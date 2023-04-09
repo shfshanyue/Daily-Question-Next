@@ -1,0 +1,29 @@
+{
+  "index": {
+    "type": "page",
+    "title": "Nextra",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "wechat": {
+    "type": "page",
+    "title": "微信机器人"
+  },
+  "feishu": {
+    "type": "page",
+    "title": "飞书机器人"
+  },
+  "ding": {
+    "type": "page",
+    "title": "钉钉机器人"
+  },
+  "contact": {
+    "type": "page",
+    "title": "商务合作",
+    "theme": {
+      "typesetting": "article"
+    }
+  }
+}

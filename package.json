@@ -27,6 +27,8 @@
     "midash": "^0.8.2",
     "next": "^13.2.4",
     "next-sitemap": "^4.0.6",
+    "nextra": "^2.3.0",
+    "nextra-theme-docs": "^2.3.0",
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.3.0",

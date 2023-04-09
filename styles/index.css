@@ -33,4 +33,11 @@
   .app-button {
     @apply px-6 py-1 text-gray-700 bg-white border border-gray-400 rounded-full shadow-sm hover:border-orange-500 hover:text-orange-600 hover:ring-1 hover:ring-orange-500;
   }
+
+  .content-container {
+    max-width: 90rem;
+    padding-left: max(env(safe-area-inset-left),1.5rem);
+    padding-right: max(env(safe-area-inset-right),1.5rem);
+    margin: 0 auto;
+  }
 }

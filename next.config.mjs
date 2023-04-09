@@ -1,4 +1,8 @@
-import withBundleAnalyzer from '@next/bundle-analyzer'
+import bundleAnalyzer from '@next/bundle-analyzer'
+import nextra from 'nextra'
+
+// TODO
+// import { compose } from 'midash'
 
 // ({
 //   enabled: process.env.ANALYZE === 'true'
@@ -9,11 +13,14 @@ const config = {
   env: {
     gaId: 'UA-',
   },
-  webpack (config) {
+  webpack(config) {
     return config
   }
 }
 
-export default withBundleAnalyzer({
+export default bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true'
-})(config)
+})(nextra({
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.tsx',
+})(config))

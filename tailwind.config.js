@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+  content: ['./theme.config.tsx', './components/**/*.{js,ts,jsx,tsx,mdx}', './pages/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       typography: (theme) => ({
@@ -16,6 +16,6 @@ module.exports = {
   },
   variants: {},
   plugins: [
-    require('@tailwindcss/typography')
+    // require('@tailwindcss/typography')
   ]
 }
