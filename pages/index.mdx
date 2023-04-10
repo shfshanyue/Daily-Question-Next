@@ -8,20 +8,33 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 <div>
-  <div className="content-container mt-8 mb-8">
-    <h1 className="font-bold inline-block text-gray-800" style={{ fontSize: 'min(3.275rem, max(8vw, 2.5rem))' }}>
-      将 <span className="font-mono">ChatGPT/Bing AI</span>
-      <br className="hidden" />
-      连接至微信、企业微信、飞书、钉钉
-    </h1>
-    <div className="mt-6 text-2xl">
-      一键接入 ChatGPT 机器人
+  <div className="content-container mt-8 mb-8 grid grid-cols-1 lg:grid-cols-5">
+    <div className="lg:col-span-3">
+      <h1 className="font-bold inline-block text-gray-800" style={{ fontSize: 'min(3rem, max(7vw, 2.5rem))' }}>
+        将 <span className="font-mono">ChatGPT/Bing AI</span>
+        <br className="hidden" />
+        连接至微信、企业微信、飞书、钉钉
+      </h1>
+      <div className="mt-6 text-2xl">
+        一键接入 ChatGPT 机器人
+      </div>
+      <div className="mt-6 text-2xl">
+        通过 AI 机器人更好地为企业赋能，解放生产力
+      </div>
+      <div className="mt-6">
+        <Link href="/contact" className="app-button inline-block text-xg px-6 py-3 text-orange-500 border-orange-500 font-semibold border-2">
+          预约咨询
+        </Link>
+      </div>
     </div>
-    <div className="mt-6 text-2xl">
-      通过 AI 机器人更好地为企业赋能，解放生产力
-    </div>
-    <div className="mt-6">
-      <button className="app-button text-xg px-6 py-3">预约咨询</button>
+    <div className="lg:col-span-2">
+      <img src="https://static.shanyue.tech/images/23-04-03/clipboard-4646.c8fcac.webp" className="rounded-3xl border border-gray-200 mt-6" />
     </div>
   </div>
+  {/* <div className="bg-gray-50 mt-8">
+    <div className="content-container py-8">
+      <h2 className="inline-block text-gray-600 text-3xl">一键新建机器人</h2>
+      <img src="https://static.shanyue.tech/images/23-04-03/clipboard-4646.c8fcac.webp" className="w-[50%] rounded-3xl border border-gray-200 mt-6" />
+    </div>
+  </div> */}
 </div>

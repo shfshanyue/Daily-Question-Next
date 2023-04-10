@@ -1,8 +1,7 @@
 {
   "index": {
     "type": "page",
-    "title": "Nextra",
-    "display": "hidden",
+    "title": "首页",
     "theme": {
       "layout": "raw"
     }

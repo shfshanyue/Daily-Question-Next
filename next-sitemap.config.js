@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://next-app-shanyue.vercel.app',
+  siteUrl: 'https://bot.prochat.tech',
   generateRobotsTxt: true,
   // optional
   robotsTxtOptions: {
