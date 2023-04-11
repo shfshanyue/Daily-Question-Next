@@ -8,7 +8,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 <div>
-  <div className="content-container mt-8 mb-8 grid grid-cols-1 lg:grid-cols-5">
+  <div className="content-container py-10 grid grid-cols-1 lg:grid-cols-5 border-b">
     <div className="lg:col-span-3">
       <h1 className="font-bold inline-block text-gray-800" style={{ fontSize: 'min(3rem, max(7vw, 2.5rem))' }}>
         将 <span className="font-mono">ChatGPT/Bing AI</span>
@@ -31,10 +31,28 @@ import Image from 'next/image'
       <img src="https://static.shanyue.tech/images/23-04-03/clipboard-4646.c8fcac.webp" className="rounded-3xl border border-gray-200 mt-6" />
     </div>
   </div>
-  {/* <div className="bg-gray-50 mt-8">
-    <div className="content-container py-8">
-      <h2 className="inline-block text-gray-600 text-3xl">一键新建机器人</h2>
-      <img src="https://static.shanyue.tech/images/23-04-03/clipboard-4646.c8fcac.webp" className="w-[50%] rounded-3xl border border-gray-200 mt-6" />
+  <div className="content-container py-20 flex justify-center gap-20 leading-normal">
+    <div className="rounded-xl border w-[400px] p-8">
+      <h3 className="text-2xl font-semibold">SaaS 版</h3>
+      <p className="text-gray-600 mt-2">一键接入 ChatGPT，无需服务器部署，无需域名。</p>
+      <h4 className="text-xl mt-4">特性</h4>
+      <ul className="text-gray-600 leading-loose mt-2">
+        <li>按年月订阅付费</li>
+        <li>不限团队人数</li>
+        <li>不限功能</li>
+        <li>不限应用数</li>
+      </ul>
     </div>
-  </div> */}
+    <div className="rounded-xl border w-[400px] p-8">
+      <h3 className="text-2xl font-semibold">私有化部署版</h3>
+      <p className="text-gray-600 mt-2">一键接入 ChatGPT，需提供服务器，提供域名，提供 Open AI Key。</p>
+      <h4 className="text-xl mt-4">特性</h4>
+      <ul className="text-gray-600 leading-loose mt-2">
+        <li>按部署维护付费</li>
+        <li>按团队人数付费</li>
+        <li>不限功能</li>
+        <li>不限应用数</li>
+      </ul>
+    </div>
+  </div>
 </div>

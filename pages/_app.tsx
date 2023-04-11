@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
-        title="Hello next.js!"
+        title="定制你的 ChatGPT 机器人"
         meta={meta}
       />
       <Component {...pageProps} />
