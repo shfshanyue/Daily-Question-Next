@@ -6,21 +6,21 @@
       "layout": "raw"
     }
   },
-  "wechat": {
+  "fe": {
     "type": "page",
-    "title": "微信机器人"
+    "title": "高级前端"
   },
-  "we-official": {
+  "server": {
     "type": "page",
-    "title": "公众号机器人"
+    "title": "全栈"
   },
-  "feishu": {
+  "base": {
     "type": "page",
-    "title": "飞书机器人"
+    "title": "计算机基础"
   },
-  "ding": {
+  "open": {
     "type": "page",
-    "title": "钉钉机器人"
+    "title": "开放式问题"
   },
   "contact": {
     "type": "page",

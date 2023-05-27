@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://bot.prochat.tech',
+  siteUrl: 'https://q.shanyue.tech',
   generateRobotsTxt: true,
   // optional
   robotsTxtOptions: {

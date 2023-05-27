@@ -13,7 +13,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "issues": "curl https://cdn.jsdelivr.net/gh/shfshanyue/interview-api@master/data/issues.json --compressed > data/issues.json"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^13.2.4",
@@ -32,6 +33,7 @@
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.3.0",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ga": "^3.3.1",
@@ -39,5 +41,8 @@
     "styled-jsx-plugin-postcss": "^4.0.1",
     "tailwindcss": "^3.3.1",
     "typescript": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/prettier": "^2.7.2"
   }
 }

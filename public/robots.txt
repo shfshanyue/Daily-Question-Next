@@ -1,9 +1,2 @@
-# *
 User-agent: *
-Allow: /
-
-# Host
-Host: https://next-app-shanyue.vercel.app
-
-# Sitemaps
-Sitemap: https://next-app-shanyue.vercel.app/sitemap.xml
+Sitemap: https://q.shanyue.tech/sitemap.xml

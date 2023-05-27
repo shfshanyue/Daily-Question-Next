@@ -14,13 +14,13 @@ export default {
         <line x1="146" y1="427" x2="455" y2="427" stroke="#FFF7ED" stroke-width="20" stroke-linecap="round"/>
       </svg> */}
       <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
-        🤖 AI 机器人管家
+        🤖 大厂面试每日一题
       </span>
     </>
   ),
   footer: {
     text: <div>
-      <div className="text-xl">AI 机器人管家</div>
+      <div className="text-xl">大厂面试每日一题</div>
       <div className="mt-4">让你的工作更加简单，让你的沟通更加高效。</div>
     </div>,
   },
@@ -34,7 +34,7 @@ export default {
     const { asPath } = useRouter()
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s – AI 机器人管家'
+        titleTemplate: '%s – 大厂面试每日一题'
       }
     }
   },
@@ -54,9 +54,9 @@ export default {
         />
         <meta
           name="og:title"
-          content={title ? title + ' – AI 机器人管家' : 'AI 机器人管家'}
+          content={title ? title + ' – 大厂面试每日一题' : '大厂面试每日一题'}
         />
-        <meta name="apple-mobile-web-app-title" content="AI 机器人管家" />
+        <meta name="apple-mobile-web-app-title" content="大厂面试每日一题" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         {/* <link
