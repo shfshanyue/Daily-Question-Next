@@ -1,2 +1,9 @@
+# *
 User-agent: *
+Allow: /
+
+# Host
+Host: https://q.shanyue.tech
+
+# Sitemaps
 Sitemap: https://q.shanyue.tech/sitemap.xml
