@@ -15,7 +15,16 @@ const config = {
   },
   webpack(config) {
     return config
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:slug*.html',
+        destination: '/:slug*', // Matched parameters can be used in the destination
+        permanent: false
+      },
+    ]
+  },
 }
 
 export default bundleAnalyzer({

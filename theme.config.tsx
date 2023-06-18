@@ -7,17 +7,21 @@ export default {
   },
   logo: (
     <>
-      {/* <svg width="30" height="30" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="600" height="600" rx="50" fill="#FB923C"/>
-        <circle cx="157" cy="234" r="71" fill="#FFF7ED"/>
-        <circle cx="444" cy="234" r="71" fill="#FFF7ED"/>
-        <line x1="146" y1="427" x2="455" y2="427" stroke="#FFF7ED" stroke-width="20" stroke-linecap="round"/>
-      </svg> */}
       <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
-        🤖 大厂面试每日一题
+        大厂面试每日一题
       </span>
     </>
   ),
+  sidebar: {
+    titleComponent({ title, type }) {
+      if (type === 'separator') {
+        return <span className="cursor-default">{title}</span>
+      }
+      return <>{title}</>
+    },
+    defaultMenuCollapseLevel: 1,
+    toggleButton: true
+  },
   footer: {
     text: <div>
       <div className="text-xl">大厂面试每日一题</div>

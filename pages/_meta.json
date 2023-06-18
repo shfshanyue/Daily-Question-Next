@@ -6,27 +6,35 @@
       "layout": "raw"
     }
   },
+  "roadmap": {
+    "type": "page",
+    "title": "面试路线图"
+  },
+  "base": {
+    "type": "page",
+    "title": "计算机基础"
+  },
   "fe": {
     "type": "page",
     "title": "高级前端"
   },
   "server": {
     "type": "page",
-    "title": "全栈"
-  },
-  "base": {
-    "type": "page",
-    "title": "计算机基础"
+    "title": "全栈开发"
   },
   "open": {
     "type": "page",
     "title": "开放式问题"
   },
-  "contact": {
+  "train": {
     "type": "page",
-    "title": "商务合作",
-    "theme": {
-      "typesetting": "article"
-    }
+    "title": "训练营"
+  },
+  "mock": {
+    "type": "page",
+    "display": "hidden"
+  },
+  "contact": {
+    "display": "hidden"
   }
 }

@@ -72,7 +72,7 @@ function generateCatagoryReadme (group: string, issues: Issue[]) {
 
   const labels = LABELS.filter(x => x.group === group)
   const meta = {
-    index: '归总',
+    index: '汇总',
     ...Object.fromEntries(labels.map(label => [label.name, label.alias]))
   }
   fs.writeFileSync(path.resolve('pages', group, '_meta.json'), JSON.stringify(meta, null, 2))
