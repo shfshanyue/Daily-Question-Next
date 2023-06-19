@@ -122,7 +122,7 @@ function generateDir () {
 async function generateMd () {
   const dir = path.resolve(__dirname, '..')
   // 最终要生成的文件，其值为 [path, markdown]
-  const files = []
+  const files: any[] = []
 
   generateDir()
 
