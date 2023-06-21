@@ -61,8 +61,6 @@ export default {
           content={title ? title + ' – 大厂面试每日一题' : '大厂面试每日一题'}
         />
         <meta name="apple-mobile-web-app-title" content="大厂面试每日一题" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/favicon.png" type="image/png" />
         {/* <link
           rel="icon"
           href="/favicon-dark.svg"
