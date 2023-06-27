@@ -2,7 +2,7 @@ import ReactGA from 'react-ga4'
 
 export const initGA = () => {
   // 设置 GA code
-  ReactGA.initialize('102193749')
+  ReactGA.initialize('G-280P4T86KE')
 }
 
 export const logPageView = () => {
