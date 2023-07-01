@@ -38,6 +38,7 @@
     "nextra": "^2.7.1",
     "nextra-theme-docs": "^2.7.1",
     "openai": "^3.3.0",
+    "p-queue": "^7.3.4",
     "postcss": "^8.4.24",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.5.0",

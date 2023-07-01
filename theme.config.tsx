@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 export default {
   project: {
   },
+  primaryHue: 25,
   logo: (
     <>
       <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
