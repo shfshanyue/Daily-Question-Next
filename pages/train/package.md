@@ -8,7 +8,7 @@
 
 <!-- ![](https://static.shanyue.tech/images/23-01-28/train-webpack-2.78619f.webp) -->
 
-+ 价格: 220 (不定期涨价)
++ 价格: 限时五折优惠220 (不定期涨价)
 + 返现: 80
 + 人数: 100
 
