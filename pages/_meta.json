@@ -6,6 +6,10 @@
       "layout": "raw"
     }
   },
+  "deploy": {
+    "type": "page",
+    "title": "前端部署十五篇"
+  },
   "interview": {
     "type": "page",
     "title": "面经大全🔥",
