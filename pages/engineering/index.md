@@ -21,10 +21,6 @@
 
 该小册假设您已经拥有前端及计算机的一些基础知识，部署篇假设您对 Docker 已有了解。
 
-## 请我喝杯咖啡
-
-<img src="/sponsor.jpg" width="300" height="300" />
-
 ## 大纲
 
 <catalog />

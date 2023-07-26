@@ -19,9 +19,14 @@ const config = {
   async redirects() {
     return [
       {
+        source: '/engineering/:number.html',
+        destination: '/engineering/e:number', // Matched parameters can be used in the destination
+        permanent: false
+      },
+      {
         source: '/:slug*.html',
         destination: '/:slug*', // Matched parameters can be used in the destination
-        permanent: false
+        permanent: true
       },
     ]
   },
