@@ -1,15 +1,8 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
  
 const config: CodegenConfig = {
-  schema: [
-    {
-      'https://api.github.com/graphql': {
-        headers: {
-          Authorization: `bearer ${process.env.ACCESS_TOKEN}`,
-        }
-      }
-    }
-  ],
+  schema: './github/schema.json',
+  documents: './github/query.gql',
   generates: {
     './github/query.ts': {
       plugins: ['typescript', 'typescript-operations', 'typescript-graphql-request'],

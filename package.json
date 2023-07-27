@@ -14,11 +14,12 @@
     "build": "NODE_OPTIONS=--max-old-space-size=16384 next build",
     "start": "next start",
     "postbuild": "next-sitemap",
-    "issues": "curl https://cdn.jsdelivr.net/gh/shfshanyue/interview-api@master/data/issues.json --compressed > data/issues.json",
+    "issues": "tsx scripts/issue.ts",
     "codegen": "graphql-codegen --config github/codegen.ts"
   },
   "dependencies": {
     "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/typescript-graphql-request": "^5.0.0",
     "@graphql-codegen/typescript-operations": "^4.0.1",
     "@next/bundle-analyzer": "^13.4.12",
     "@shanyue/promise-utils": "^2.0.4",
@@ -31,6 +32,7 @@
     "express": "^4.18.2",
     "graphql": "^16.7.1",
     "graphql-request": "^6.1.0",
+    "graphql-tag": "^2.12.6",
     "lodash": "^4.17.21",
     "midash": "^0.8.5",
     "next": "^13.4.12",
@@ -50,6 +52,7 @@
     "react-helmet": "^6.1.0",
     "styled-jsx-plugin-postcss": "^4.0.1",
     "tailwindcss": "^3.3.3",
+    "tsx": "^3.12.7",
     "typescript": "^5.1.6",
     "undici": "^5.22.1"
   },
