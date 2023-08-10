@@ -8968,6 +8968,17 @@
             "login": "18062706139fcz",
             "url": "https://github.com/18062706139fcz"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jitAq",
+          "body": "```\r\nsetTimeout(() => {\r\n    console.log(1)\r\n}, 100)\r\nconsole.log(2);\r\nsetTimeout(() => {\r\n    console.log(3)\r\n}, 0)\r\n```\r\n// 2\r\n// 3\r\n// 1",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Ghaining",
+            "url": "https://github.com/Ghaining"
+          }
         }
       ]
     },
@@ -9612,8 +9623,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "crosszheng-take2",
-            "url": "https://github.com/crosszheng-take2"
+            "login": "crossz",
+            "url": "https://github.com/crossz"
           }
         },
         {
@@ -12912,6 +12923,17 @@
             "login": "bigbigDreamer",
             "url": "https://github.com/bigbigDreamer"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jigut",
+          "body": "```\r\nfunction myNew(fn, ...args) {\r\n  const instance = Object.create(fn.prototype);\r\n  const ret = fn.apply(instance, args);\r\n  return typeof ret === \"object\" && ret !== null ? ret : instance;\r\n}\r\n\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Ghaining",
+            "url": "https://github.com/Ghaining"
+          }
         }
       ]
     },
@@ -15361,6 +15383,28 @@
             "login": "hatedMe",
             "url": "https://github.com/hatedMe"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jjxV2",
+          "body": "```\r\nfunction findMostEle() {\r\n  const els = document.querySelectorAll(\"*\");\r\n  const map = new Map();\r\n  for (let i = 0; i < els.length; i++) {\r\n    const el = els[i];\r\n    const tag = el.tagName;\r\n    if (map.has(tag)) {\r\n      map.set(tag, map.get(tag) + 1);\r\n    } else {\r\n      map.set(tag, 1);\r\n    }\r\n  }\r\n  return [...map].sort((a, b) => b[1] - a[1]);\r\n}\r\n\r\n```",
+          "star": {
+            "totalCount": 1
+          },
+          "author": {
+            "login": "Ghaining",
+            "url": "https://github.com/Ghaining"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jkGDv",
+          "body": "@Ghaining markdown 没有标记 javascript 语言呀",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "shfshanyue",
+            "url": "https://github.com/shfshanyue"
+          }
         }
       ]
     },
@@ -15577,6 +15621,17 @@
           "author": {
             "login": "Hazel-Lin",
             "url": "https://github.com/Hazel-Lin"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jW0xQ",
+          "body": "```\r\nfunction encode(str) {\r\n  var result = \"\";\r\n  var count = 1;\r\n  for (var i = 0; i < str.length; i++) {\r\n    if (str[i] === str[i + 1]) {\r\n      count++;\r\n    } else {\r\n      result += str[i] + count;\r\n      count = 1;\r\n    }\r\n  }\r\n  console.log(result);\r\n}\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Ghaining",
+            "url": "https://github.com/Ghaining"
           }
         }
       ]
@@ -23010,7 +23065,7 @@
           "id": "IC_kwDODQzyOs400Vtn",
           "body": "```js\r\nfunction isEqual(x, y) {\r\n  if (x === y) {\r\n    return true;\r\n  } else if ((typeof x === 'object' && x !== null) && (typeof y === 'object' && y !== null)) {\r\n    const keysX = Object.keys(x);\r\n    const keysY = Object.keys(y);\r\n    if (keysX.length !== keysY.length) {\r\n      return false;\r\n    }\r\n    for (const key of keysX) {\r\n      if(!isEqual(x[key], y[key])) {\r\n        return false;\r\n      }\r\n    }\r\n    return true;\r\n  } else {\r\n    return false;\r\n  }\r\n}\r\n```",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "haotie1990",
@@ -24126,7 +24181,7 @@
           "id": "IC_kwDODQzyOs400FUt",
           "body": "```js\r\n\r\nconst middlewares = [];\r\n\r\nmiddlewares.push(async function(ctx, next) {\r\n  console.log('1');\r\n  await next();\r\n  console.log('6');\r\n});\r\n\r\nmiddlewares.push(async function(ctx, next) {\r\n  console.log('2');\r\n  await next();\r\n  console.log('5');\r\n});\r\n\r\nmiddlewares.push(async function(ctx, next) {\r\n  console.log('3');\r\n  await next();\r\n  console.log('4');\r\n});\r\n\r\nasync function run() {\r\n  const middleware = middlewares.shift();\r\n  await (middleware && middleware({}, run));\r\n}\r\n\r\nrun(); // expect output: 1 2 3 4 5 6\r\n```",
           "star": {
-            "totalCount": 1
+            "totalCount": 2
           },
           "author": {
             "login": "haotie1990",
@@ -26971,7 +27026,7 @@
           "id": "IC_kwDODQzyOs41C-no",
           "body": "``` js\r\nfunction keyBy (list, by) {\r\n  return list.reduce((acc, x) => {\r\n    acc[by(x)] = x \r\n    return acc \r\n  }, {})\r\n}\r\n```",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "shfshanyue",
@@ -27141,6 +27196,39 @@
             "login": "hwb2017",
             "url": "https://github.com/hwb2017"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jck7x",
+          "body": "```\r\nfunction twoSum(arr, target) {\r\n  const map = {};\r\n  for (let i = 0; i < arr.length; i++) {\r\n    const num = arr[i];\r\n    const diff = target - num;\r\n    if (map[diff] !== undefined) {\r\n      return [map[diff], arr[i]];\r\n    }\r\n    map[num] = arr[i];\r\n  }\r\n  return null;\r\n}\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Ghaining",
+            "url": "https://github.com/Ghaining"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jcnIL",
+          "body": "> \r\n\r\n\r\nvar twoSum = function (nums, target) {\r\n  const hash = new Map();\r\n  for (let i = 0; i < nums.length; i++) {\r\n    const diff = target - nums[i];\r\n    if (hash.has(diff)) return [i, hash.get(diff)];\r\n    hash.set(nums[i], i);\r\n  }\r\n  return null;\r\n};\r\n\r\n第一个有点问题，应该是这样",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Ghaining",
+            "url": "https://github.com/Ghaining"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jcnZD",
+          "body": "> 一，常规两数之和\r\n> \r\n> ```js\r\n> var twoSum = function (nums, target) {\r\n>     const hash = new Map();\r\n>     for (let i = 0; i < nums.length; i++) {\r\n>         if (hash.has(target - nums[i])) return [nums[i], nums[target - i]];\r\n>         hash.set(nums[i], i);\r\n>     }\r\n>     return null;\r\n> };\r\n> ```\r\n> \r\n> 二，双指针 利用题目的提示 “正序增长的正整数数组” 而且例1的提示很明显了，左右两个指针 当前和大于目标值，右指针左移 当前和小于目标值，左指针右移 左指针等于右指针，循环中断，返回null\r\n> \r\n> ```js\r\n> const twoSum = (number, target) => {\r\n>     let left = 0,\r\n>         right = number.length - 1;\r\n>     while (left < right) {\r\n>         const sum = number[left] + number[right];\r\n>         if (sum === target) return [number[left], number[right]]; // 等于目标值，返回对应值\r\n>         else if (sum < target) left++; // 小于目标值，左指针向右移动\r\n>         else right--; // 大于目标值，右指针向左移动\r\n>     }\r\n>     return null;\r\n> };\r\n> ```\r\n\r\n\r\n```\r\nvar twoSum = function (nums, target) {\r\n  const hash = new Map();\r\n  for (let i = 0; i < nums.length; i++) {\r\n    const diff = target - nums[i];\r\n    if (hash.has(diff)) return [i, hash.get(diff)];\r\n    hash.set(nums[i], i);\r\n  }\r\n  return null;\r\n};\r\n```\r\n\r\n第一个有点小问题",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Ghaining",
+            "url": "https://github.com/Ghaining"
+          }
         }
       ]
     },
@@ -27257,6 +27345,17 @@
           "author": {
             "login": "Hazel-Lin",
             "url": "https://github.com/Hazel-Lin"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jWm7W",
+          "body": "```\r\nfunction fizzbuzz(n) {\r\n  const fizz = n % 3 === 0 ? \"fizz\" : \"\";\r\n  const buzz = n % 5 === 0 ? \"buzz\" : \"\";\r\n  return fizz + buzz || n;\r\n}\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Ghaining",
+            "url": "https://github.com/Ghaining"
           }
         }
       ]
@@ -29014,7 +29113,7 @@
       "nodes": [
         {
           "id": "IC_kwDODQzyOs46FuNe",
-          "body": "## 软链接和硬链接\r\n\r\n假设我们有一个文件，称为 `hello`\r\n\r\n通过 `ln -s` 创建一个软链接，通过 `ln` 可以创建一个硬链接。\r\n\r\n``` bash\r\n$ ln -s hello hello-soft\r\n$ ln hello hello-hard\r\n\r\n$ ls -lh\r\ntotal 768\r\n45459612 -rw-r--r--  2 xiange  staff   153K 11 19 17:56 hello\r\n45459612 -rw-r--r--  2 xiange  staff   153K 11 19 17:56 hello-hard\r\n45463415 lrwxr-xr-x  1 xiange  staff     5B 11 19 19:40 hello-soft -> hello\r\n```\r\n\r\n他们的区别有以下几点:\r\n\r\n1. 软链接可理解为指向源文件的指针，它是单独的一个文件，仅仅只有几个字节，它拥有独立的 `inode`\r\n1. 硬链接与源文件同时指向一个物理地址，它与源文件共享存储数据，它俩拥有相同的 `inode`\r\n\r\n## pnpm 为何节省空间\r\n\r\n它解决了 npm/yarn 平铺 node_modules 带来的依赖项重复的问题 (doppelgangers)\r\n\r\n假设存在依赖依赖:\r\n\r\n``` bash\r\n.\r\n├── package-a\r\n│   └── lodash@4.0.0\r\n├── package-b\r\n│   └── lodash@4.0.0\r\n├── package-c\r\n│   └── lodash@3.0.0\r\n└── package-d\r\n    └── lodash@3.0.0\r\n```\r\n\r\n那么不可避免地在 npm 或者 yarn 中，`lodash@3.0.0` 会被多次安装，无疑造成了空间的浪费与诸多问题。\r\n\r\n``` bash\r\n./node_modules/lodash\r\n./node_modules/package-a\r\n./node_modules/package-b\r\n./node_modules/package-c\r\n./node_modules/package-c/node_mdoules/lodash\r\n./node_modules/package-d\r\n./node_modules/package-d/node_mdoules/lodash\r\n```\r\n\r\n``` mermaid\r\ngraph\r\n  app(node_modules) ---> A(package-a)\r\n  app          ---> B(package-b)\r\n  app          ---> C(package-c)\r\n  app          ---> D(package-d)\r\n  app          ---> X(\"lodash@4.0.0\")\r\n  C            ---> Y(\"lodash@3.0.0\")\r\n  D            ---> Z(\"lodash@3.0.0\")\r\n```\r\n\r\n这里有一个来自 [Rush](https://rushjs.io/images/home/card-doppel.svg) 的图可以很形象的说明问题。\r\n\r\n这是一个较为常见的场景，在平时项目中有些库相同版本甚至会安装七八次，如 `postcss`、`ansi-styles`、`ansi-regex`、`braces` 等，你们可以去你们的 `yarn.lock`/`package-lock.json` 中搜索一下。\r\n\r\n而在 pnpm 中，它改变了 npm/yarn 的目录结构，采用软链接的方式，避免了 `doppelgangers` 问题更加节省空间。\r\n\r\n它最终生成的 `node_modules` 如下所示，从中也可以看出它解决了幽灵依赖的问题。\r\n\r\n``` bash\r\n./node_modules/package-a       ->  .pnpm/package-a@1.0.0/node_modules/package-a\r\n./node_modules/package-b       ->  .pnpm/package-b@1.0.0/node_modules/package-b\r\n./node_modules/package-c       ->  .pnpm/package-c@1.0.0/node_modules/package-c\r\n./node_modules/package-d       ->  .pnpm/package-d@1.0.0/node_modules/package-d\r\n./node_modules/.pnpm/lodash@3.0.0\r\n./node_modules/.pnpm/lodash@4.0.0\r\n./node_modules/.pnpm/package-a@1.0.0\r\n./node_modules/.pnpm/package-a@1.0.0/node_modules/package-a\r\n./node_modules/.pnpm/package-a@1.0.0/node_modules/lodash     -> .pnpm/package-a@1.0.0/node_modules/lodash@4.0.0\r\n./node_modules/.pnpm/package-b@1.0.0\r\n./node_modules/.pnpm/package-b@1.0.0/node_modules/package-b\r\n./node_modules/.pnpm/package-b@1.0.0/node_modules/lodash     -> .pnpm/package-b@1.0.0/node_modules/lodash@4.0.0\r\n./node_modules/.pnpm/package-c@1.0.0\r\n./node_modules/.pnpm/package-c@1.0.0/node_modules/package-c\r\n./node_modules/.pnpm/package-c@1.0.0/node_modules/lodash     -> .pnpm/package-c@1.0.0/node_modules/lodash@3.0.0\r\n./node_modules/.pnpm/package-d@1.0.0\r\n./node_modules/.pnpm/package-d@1.0.0/node_modules/package-d\r\n./node_modules/.pnpm/package-d@1.0.0/node_modules/lodash     -> .pnpm/package-d@1.0.0/node_modules/lodash@3.0.0\r\n```\r\n\r\n如此，依赖*软链接*的方式，可解决重复依赖安装 (doppelgangers) 的问题，**如果一个项目占用 1000 MB，那么使用 pnpm 可能仅占用 800 MB**\r\n\r\n然而它除此之外，还有一个最大的好处，**如果一个项目占用 1000 MB，传统方式十个项目占用 10000 MB，那么使用 pnpm 可能仅占用 3000 MB**，而它得益于硬链接。\r\n\r\n再借用以上示例，`lodash@3.0.0` 与 `lodash@4.0.0` 会生成一个指向全局目录(`~/.pnpm-store`)的硬链接，如果新项目依赖二者，则可复用存储空间。\r\n\r\n``` bash\r\n./node_modules/.pnpm/lodash@3.0.0/node_modules/lodash   -> hardlink \r\n./node_modules/.pnpm/lodash@4.0.0/node_modules/lodash   -> hardlink\r\n```\r\n",
+          "body": "## 软链接和硬链接\r\n\r\n假设我们有一个文件，称为 `hello`\r\n\r\n通过 `ln -s` 创建一个软链接，通过 `ln` 可以创建一个硬链接。\r\n\r\n``` bash\r\n$ ln -s hello hello-soft\r\n$ ln hello hello-hard\r\n\r\n$ ls -lh\r\ntotal 768\r\n45459612 -rw-r--r--  2 xiange  staff   153K 11 19 17:56 hello\r\n45459612 -rw-r--r--  2 xiange  staff   153K 11 19 17:56 hello-hard\r\n45463415 lrwxr-xr-x  1 xiange  staff     5B 11 19 19:40 hello-soft -> hello\r\n```\r\n\r\n他们的区别有以下几点:\r\n\r\n1. 软链接可理解为指向源文件的指针，它是单独的一个文件，仅仅只有几个字节，它拥有独立的 `inode`\r\n1. 硬链接与源文件同时指向一个物理地址，它与源文件共享存储数据，它俩拥有相同的 `inode`\r\n\r\n## pnpm 为何节省空间\r\n\r\n它解决了 npm/yarn 平铺 node_modules 带来的依赖项重复的问题 (doppelgangers)\r\n\r\n假设存在依赖依赖:\r\n\r\n``` bash\r\n.\r\n├── package-a\r\n│   └── lodash@4.0.0\r\n├── package-b\r\n│   └── lodash@4.0.0\r\n├── package-c\r\n│   └── lodash@3.0.0\r\n└── package-d\r\n    └── lodash@3.0.0\r\n```\r\n\r\n那么不可避免地在 npm 或者 yarn 中，`lodash@3.0.0` 会被多次安装，无疑造成了空间的浪费与诸多问题。\r\n\r\n``` bash\r\n./node_modules/lodash\r\n./node_modules/package-a\r\n./node_modules/package-b\r\n./node_modules/package-c\r\n./node_modules/package-c/node_mdoules/lodash\r\n./node_modules/package-d\r\n./node_modules/package-d/node_mdoules/lodash\r\n```\r\n\r\n``` mermaid\r\ngraph\r\n  app(node_modules) ---> A(package-a)\r\n  app          ---> B(package-b)\r\n  app          ---> C(package-c)\r\n  app          ---> D(package-d)\r\n  app          ---> X(\"lodash@4.0.0\")\r\n  C            ---> Y(\"lodash@3.0.0\")\r\n  D            ---> Z(\"lodash@3.0.0\")\r\n```\r\n\r\n这里有一个来自 [Rush](https://rushjs.io/images/home/card-doppel.svg) 的图可以很形象的说明问题。\r\n\r\n![](https://rushjs.io/images/home/card-doppel.svg)\r\n\r\n这是一个较为常见的场景，在平时项目中有些库相同版本甚至会安装七八次，如 `postcss`、`ansi-styles`、`ansi-regex`、`braces` 等，你们可以去你们的 `yarn.lock`/`package-lock.json` 中搜索一下。\r\n\r\n而在 pnpm 中，它改变了 npm/yarn 的目录结构，采用软链接的方式，避免了 `doppelgangers` 问题更加节省空间。\r\n\r\n它最终生成的 `node_modules` 如下所示，从中也可以看出它解决了幽灵依赖的问题。\r\n\r\n``` bash\r\n./node_modules/package-a       ->  .pnpm/package-a@1.0.0/node_modules/package-a\r\n./node_modules/package-b       ->  .pnpm/package-b@1.0.0/node_modules/package-b\r\n./node_modules/package-c       ->  .pnpm/package-c@1.0.0/node_modules/package-c\r\n./node_modules/package-d       ->  .pnpm/package-d@1.0.0/node_modules/package-d\r\n./node_modules/.pnpm/lodash@3.0.0\r\n./node_modules/.pnpm/lodash@4.0.0\r\n./node_modules/.pnpm/package-a@1.0.0\r\n./node_modules/.pnpm/package-a@1.0.0/node_modules/package-a\r\n./node_modules/.pnpm/package-a@1.0.0/node_modules/lodash     -> .pnpm/package-a@1.0.0/node_modules/lodash@4.0.0\r\n./node_modules/.pnpm/package-b@1.0.0\r\n./node_modules/.pnpm/package-b@1.0.0/node_modules/package-b\r\n./node_modules/.pnpm/package-b@1.0.0/node_modules/lodash     -> .pnpm/package-b@1.0.0/node_modules/lodash@4.0.0\r\n./node_modules/.pnpm/package-c@1.0.0\r\n./node_modules/.pnpm/package-c@1.0.0/node_modules/package-c\r\n./node_modules/.pnpm/package-c@1.0.0/node_modules/lodash     -> .pnpm/package-c@1.0.0/node_modules/lodash@3.0.0\r\n./node_modules/.pnpm/package-d@1.0.0\r\n./node_modules/.pnpm/package-d@1.0.0/node_modules/package-d\r\n./node_modules/.pnpm/package-d@1.0.0/node_modules/lodash     -> .pnpm/package-d@1.0.0/node_modules/lodash@3.0.0\r\n```\r\n\r\n如此，依赖*软链接*的方式，可解决重复依赖安装 (doppelgangers) 的问题，**如果一个项目占用 1000 MB，那么使用 pnpm 可能仅占用 800 MB**\r\n\r\n然而它除此之外，还有一个最大的好处，**如果一个项目占用 1000 MB，传统方式十个项目占用 10000 MB，那么使用 pnpm 可能仅占用 3000 MB**，而它得益于硬链接。\r\n\r\n再借用以上示例，`lodash@3.0.0` 与 `lodash@4.0.0` 会生成一个指向全局目录(`~/.pnpm-store`)的硬链接，如果新项目依赖二者，则可复用存储空间。\r\n\r\n``` bash\r\n./node_modules/.pnpm/lodash@3.0.0/node_modules/lodash   -> hardlink \r\n./node_modules/.pnpm/lodash@4.0.0/node_modules/lodash   -> hardlink\r\n```\r\n",
           "star": {
             "totalCount": 0
           },
@@ -29746,7 +29845,12 @@
       ]
     },
     "labels": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "MDU6TGFiZWwxNjUxNDAyMzE4",
+          "name": "js"
+        }
+      ]
     }
   }
 ]

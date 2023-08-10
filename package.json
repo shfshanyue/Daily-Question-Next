@@ -24,7 +24,6 @@
     "@graphql-codegen/typescript-graphql-request": "^5.0.0",
     "@graphql-codegen/typescript-operations": "^4.0.1",
     "@next/bundle-analyzer": "^13.4.12",
-    "@shanyue/promise-utils": "^2.0.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.4.4",
     "@types/react": "^18.2.16",

@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@apollo/server':
     specifier: ^4.8.1
@@ -19,9 +23,6 @@ dependencies:
   '@next/bundle-analyzer':
     specifier: ^13.4.12
     version: 13.4.12
-  '@shanyue/promise-utils':
-    specifier: ^2.0.4
-    version: 2.0.4
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.3)
@@ -2606,11 +2607,6 @@ packages:
 
   /@repeaterjs/repeater@3.0.4:
     resolution: {integrity: sha512-AW8PKd6iX3vAZ0vA43nOUOnbq/X5ihgU+mSXXqunMkeQADGiqw/PY0JNeYtD5sr0PAy51YPgAPbDoeapv9r8WA==}
-    dev: false
-
-  /@shanyue/promise-utils@2.0.4:
-    resolution: {integrity: sha512-dpGmggFZ80nZJJpQ957fxbavLXnkvrcL/miQXtIexlZZqWStGnNgKHQ4cdDUei+ktpKn24YbIXsiy957GtNs6g==}
-    engines: {node: '>=10'}
     dev: false
 
   /@swc/helpers@0.5.1:

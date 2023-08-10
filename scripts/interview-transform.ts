@@ -1,5 +1,4 @@
 import fs from 'fs'
-import { map } from '@shanyue/promise-utils'
 import PQueue from 'p-queue';
 
 import interviews from '../data/interview-raw.json'
