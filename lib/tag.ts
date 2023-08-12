@@ -1,5 +1,20 @@
-import { sample } from "midash"
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai"
+import fs from "fs";
+import path from "path";
+import {
+  createJsonTranslator,
+  createOpenAILanguageModel,
+} from "typechat";
+import { InterviewArticle } from "./tag.schema"
+
+const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-turbo', 'https://openai.devdoc.tech/v1/chat/completions')
+
+const interviewTagsSchema = fs.readFileSync(
+  path.join(__dirname, "tag.schema.ts"),
+  "utf8"
+);
+
+const interviewTagsTranslator = createJsonTranslator<InterviewArticle>(model, interviewTagsSchema, "InterviewArticle");
 
 function createOpenAI() {
   const options = new Configuration({
@@ -44,21 +59,25 @@ export async function isInterviewExperience(text: string) {
   return content?.includes('true') || false
 }
 
-async function tag(text: string) {
-  const createPrompt = (text: string) => `有一篇关于程序员的技术文章标题及简介："""${text}"""
+export async function tag(text: string): Promise<InterviewArticle | undefined> {
+//   const createPrompt = (text: string) => `有一篇关于程序员的技术文章标题及简介："""${text}"""
 
-请问，面试的是哪家公司，请直接回答公司名称。
-`
-  return reply([{
-    role: 'user',
-    content: createPrompt('近期找工作+实习+字节前端提前批面试的心得分享')
-  }, {
-    role: 'assistant',
-    content: '字节跳动'
-  }, {
-    role: 'user',
-    content: createPrompt(text)
-  }])
+// 请问，面试的是哪家公司，请直接回答公司名称。
+// `
+//   return reply([{
+//     role: 'user',
+//     content: createPrompt('近期找工作+实习+字节前端提前批面试的心得分享')
+//   }, {
+//     role: 'assistant',
+//     content: '字节跳动'
+//   }, {
+//     role: 'user',
+//     content: createPrompt(text)
+//   }])
+  const article = await interviewTagsTranslator.translate(text)
+  if (article.success) {
+    return article.data
+  }
 }
 
 export async function mock({
