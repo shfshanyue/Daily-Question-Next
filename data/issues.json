@@ -13906,7 +13906,19 @@
     "title": "【Q369】在 React 项目中 immutable 是优化性能的",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5kWnbg",
+          "body": "\r\n使用不可变数据（immutable data）可以在 React 项目中优化性能。不可变数据是指一旦创建就不能被更改的数据，任何更改操作都会返回一个新的数据副本，而不是直接在原始数据上进行修改。在 React 中，使用不可变数据的主要方式是通过使用类似于 Immutable.js 这样的库，或者使用一些技术手段来确保数据不被直接修改。\r\n\r\n使用不可变数据的优势在于：\r\n\r\n更好的性能： 不可变数据可以帮助 React 更有效地进行虚拟 DOM 的比较。当数据发生变化时，React 需要比较新旧虚拟 DOM 树来确定哪些部分需要更新。使用不可变数据可以减少比较的复杂性，从而提高性能。\r\n\r\n易于追踪变化： 使用不可变数据可以更容易地追踪数据的变化，因为每次变化都会产生一个新的数据副本。这对于调试和性能优化都非常有帮助。\r\n\r\n避免意外的副作用： 直接修改数据可能导致意外的副作用，特别是在 React 中，直接修改数据可能导致组件不正确地重新渲染。\r\n\r\n更好的时间旅行： 在开发者工具中查看 React 组件状态的历史记录时，不可变数据可以确保每个状态都是明确的，并且可以更容易地回溯到之前的状态。\r\n\r\n需要注意的是，尽管不可变数据有很多优势，但也可能增加内存使用量，因为每次变化都会创建新的数据副本。在决定是否使用不可变数据时，需要权衡这些优势和缺点，以及项目的具体情况。在一些场景下，使用不可变数据可以显著提高性能，特别是在处理大规模数据时。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "GithubFuzhengshi",
+            "url": "https://github.com/GithubFuzhengshi"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -19223,7 +19235,19 @@
     "title": "【Q501】在 React 中发现状态更新时卡顿，此时应该如何定位及优化",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5j8-Lv",
+          "body": "在 React 中，当状态更新时出现卡顿，可能是由于以下原因导致的：\r\n\r\n1. 大量计算：当组件进行大量计算时，可能会导致状态更新时出现卡顿。这种情况下，可以考虑使用 `useMemo` 或 `useCallback` 来优化计算性能。\r\n\r\n2. 大量渲染：当组件进行大量渲染时，可能会导致状态更新时出现卡顿。这种情况下，可以考虑使用 `React.memo` 或 `shouldComponentUpdate` 来避免不必要的渲染。\r\n\r\n3. 大量数据：当组件需要处理大量数据时，可能会导致状态更新时出现卡顿。这种情况下，可以考虑使用分页或虚拟滚动等技术来优化性能。\r\n\r\n4. 异步更新：当组件进行异步更新时，可能会导致状态更新时出现卡顿。这种情况下，可以考虑使用 `React.lazy` 或 `Suspense` 来异步加载组件，从而避免卡顿。\r\n\r\n针对以上情况，可以采取以下优化措施：\r\n\r\n1. 使用性能分析工具：可以使用 Chrome 开发者工具中的 Performance 面板或 React DevTools 中的 Profiler 面板来分析组件的性能瓶颈，并找到需要优化的地方。\r\n\r\n2. 拆分组件：可以将组件拆分成更小的组件，从而减少组件的复杂度，提高性能。\r\n\r\n3. 使用异步更新：可以使用 `React.lazy` 或 `Suspense` 来异步加载组件，从而避免卡顿。\r\n\r\n4. 使用分页或虚拟滚动：可以使用分页或虚拟滚动等技术来优化处理大量数据时的性能。\r\n\r\n5. 使用 `useMemo` 或 `useCallback`：可以使用 `useMemo` 或 `useCallback` 来优化计算性能。\r\n\r\n6. 使用 `React.memo` 或 `shouldComponentUpdate`：可以使用 `React.memo` 或 `shouldComponentUpdate` 来避免不必要的渲染。\r\n\r\n总之，在 React 中，当状态更新时出现卡顿，可以使用性能分析工具来定位性能瓶颈，并采取相应的优化措施来提高性能。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "yumo-mt",
+            "url": "https://github.com/yumo-mt"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -27928,11 +27952,22 @@
           "id": "IC_kwDODQzyOs5QSFA1",
           "body": "# TypeScript 逆变和协变\r\n> 文章中所有的代码均在这里 [TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgIImAWzgG2QbwChkTkQ5MIAuZAZzClAHNCBfQw0SWRFAEQD2TZBAAekEABNaaDNjxFSyAPTLkgcRNAfDqAX3WKkA7nCZNmAFTjAcACgCUNAG4Dgkthy7R4SZAGEBUEyLiEFIygsKKpAhwIADqRiYgTDTwOLQQroQ4EGDI0Vi4NOj5eAC8BHok5JQ0AOR58jUANGwA3JnZyJJCNGHIZRGVFNTINWACmE0VyIbGZhbWNgTICAIgtAJZAHQ4QlY1MwlM5pYAhDWLrM2sbYT1uH2dQhxgAJ4ADigAYiAAjA9WcH8PSEixKAD5kGFnu8viAAEz-QFJWTFUEQ3z+YAcLI5GC-GjfH5tHHIPFwgnwm6EPF-MpkoA)\r\n\r\n## 一些概念\r\n### Subtyping 子类型\r\n在编程语言理论中，子类型是一种类型多态的形式，这种类型可以替换其超类型(supertype)。如果 S 是 T 的子类型，一般表示为 S <: T，意思是在任何类型为 T 的地方都可以安全的使用 S。\r\n```js\r\ntype T = number\r\ntype S = T | string\r\n\r\ntype Fn = (arg: T) => void\r\n\r\nlet fn: Fn = (arg: S) => {}\r\n```\r\n上面的代码我们定义了 T 和 S 类型，然后定义了一个 参数为 T 返回值为 any 的函数类型 Fn， 但是在具体的赋值的时候我们将 args 变为 S，程序是可以正常运行的。\r\n### 协变与逆变\r\n> 协变与逆变（Covariance and contravariance）是在计算机科学中，描述具有父/子型别关系的多个型别通过型别构造器、构造出的多个复杂型别之间是否有父/子型别关系的用语。\r\n在一门程序设计语言的[类型系统](https://zh.wikipedia.org/wiki/%E5%9E%8B%E5%88%A5%E7%B3%BB%E7%B5%B1)中，一个类型规则或者类型构造器是：\r\n- 协变（covariant），如果它保持了[子类型序关系≦](https://zh.wikipedia.org/wiki/%E5%AD%90%E5%9E%8B%E5%88%A5)。该序关系是：子类型≦基类型。\r\n- 逆变（contravariant），如果它逆转了子类型序关系。\r\n- 不变（invariant），如果上述两种均不适用。\r\n维基百科中的描述有点抽象，我们提取一下关键词\r\n- 父/子型别\r\n- 构造器构造\r\n- 是否具有父/子型别关系\r\n我们先用简单的数学模拟一下，假设我们现在有两个值 x = -1 ， y = -5，x 和 y 的关系为 x > y。\r\n假设现在有函数 \r\n$$f(t) = t + 10$$\r\n将我们的 x 和 y 代入 f(t) 后得到 f(x) = 9 和 f(y) = 5 ，可以发现 f(x) 和 f(y) 的关系仍然为 f(x) > f(y)，这就是典型的协变。\r\n假设如下函数\r\n$$g(t) = t^2$$\r\ng(x) = 1 < g(y) = 5 这就是逆变。\r\n上面只是举了一个很简单并且不够严谨的例子，主要是为了方便理解，现在我们看一下在 ts 中的实现。\r\n### TypeScript实现\r\n考虑如下类型\r\n```js\r\ndinterface Animal {\r\n    name: string\r\n}\r\n\r\ninterface Dog extends Animal {\r\n    // 摇尾巴\r\n    waggingTail(): void\r\n}\r\n\r\ninterface Corgi extends Dog {\r\n    canWagging: false\r\n}\r\n```\r\n代码中我们定义了三个类型，他们之间的子集关系为 Corgi <: Dog <: Animal。\r\n```js\r\n// 协变\r\ntype AnimalList = Array<Animal>\r\ntype DogList = Array<Dog>\r\n\r\nlet animalArr: AnimalList = [];\r\nlet dogArr: DogList = [];\r\n// ✅ DogList 为 AnimalList 子集\r\nanimalArr = dogArr;\r\n```\r\n我们再考虑一种特殊情况\r\n```js\r\ntype Fn1 = (arg: Dog) => Dog\r\n```\r\nFn1 类型的子类型是什么呢？\r\n是 (arg: Corgi) => Corgi吗？\r\n考虑如下场景\r\n![image](https://user-images.githubusercontent.com/73587626/207111255-346a9f4b-22ae-4f8b-939d-1429b95888cc.png)\r\n显然 Fn3 并不是 Fn1 的子类型。\r\n我们分析一下这样为什么不被允许，由于 Fn3 类型的限制，这里 fn3 函数的参数只能传入 arg 为 Corgi 类型的函数，但是本来的 Fn1 是允许任何 Dog 类型的参数，所以 ts 禁止了这样的操作。\r\n所以 Fn1 的子类型应该为参数可以接受任何类型的 Dog，返回值具有 Dog 所有值的类型。\r\n所以正确答案是 (arg: Animal) => Corgi 。\r\n![image](https://user-images.githubusercontent.com/73587626/207111384-9e00ad55-266f-4149-b487-60530555a103.png)\r\n> 为了方便表示，这里我们定义 A → B 指的是以 A 为参数类型，以 B 为返回值类型的函数类型。\r\n返回值类型很容易理解：柯基是狗的子类型。但参数类型则是相反的：动物是狗的父类。\r\n用合适的术语来描述这个奇怪的表现，可以说我们允许一个函数类型中，返回值类型是协变的，而参数类型是逆变的。返回值类型是协变的，意思是 A <: B 就意味着 (T → A) <: (T → B) 。参数类型是逆变的，意思是 A <: B 就意味着 (B → T) <: (A → T) （ A 和 B 的位置颠倒过来了）。\r\n一个有趣的现象：在 TypeScript 中， [参数类型是双向协变的](https://github.com/Microsoft/TypeScript/wiki/FAQ#why-are-function-parameters-bivariant) ，也就是说既是协变又是逆变的，而这并不安全。但是现在你可以在 [TypeScript 2.6](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-6.html) 版本中通过 --strictFunctionTypes 或 --strict 标记来修复这个问题。\r\n\r\n参考\r\n- [维基百科-子类型](https://zh.wikipedia.org/wiki/%E5%AD%90%E7%B1%BB%E5%9E%8B)\r\n- [维基百科-协变与逆变](https://zh.wikipedia.org/wiki/%E5%8D%8F%E5%8F%98%E4%B8%8E%E9%80%86%E5%8F%98#%E2%80%9C%E5%8D%8F%E5%8F%98%E2%80%9D%E4%B8%80%E8%AF%8D%E7%9A%84%E6%9D%A5%E6%BA%90)\r\n- [What are covariance and contravariance? | Stephan Boyer](https://www.stephanboyer.com/post/132/what-are-covariance-and-contravariance)",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "huangyulie",
             "url": "https://github.com/huangyulie"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5jsuxV",
+          "body": "dinterface Animal -> interface",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "pkc918",
+            "url": "https://github.com/pkc918"
           }
         }
       ]

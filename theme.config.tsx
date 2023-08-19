@@ -77,4 +77,7 @@ export default {
       </>
     )
   },
+  search: {
+    component: false
+  }
 } as DocsThemeConfig
