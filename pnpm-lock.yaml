@@ -72,8 +72,8 @@ dependencies:
     specifier: ^2.11.0
     version: 2.11.0(next@13.4.19)(nextra@2.11.0)(react-dom@18.2.0)(react@18.2.0)
   openai:
-    specifier: ^4.0.0
-    version: 4.0.0
+    specifier: ^4.0.1
+    version: 4.0.1
   p-queue:
     specifier: ^7.3.4
     version: 7.3.4
@@ -6329,8 +6329,8 @@ packages:
       mimic-fn: 2.1.0
     dev: false
 
-  /openai@4.0.0:
-    resolution: {integrity: sha512-UHv70gIw20pxu9tiUueE9iS+4U4eTGiTgQr+zlJ5aX4oj6LUUp+7mBn0xAqilawftwUB/biohPth2vcZFmoNYw==}
+  /openai@4.0.1:
+    resolution: {integrity: sha512-UanMv/kCD/ylgOdBrkkRgkoFXdfENrXYWNvYdvPttXZaEJmRVY9MZSknlkWYH7iPMX6tTcz6szbI2d3O04UFag==}
     hasBin: true
     dependencies:
       '@types/node': 18.17.6

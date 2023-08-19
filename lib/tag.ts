@@ -1,4 +1,4 @@
-import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai"
+import OpenAI from "openai"
 import fs from "fs";
 import path from "path";
 import {
@@ -17,18 +17,17 @@ const interviewTagsSchema = fs.readFileSync(
 const interviewTagsTranslator = createJsonTranslator<InterviewArticle>(model, interviewTagsSchema, "InterviewArticle");
 
 function createOpenAI() {
-  const options = new Configuration({
+  const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
-    basePath: 'https://openai.devdoc.tech/v1'
+    baseURL: 'https://openai.devdoc.tech/v1'
   })
-  const openai = new OpenAIApi(options)
   return openai
 }
 
-async function reply(messages: ChatCompletionRequestMessage[], model: string = 'gpt-3.5-turbo') {
+async function reply(messages: any[], model: string = 'gpt-3.5-turbo') {
   const ai = createOpenAI()
 
-  const { data: { choices } } = await ai.createChatCompletion({
+  const { choices } = await ai.chat.completions.create({
     model: model || 'gpt-3.5-turbo',
     messages
   })
