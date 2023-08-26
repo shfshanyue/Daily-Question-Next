@@ -5,7 +5,6 @@ import * as _ from 'midash'
 import { Issue, IssueComment } from '../../github/query'
 import issues from '../../data/issues.json'
 import labels from '../../data/labels.json'
-import { NextRequest } from 'next/server';
 
 const allQuestions: Array<Issue> = issues as any
 const questionsById = _.keyBy(allQuestions, x => x.number)

@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react'
 import Router from 'next/router'
+import { Helmet } from 'react-helmet'
+import {
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
 
 import { initGA, logPageView } from '../lib/ga'
 import '../styles/index.css'
-import { Helmet } from 'react-helmet'
-import { AppProps } from 'next/app'
+import { queryClient } from '../lib/queryClient'
+
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -28,7 +33,7 @@ export default function App({ Component, pageProps }) {
   ]
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Helmet
         meta={meta}
       >
@@ -44,6 +49,6 @@ export default function App({ Component, pageProps }) {
         </script>
       </Helmet>
       <Component {...pageProps} />
-    </>
+    </QueryClientProvider>
   )
 }

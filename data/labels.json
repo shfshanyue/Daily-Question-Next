@@ -1,5 +1,42 @@
 [
   {
+    "name": "http",
+    "group": "fe"
+  },
+  {
+    "name": "css",
+    "group": "fe"
+  },
+  {
+    "name": "dom",
+    "group": "fe"
+  },
+  {
+    "name": "html",
+    "group": "fe"
+  },
+  {
+    "name": "js",
+    "group": "fe"
+  },
+  {
+    "name": "ts",
+    "group": "fe"
+  },
+  {
+    "name": "react",
+    "group": "fe"
+  },
+  {
+    "name": "vue",
+    "group": "fe"
+  },
+  {
+    "name": "regexp",
+    "alias": "正则",
+    "group": "fe"
+  },
+  {
     "name": "perf",
     "alias": "性能优化",
     "group": "fe"
@@ -10,17 +47,9 @@
     "group": "fe"
   },
   {
-    "name": "ts",
-    "group": "fe"
-  },
-  {
     "name": "c",
     "alias": "C语言",
     "group": "server"
-  },
-  {
-    "name": "dom",
-    "group": "fe"
   },
   {
     "name": "open",
@@ -46,18 +75,6 @@
     "group": "base"
   },
   {
-    "name": "html",
-    "group": "fe"
-  },
-  {
-    "name": "js",
-    "group": "fe"
-  },
-  {
-    "name": "css",
-    "group": "fe"
-  },
-  {
     "name": "server",
     "alias": "后端基础",
     "group": "server"
@@ -75,29 +92,12 @@
     "group": "server"
   },
   {
-    "name": "react",
-    "group": "fe"
-  },
-  {
-    "name": "regexp",
-    "alias": "正则",
-    "group": "fe"
-  },
-  {
-    "name": "vue",
-    "group": "fe"
-  },
-  {
     "name": "k8s",
     "group": "server"
   },
   {
     "name": "redis",
     "group": "server"
-  },
-  {
-    "name": "http",
-    "group": "fe"
   },
   {
     "name": "tcp",
