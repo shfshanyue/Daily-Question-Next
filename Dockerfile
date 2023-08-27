@@ -1,9 +1,9 @@
-FROM node:18-alpine
+FROM node:18
 
 RUN corepack enable
 WORKDIR /code
 ADD package.json pnpm-lock.yaml /code/
-RUN pnpm
+RUN pnpm i
 
 ADD . /code
 RUN pnpm build
