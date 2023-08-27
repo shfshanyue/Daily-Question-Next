@@ -1,7 +1,8 @@
 import clsx from "clsx"
 import Link from "next/link"
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { useState } from "react"
+import { useEffect, useMemo, useState } from "react"
+import { usePrevious } from 'ahooks'
 
 import { MockInterview } from "../lib/mock.schema"
 
@@ -21,10 +22,76 @@ const ALL_LABELS = [
   '前端工程化',
 ]
 
+const INIT_DATA = {
+  "basic": [
+    {
+      "question": "请解释什么是CSS盒模型？",
+      "answer": ""
+    },
+    {
+      "question": "请解释什么是JavaScript闭包？",
+      "answer": ""
+    },
+    {
+      "question": "请解释什么是DOM事件冒泡？",
+      "answer": ""
+    },
+    {
+      "question": "请解释什么是HTTP状态码？",
+      "answer": ""
+    }
+  ],
+  "advance": [
+    {
+      "question": "请解释什么是前端工程化？",
+      "answer": ""
+    },
+    {
+      "question": "请解释什么是构建工具？",
+      "answer": ""
+    },
+    {
+      "question": "请解释什么是模块化开发？",
+      "answer": ""
+    },
+    {
+      "question": "请解释什么是代码分割？",
+      "answer": ""
+    },
+    {
+      "question": "请解释什么是性能优化？",
+      "answer": ""
+    },
+    {
+      "question": "请解释什么是前端自动化测试？",
+      "answer": ""
+    }
+  ],
+  "althorigm": [
+    {
+      "question": "请编写一个函数，判断一个字符串是否是回文字符串。",
+      "answer": ""
+    },
+    {
+      "question": "请编写一个函数，实现数组去重。",
+      "answer": ""
+    },
+    {
+      "question": "请编写一个函数，实现数组扁平化。",
+      "answer": ""
+    },
+    {
+      "question": "请编写一个函数，实现数组的排序。",
+      "answer": ""
+    }
+  ]
+}
+
 export default function Mock() {
   const [currentYear, setCurrentYear] = useState(0)
   const [labels, setLabels] = useState<string[]>([])
-  const { isLoading, error, data, mutate } = useMutation<MockInterview, unknown, {
+  const [data, setData] = useState<MockInterview>(INIT_DATA)
+  const { isLoading, error, data: fetchData, mutate } = useMutation<MockInterview, unknown, {
     currentYear: number;
     labels: string[];
   }, unknown>({
@@ -36,6 +103,12 @@ export default function Mock() {
       return res.json()
     },
   })
+
+  useEffect(() => {
+    if (fetchData) {
+      setData(fetchData)
+    }
+  }, [fetchData])
 
   return (
     <div className="py-8 border-b content-container">
