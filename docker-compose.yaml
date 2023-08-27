@@ -1,12 +1,12 @@
 version: "3"
 services:
-  shici:
+  question:
     build: .
     restart: always
     labels:
-      - traefik.http.routers.next-app.rule=Host(`next-app.shanyue.tech`)
-      - traefik.http.routers.next-app.tls=true
-      - traefik.http.routers.next-app.tls.certresolver=le
+      - traefik.http.routers.question.rule=Host(`q.dev.shanyue.tech`)
+      - traefik.http.routers.question.tls=true
+      - traefik.http.routers.question.tls.certresolver=le
 
 networks:
   default:

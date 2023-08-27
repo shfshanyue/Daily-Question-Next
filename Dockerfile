@@ -1,14 +1,12 @@
-FROM node:12-alpine
+FROM node:18-alpine
 
 WORKDIR /code
-ADD package.json yarn.lock /code/
-RUN yarn
-
-ENV NODE_ENV=production
+ADD package.json pnpm-lock.yaml /code/
+RUN pnpm
 
 ADD . /code
-RUN yarn build
+RUN pnpm build
 
 EXPOSE 3000
-CMD yarn start
+CMD npm start
 
