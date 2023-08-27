@@ -32,7 +32,7 @@ export default function Mock() {
       currentYear: number;
       labels: string[]
     }) {
-      const res = await fetch(`/api/mock?n=${currentYear}&labels=${labels.join(',')}`)
+      const res = await fetch(`https://q.dev.shanyue.tech/api/mock?n=${currentYear}&labels=${labels.join(',')}`)
       return res.json()
     },
   })

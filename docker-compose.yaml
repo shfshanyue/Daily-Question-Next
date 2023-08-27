@@ -3,6 +3,8 @@ services:
   question:
     build: .
     restart: always
+    env_file:
+      - .env
     labels:
       - traefik.http.routers.question.rule=Host(`q.dev.shanyue.tech`)
       - traefik.http.routers.question.tls=true
