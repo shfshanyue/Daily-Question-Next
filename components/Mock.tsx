@@ -1,8 +1,6 @@
 import clsx from "clsx"
-import Link from "next/link"
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { useEffect, useMemo, useState } from "react"
-import { usePrevious } from 'ahooks'
+import { useEffect, useState } from "react"
 
 import { MockInterview } from "../lib/mock.schema"
 
@@ -11,12 +9,27 @@ const ALL_LABELS = [
   'react',
   'redux',
   'vue',
-  'npm',
+  'sass/less',
+  'postcss',
   'eslint',
+  'npm',
   'pnpm',
-  'node',
   'webpack',
+  'vite',
+  'rollup',
+  'graphql',
+  'node.js',
   'canvas',
+  'svg',
+  'docker',
+  'react-native',
+  'flutter',
+  '3D',
+  'three-js',
+  'webrtx',
+  '微信小程序',
+  '单元测试',
+  '自动化测试',
   '正则',
   '性能优化',
   '前端工程化',
@@ -126,7 +139,7 @@ export default function Mock() {
           ))
         }
       </div>
-      <div className="flex gap-4 py-2 mb-4 border-b">
+      <div className="flex flex-wrap gap-4 py-2 mb-4 border-b">
         <span className="italic font-semibold">擅长技术：</span>
         {
           ALL_LABELS.map(label => (
