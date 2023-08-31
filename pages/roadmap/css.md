@@ -8,7 +8,7 @@
 
 ## 盒模型
 
-+ 题目：[简述 CSS 的盒模型](https://github.com/shfshanyue/Daily-Question/issues/626)
++ 题目：[简述 CSS 的盒模型](https://q.shanyue.tech/fe/css/626)
 
 CSS 的盒模型主要包括以下两种，可通过 [box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing) 属性进行配置：
 
@@ -17,7 +17,7 @@ CSS 的盒模型主要包括以下两种，可通过 [box-sizing](https://develo
 
 ## CSS specificity (权重)
 
-+ 题目：[简述下 css specificity](https://github.com/shfshanyue/Daily-Question/issues/311)
++ 题目：[简述下 css specificity](https://github.com/fe/css/311)
 
 `css specificity` 即 css 中关于选择器的权重，以下三种类型的选择器依次下降
 
@@ -36,20 +36,20 @@ CSS 的盒模型主要包括以下两种，可通过 [box-sizing](https://develo
 补充问题:
 
 1. 100 个 class 选择器和 id 选择器那个比较高
-1. [属性选择器和类选择器哪个权重较高](https://github.com/shfshanyue/Daily-Question/issues/323)
+1. [属性选择器和类选择器哪个权重较高](https://q.shanyue.tech/fe/css/323)
 1. 通配符选择器和元素选择器哪个权重教高
 
 ## '+' 与 '~' 选择器有什么不同
 
-+ [【Q315】'+' 与 '~' 选择器有什么不同](https://github.com/shfshanyue/Daily-Question/issues/317)
++ [【Q315】'+' 与 '~' 选择器有什么不同](https://q.shanyue.tech/fe/css/317)
 
 + `+` 选择器匹配紧邻的兄弟元素
 + `~` 选择器匹配随后的所有兄弟元素
 
 ## z-index 与层叠上下文
 
-+ 题目：[如何更好地给元素设置 z-index](https://github.com/shfshanyue/Daily-Question/issues/505)
-+ 题目：[z-index: 999 元素一定会置于 z-index: 0 元素之上吗](https://github.com/shfshanyue/Daily-Question/issues/579)
++ 题目：[如何更好地给元素设置 z-index](https://q.shanyue.tech/fe/css/505)
++ 题目：[z-index: 999 元素一定会置于 z-index: 0 元素之上吗](https://q.shanyue.tech/fe/css/579)
 
 `z-index` 高数值一定在低数值前边吗，div 层级如下所示
 
@@ -64,7 +64,7 @@ CSS 的盒模型主要包括以下两种，可通过 [box-sizing](https://develo
 
 ## 水平垂直居中
 
-+ 题目: [如何实现一个元素的水平垂直居中](https://github.com/shfshanyue/Daily-Question/issues/10)
++ 题目: [如何实现一个元素的水平垂直居中](https://q.shanyue.tech/fe/css/10)
 + 代码: [absolute/translate](https://codepen.io/shanyue/pen/XWMdabg?editors=1100)
 
 宽高不定的块状元素水平垂直居中，可见以下示例
@@ -86,7 +86,7 @@ CSS 的盒模型主要包括以下两种，可通过 [box-sizing](https://develo
 
 ## 左侧固定、右侧自适应
 
-+ 题目: [css 如何实现左侧固定300px，右侧自适应的布局](https://github.com/shfshanyue/Daily-Question/issues/18)
++ 题目: [css 如何实现左侧固定300px，右侧自适应的布局](https://q.shanyue.tech/fe/css/18)
 + 代码: [代码](https://codepen.io/shanyue/pen/GRWmbyb?editors=1100)
 
 提供 `flex` 与 `grid` 布局的两种思路
@@ -112,7 +112,7 @@ CSS 的盒模型主要包括以下两种，可通过 [box-sizing](https://develo
   
 ## 三栏均分布局
 
-+ 题目: [如何实现三列均分布局](https://github.com/shfshanyue/Daily-Question/issues/572)
++ 题目: [如何实现三列均分布局](https://q.shanyue.tech/fe/css/572)
 + 代码: [如何实现三列均分布局](https://codepen.io/shanyue/pen/yLMzxqX)
 
 同样提供 `flex` 与 `grid` 的两种方案
@@ -127,7 +127,7 @@ CSS 的盒模型主要包括以下两种，可通过 [box-sizing](https://develo
   
 ## 如何画一个正方形/长宽固定的长方形
 
-+ 问题：[如何画一个正方形/长宽固定的长方形](https://github.com/shfshanyue/Daily-Question/issues/547)
++ 问题：[如何画一个正方形/长宽固定的长方形](https://q.shanyue.tech/fe/css/547)
 
 过去的解决方案是使用 `padding`。一个元素的 `padding` 如若设置为百分比，则代表的是以父元素宽度为基准，根据这个原理，可设置长宽比。但实际上意义有限，毕竟你把 padding 给占了，content 无任何区域。
 
@@ -135,7 +135,7 @@ CSS 的盒模型主要包括以下两种，可通过 [box-sizing](https://develo
 
 ## CSS 如何避免样式冲突
 
-+ 题目：[写 CSS 时如何避免命名样式冲突](https://github.com/shfshanyue/Daily-Question/issues/493)
++ 题目：[写 CSS 时如何避免命名样式冲突](https://q.shanyue.tech/fe/css/493)
 
 ### 1. BEM 式: `.home-page .home-page-btn`
 
@@ -179,7 +179,7 @@ BEM 有一个缺点，就是有些太长，可适当简化，只包裹该页面�
 
 ## CSS 变量
 
-+ 题目：[有没有使用过 css variable，它解决了哪些问题](https://github.com/shfshanyue/Daily-Question/issues/185)
++ 题目：[有没有使用过 css variable，它解决了哪些问题](https://q.shanyue.tech/fe/css/185)
 
 ``` css
 :root{
@@ -190,7 +190,7 @@ BEM 有一个缺点，就是有些太长，可适当简化，只包裹该页面�
 
 ## CSS 配置暗黑模式
 
-+ 题目：[如何使用 CSS 实现网站的暗黑模式 (Dark Mode)](https://github.com/shfshanyue/Daily-Question/issues/375)
++ 题目：[如何使用 CSS 实现网站的暗黑模式 (Dark Mode)](https://q.shanyue.tech/fe/css/375)
 
 最简单来讲，可通过媒体查询 `@media (prefers-color-scheme: dark)` 与 CSS 变量实现。
 

@@ -8,8 +8,8 @@ Web API 包括 Fetch API、Canvas API、Web Worker、WebRTC、WebGL 等，见 [M
 
 ## 统计当前页面出现次数最多的标签
 
-+ 题目：[如何找到当前页面出现的所有标签](https://q.shanyue.tech/fe/dom/573.html)
-+ 题目：[如何找到当前页面出现次数最多的 HTML 标签](https://q.shanyue.tech/fe/dom/418.html)
++ 题目：[如何找到当前页面出现的所有标签](https://q.shanyue.tech/fe/dom/573)
++ 题目：[如何找到当前页面出现次数最多的 HTML 标签](https://q.shanyue.tech/fe/dom/418)
 
 这是一道前端基础与编程功底具备的面试题：
 
@@ -29,7 +29,7 @@ Web API 包括 Fetch API、Canvas API、Web Worker、WebRTC、WebGL 等，见 [M
 
 ## 跨域
 
-+ 题目：[什么是跨域，如何解决](https://q.shanyue.tech/fe/dom/216.html)
++ 题目：[什么是跨域，如何解决](https://q.shanyue.tech/fe/dom/216)
 
 **协议**，**域名**，**端口**，三者有一不一样，就是跨域
 
@@ -43,7 +43,7 @@ Web API 包括 Fetch API、Canvas API、Web Worker、WebRTC、WebGL 等，见 [M
 
 ## 图片懒加载
 
-+ 题目：[网站开发中，如何实现图片的懒加载](https://q.shanyue.tech/fe/dom/1.html)
++ 题目：[网站开发中，如何实现图片的懒加载](https://q.shanyue.tech/fe/dom/1)
 
 最新的实现方案是使用 [IntersectionObserver API](https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API)。
 
@@ -64,13 +64,13 @@ observer.observe(img)
 
 ## sessionStorage 与 localStorage 有何区别
 
-+ 题目：[sessionStorage 与 localStorage 有何区别](https://q.shanyue.tech/fe/dom/570.html)
++ 题目：[sessionStorage 与 localStorage 有何区别](https://q.shanyue.tech/fe/dom/570)
 
 略
 
 ## 如何设置一个支持过期时间的 localStorage
 
-+ 题目：[如何设置一个支持过期时间的 localStorage](https://q.shanyue.tech/fe/dom/571.html)
++ 题目：[如何设置一个支持过期时间的 localStorage](https://q.shanyue.tech/fe/dom/571)
 
 设置如下数据结构，当用户存储数据时，存储至 `__value` 字段。并将过期时间存储至 `__expires` 字段。
 
@@ -82,7 +82,7 @@ observer.observe(img)
 
 ## Cookie 属性
 
-+ 题目：[浏览器中 cookie 有哪些字段](https://q.shanyue.tech/fe/dom/560.html)
++ 题目：[浏览器中 cookie 有哪些字段](https://q.shanyue.tech/fe/dom/560)
 
 Cookie 有以下属性
 
@@ -95,16 +95,16 @@ Cookie 有以下属性
 
 ## Cookie maxAge
 
-+ 题目：[当 cookie 没有设置 maxage 时，cookie 会存在多久](https://q.shanyue.tech/fe/dom/313.html)
++ 题目：[当 cookie 没有设置 maxage 时，cookie 会存在多久](https://q.shanyue.tech/fe/dom/313)
 
 如果没有 maxAge，则 cookie 的有效时间为会话时间。
 
 ## Cookie SameSite
 
-+ 题目：[SameSite Cookie 有哪些值，是如何预防 CSRF 攻击的？](https://q.shanyue.tech/fe/dom/569.html)
++ 题目：[SameSite Cookie 有哪些值，是如何预防 CSRF 攻击的？](https://q.shanyue.tech/fe/dom/569)
 
 > 见文档 [SameSite Cookie - MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
-> 见文章 [Cookie 的 SameSite 属性](http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)
+> 见文章 [Cookie 的 SameSite 属性](http://www.ruanyifeng.com/blog/2019/09/cookie-samesite)
 
 + None: 任何情况下都会向第三方网站请求发送 Cookie
 + Lax: 只有导航到第三方网站的 Get 链接会发送 Cookie，跨域的图片、iframe、form表单都不会发送 Cookie
@@ -114,8 +114,8 @@ Cookie 有以下属性
 
 ## Cookie 增删改查
 
-+ 题目：[如何设置一个 Cookie](https://q.shanyue.tech/fe/dom/161.html)
-+ 题目：[如何删除一个 Cookie](https://q.shanyue.tech/fe/dom/162.html)
++ 题目：[如何设置一个 Cookie](https://q.shanyue.tech/fe/dom/161)
++ 题目：[如何删除一个 Cookie](https://q.shanyue.tech/fe/dom/162)
 
 通过把该 `cookie` 的过期时间改为过去时即可删除成功，具体操作的话可以通过操作两个字段来完成
 
@@ -152,14 +152,14 @@ document.cookie = 'a=3; max-age=-1'
 
 ## addEventListener()
 
-+ 题目：[浏览器中监听事件函数 addEventListener 第三个参数有那些值](https://q.shanyue.tech/fe/dom/689.html)
++ 题目：[浏览器中监听事件函数 addEventListener 第三个参数有那些值](https://q.shanyue.tech/fe/dom/689)
 
 详见 MDN https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener
 
 ## 什么是事件冒泡和事件捕获
 
-+ 题目：[什么是事件冒泡和事件捕获](https://q.shanyue.tech/fe/dom/557.html)
-+ 题目：[关于事件捕获和冒泡，以下代码输出多少](https://q.shanyue.tech/fe/dom/559.html)
++ 题目：[什么是事件冒泡和事件捕获](https://q.shanyue.tech/fe/dom/557)
++ 题目：[关于事件捕获和冒泡，以下代码输出多少](https://q.shanyue.tech/fe/dom/559)
 
 可以使用一道代码题，完全理解事件冒泡和事件捕获。
 
@@ -209,7 +209,7 @@ btn.addEventListener('click', () => {
 
 ## 什么是事件委托，e.currentTarget 与 e.target 有何区别
 
-+ 题目：[什么是事件委托，e.currentTarget 与 e.target 有何区别](https://q.shanyue.tech/fe/dom/558.html)
++ 题目：[什么是事件委托，e.currentTarget 与 e.target 有何区别](https://q.shanyue.tech/fe/dom/558)
 
 ![](https://static.shanyue.tech/images/23-02-11/clipboard-0095.c66057.webp)
 
@@ -219,7 +219,7 @@ btn.addEventListener('click', () => {
 
 ## e.preventDefault
 
-+ 题目：[DOM 中如何阻止事件默认行为，如何判断事件否可阻止？](https://q.shanyue.tech/fe/dom/556.html)
++ 题目：[DOM 中如何阻止事件默认行为，如何判断事件否可阻止？](https://q.shanyue.tech/fe/dom/556)
 
 如下：
 
@@ -231,8 +231,8 @@ btn.addEventListener('click', () => {
 
 ## input 事件
 
-+ 题目：[React 中监听 input 的 onChange 事件的原生事件是什么](https://q.shanyue.tech/fe/dom/611.html)
-+ 题目：[input 中监听值的变化是在监听什么事件](https://q.shanyue.tech/fe/dom/215.html)
++ 题目：[React 中监听 input 的 onChange 事件的原生事件是什么](https://q.shanyue.tech/fe/dom/611)
++ 题目：[input 中监听值的变化是在监听什么事件](https://q.shanyue.tech/fe/dom/215)
 
 重点要了解下 `input` 事件，比如 React 的 `onChange` 在底层实现时，就是用了原生的 `input` 事件，可观察以下代码输出。
 
@@ -257,9 +257,9 @@ export default function App() {
 
 ## ClipBoard API
 
-+ 题目：[在浏览器中如何获取剪切板中内容](https://q.shanyue.tech/fe/dom/315.html)
-+ 题目：[浏览器的剪切板中如何监听复制事件](https://q.shanyue.tech/fe/dom/444.html)
-+ 题目：[如何实现页面文本不可复制](https://q.shanyue.tech/fe/dom/454.html)
++ 题目：[在浏览器中如何获取剪切板中内容](https://q.shanyue.tech/fe/dom/315)
++ 题目：[浏览器的剪切板中如何监听复制事件](https://q.shanyue.tech/fe/dom/444)
++ 题目：[如何实现页面文本不可复制](https://q.shanyue.tech/fe/dom/454)
 
 通过 `Clipboard API` 可以获取剪切板中内容，但需要获取到 `clipboard-read` 的权限，以下是关于读取剪贴板内容的代码：
 
@@ -299,7 +299,7 @@ document.body.oncopy = e => {
 
 ## fetch 中 credentials 指什么意思
 
-+ 题目：[fetch 中 credentials 指什么意思](https://q.shanyue.tech/fe/dom/297.html)
++ 题目：[fetch 中 credentials 指什么意思](https://q.shanyue.tech/fe/dom/297)
 
 `credentials` 指在使用 `fetch` 发送请求时是否应当发送 `cookie`
 
@@ -309,7 +309,7 @@ document.body.oncopy = e => {
 
 ## 如何取消请求的发送
 
-+ 题目：[如何取消请求的发送](https://q.shanyue.tech/fe/dom/502.html)
++ 题目：[如何取消请求的发送](https://q.shanyue.tech/fe/dom/502)
 
 以下两种 API 的方式如下
 
@@ -318,7 +318,7 @@ document.body.oncopy = e => {
 
 ## 如何判断在移动端
 
-+ 题目：[如何判断当前环境是移动端还是 PC 端](https://q.shanyue.tech/fe/dom/211.html)
++ 题目：[如何判断当前环境是移动端还是 PC 端](https://q.shanyue.tech/fe/dom/211)
 
 判断 `navigator.userAgent`，对于 Android/iPhone 可以匹配以下正则
 
@@ -340,7 +340,7 @@ const mobile = isMobile()
 
 ## requestIdleCallback
 
-+ 题目：[简单介绍 requestIdleCallback 及使用场景](https://q.shanyue.tech/fe/dom/379.html)
++ 题目：[简单介绍 requestIdleCallback 及使用场景](https://q.shanyue.tech/fe/dom/379)
 
 `requestIdleCallback` 维护一个队列，将在浏览器空闲时间内执行。它属于 [Background Tasks API](https://developer.mozilla.org/zh-CN/docs/Web/API/Background_Tasks_API)，你可以使用 `setTimeout` 来模拟实现
 
@@ -373,13 +373,13 @@ const rIC = window['requestIdleCallback'] || (f => setTimeout(f, 1))
 
 ## 如何把 DOM 转化为图片
 
-+ 题目：[如何把 DOM 转化为图片](https://q.shanyue.tech/fe/dom/437.html)
++ 题目：[如何把 DOM 转化为图片](https://q.shanyue.tech/fe/dom/437)
 
 简单总结：DOM -> SVG -> Canvas -> JPEG/PNG
 
 ## JSONP 的原理是什么，如何实现
 
-+ 题目：[JSONP 的原理是什么，如何实现](https://q.shanyue.tech/fe/dom/447.html)
++ 题目：[JSONP 的原理是什么，如何实现](https://q.shanyue.tech/fe/dom/447)
 
 `JSONP`，全称 `JSON with Padding`，为了解决跨域的问题而出现。虽然它只能处理 GET 跨域，虽然现在基本上都使用 CORS 跨域，但仍然要知道它，毕竟**面试会问**。
 
@@ -390,9 +390,9 @@ const rIC = window['requestIdleCallback'] || (f => setTimeout(f, 1))
 
 ## 异步加载 JS 脚本时，async 与 defer 有何区别
 
-+ 题目：[异步加载 JS 脚本时，async 与 defer 有何区别](https://q.shanyue.tech/fe/dom/456.html)
++ 题目：[异步加载 JS 脚本时，async 与 defer 有何区别](https://q.shanyue.tech/fe/dom/456)
 
-> 以下图片取自 whatwg 的规范，可以说是最权威的图文解释了，详细参考[原文](https://html.spec.whatwg.org/multipage/scripting.html#the-script-element)
+> 以下图片取自 whatwg 的规范，可以说是最权威的图文解释了，详细参考[原文](https://html.spec.whatwg.org/multipage/scripting#the-script-element)
 
 ![async 与 defer 区别](https://html.spec.whatwg.org/images/asyncdefer.svg)
 
@@ -410,7 +410,7 @@ const rIC = window['requestIdleCallback'] || (f => setTimeout(f, 1))
 
 ## React/Vue 中的 router 实现原理如何
 
-+ 题目：[React/Vue 中的 router 实现原理如何](https://q.shanyue.tech/fe/dom/463.html)
++ 题目：[React/Vue 中的 router 实现原理如何](https://q.shanyue.tech/fe/dom/463)
 
 前端路由有两种实现方式:
 
@@ -426,7 +426,7 @@ hash
 
 ## 浏览器中如何读取二进制信息
 
-+ 题目：[浏览器中如何读取二进制信息](https://q.shanyue.tech/fe/dom/585.html)
++ 题目：[浏览器中如何读取二进制信息](https://q.shanyue.tech/fe/dom/585)
 
 ![](https://shanyue.tech/assets/img/transform.77175c26.jpg)
 

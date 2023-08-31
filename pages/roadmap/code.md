@@ -90,9 +90,9 @@ setTimeout(blastOff, MILLISECONDS_PER_DAY);
 
 ### bind/call/apply ⭐⭐⭐⭐⭐️️️️
 
-+ [实现 call/apply](https://github.com/shfshanyue/Daily-Question/issues/674)
-+ [实现 bind](https://github.com/shfshanyue/Daily-Question/issues/32)
-+ [实现 softBind](https://github.com/shfshanyue/Daily-Question/issues/33)
++ [实现 call/apply](https://q.shanyue.tech/fe/code/674)
++ [实现 bind](https://q.shanyue.tech/fe/code/32)
++ [实现 softBind](https://q.shanyue.tech/fe/code/33)
 
 高频问题，中频实现。
 
@@ -104,7 +104,7 @@ Function.prototype.fakeBind = function(obj, ...args) {
 
 ### sleep/delay ⭐⭐⭐⭐⭐
 
-+ 题目: [【Q435】JS 如何实现一个 sleep/delay 函数](https://github.com/shfshanyue/Daily-Question/issues/442)
++ 题目: [【Q435】JS 如何实现一个 sleep/delay 函数](https://q.shanyue.tech/fe/code/442)
 + 代码: [【Q435】JS 如何实现一个 sleep/delay 函数](https://codepen.io/shanyue/pen/qBmoNRq?editors=0012)
 
 `sleep` 函数既是面试中常问到的一道代码题，也是日常工作，特别是测试中常用的一个工具函数。
@@ -124,7 +124,7 @@ function delay (func, seconds, ...args) {
 ### Promise.all ⭐️⭐️⭐️⭐️⭐️
 
 + 代码: [Promise.all](https://codepen.io/shanyue/pen/JjWEqBL?editors=0012)
-+ 题目: [Promise.all](https://github.com/shfshanyue/Daily-Question/issues/500)
++ 题目: [Promise.all](https://q.shanyue.tech/fe/code/500)
 
 乍看简单，实现时方觉不易。
 
@@ -156,13 +156,13 @@ function pAll (_promises) {
 
 ### Array.isArray ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [Array.isArray](https://github.com/shfshanyue/Daily-Question/issues/563)
++ 题目: [Array.isArray](https://q.shanyue.tech/fe/code/563)
 
 面试常问，不过也足够简单。
 
 ### Array.prototype.flat ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q443】实现一个数组扁平化的函数 flatten](https://github.com/shfshanyue/Daily-Question/issues/451)
++ 题目: [【Q443】实现一个数组扁平化的函数 flatten](https://q.shanyue.tech/fe/code/451)
 + 代码: [【Q443】实现一个数组扁平化的函数 flatten](https://codepen.io/shanyue/pen/xxdjQXG?editors=0012)
 
 `reduce` 与 `concat` 简直是绝配
@@ -178,14 +178,14 @@ function flatten (list, depth = 1) {
 
 ### Promise ⭐️⭐️⭐️⭐️
 
-+ 题目: [Promise](https://github.com/shfshanyue/Daily-Question/issues/23)
++ 题目: [Promise](https://q.shanyue.tech/fe/code/23)
 
 不说了，要实现真正的符合规范的 Promise，十分不容易。
 
 ### Array.prototype.reduce ⭐️⭐️⭐️
 
 + 代码: [Array.prototype.reduce](https://codepen.io/shanyue/pen/dyWmLgQ?editors=0012)
-+ 题目: [Array.prototype.reduce](https://github.com/shfshanyue/Daily-Question/issues/658)
++ 题目: [Array.prototype.reduce](https://q.shanyue.tech/fe/code/658)
 
 ``` js
 const reduce = (list, fn, ...init) => {
@@ -204,7 +204,7 @@ const reduce = (list, fn, ...init) => {
 
 ### String.prototype.trim ⭐️⭐️⭐️
 
-+ 题目: [如何去除字符串首尾空白字符](https://github.com/shfshanyue/Daily-Question/issues/667)
++ 题目: [如何去除字符串首尾空白字符](https://q.shanyue.tech/fe/code/667)
 
 在正则表达式中，`\s` 指匹配一个空白字符，包括空格、制表符、换页符和换行符。等价于`[ \f\n\r\t\v\u00a0\u1680\u180e\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]`。
 
@@ -218,7 +218,7 @@ const trim = str => str.trim || str.replace(/^\s+|\s+$/g, '')
 
 ### throtle/debounce ⭐⭐⭐⭐⭐️️
 
-+ 题目: [什么是防抖和节流，他们的应用场景有哪些](https://github.com/shfshanyue/Daily-Question/issues/3)
++ 题目: [什么是防抖和节流，他们的应用场景有哪些](https://q.shanyue.tech/fe/code/3)
 
 性能优化中减少渲染的必要手段，代码也足够容易，面试题中经常会被提到。
 
@@ -249,7 +249,7 @@ function debounce (f, wait) {
 
 ### cloneDeep ⭐⭐️⭐⭐⭐
 
-+ 题目: [【Q202】如何实现一个深拷贝 (cloneDeep)](https://github.com/shfshanyue/Daily-Question/issues/203)
++ 题目: [【Q202】如何实现一个深拷贝 (cloneDeep)](https://q.shanyue.tech/fe/code/203)
 
 深拷贝，无论在工作中的性能优化，还是面试中，都大受青睐。
 
@@ -257,13 +257,13 @@ function debounce (f, wait) {
 
 ### isEqual ⭐⭐⭐⭐⭐
 
-+ 题目: [【Q598】如何实现一个深比较的函数 deepEqual ](https://github.com/shfshanyue/Daily-Question/issues/614)
++ 题目: [【Q598】如何实现一个深比较的函数 deepEqual ](https://q.shanyue.tech/fe/code/614)
 
 深比较，在性能优化中也常用到，比 `cloneDeep` 难度要低一些。
 
 ### get ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [如何实现类似 lodash.get 函数](https://github.com/shfshanyue/Daily-Question/issues/199)
++ 题目: [如何实现类似 lodash.get 函数](https://q.shanyue.tech/fe/code/199)
 + 代码: [如何实现类似 lodash.get 函数](https://codepen.io/shanyue/pen/jOmxwMv?editors=0012)
 
 在 ES6+ 中，使用可选链操作符 `?.` 可进一步减小实现难度
@@ -282,7 +282,7 @@ function get (source, path, defaultValue = undefined) {
 
 ### compose(flowRight) ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q181】如何实现 compose 函数，进行函数合成](https://github.com/shfshanyue/Daily-Question/issues/182)
++ 题目: [【Q181】如何实现 compose 函数，进行函数合成](https://q.shanyue.tech/fe/code/182)
 
 ``` js
 const compose = (...fns) =>
@@ -292,8 +292,8 @@ const compose = (...fns) =>
 
 ### shuffle ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q447】如何实现一个数组洗牌函数 shuffle](https://github.com/shfshanyue/Daily-Question/issues/455)
-+ 相关: [【Q645】随机生成六位数的手机验证码(重复/不可重复)](https://github.com/shfshanyue/Daily-Question/issues/663)
++ 题目: [【Q447】如何实现一个数组洗牌函数 shuffle](https://q.shanyue.tech/fe/code/455)
++ 相关: [【Q645】随机生成六位数的手机验证码(重复/不可重复)](https://q.shanyue.tech/fe/code/663)
 + 代码: [【Q447】如何实现一个数组洗牌函数 shuffle](https://codepen.io/shanyue/pen/KKmRqZJ?editors=0012)
 
 对于实现一个简单的 `shuffle`，可能极其简单。
@@ -320,7 +320,7 @@ function shuffle (list) {
 
 ### sample ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q436】如何实现一个 sample 函数，从数组中随机取一个元素](https://github.com/shfshanyue/Daily-Question/issues/443)
++ 题目: [【Q436】如何实现一个 sample 函数，从数组中随机取一个元素](https://q.shanyue.tech/fe/code/443)
 
 Math.random() 函数返回一个浮点, 伪随机数在范围从0到小于1，用数学表示就是 [0, 1)，可以利用它来实现 sample 函数
 
@@ -330,7 +330,7 @@ Array.prototype.sample = function () { return this[Math.floor(Math.random() * th
 
 ### sampleSize ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q677】如何实现一个 sampleSize 函数，从数组中随机取N个元素](https://github.com/shfshanyue/Daily-Question/issues/696)
++ 题目: [【Q677】如何实现一个 sampleSize 函数，从数组中随机取N个元素](https://q.shanyue.tech/fe/code/696)
 
 可以根据 `shuffle` 来实现一个简单的 sampleSize
 
@@ -341,19 +341,19 @@ const sampleSize = (list, n) => shuffle(list).slice(0, n)
 
 ### maxBy ⭐⭐⭐⭐⭐
 
-+ 题目: [【Q628】实现一个函数 maxBy，根据给定条件找到最大的数组项](https://github.com/shfshanyue/Daily-Question/issues/646)
++ 题目: [【Q628】实现一个函数 maxBy，根据给定条件找到最大的数组项](https://q.shanyue.tech/fe/code/646)
 
 ### keyBy ⭐⭐⭐⭐
 
-+ 题目: [【Q678】实现一个函数 keyBy](https://github.com/shfshanyue/Daily-Question/issues/697)
++ 题目: [【Q678】实现一个函数 keyBy](https://q.shanyue.tech/fe/code/697)
 
 ### groupeBy ⭐⭐⭐⭐
 
-+ 题目: [【Q679】实现一个函数 groupBy](https://github.com/shfshanyue/Daily-Question/issues/698)
++ 题目: [【Q679】实现一个函数 groupBy](https://q.shanyue.tech/fe/code/698)
 
 ### chunk ⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q643】如何实现 chunk 函数，数组进行分组](https://github.com/shfshanyue/Daily-Question/issues/661)
++ 题目: [【Q643】如何实现 chunk 函数，数组进行分组](https://q.shanyue.tech/fe/code/661)
 
 ``` js
 function chunk (list, size) {
@@ -369,7 +369,7 @@ function chunk (list, size) {
 
 ### chunk ⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q399】实现一个 once 函数，记忆返回结果只执行一次](https://github.com/shfshanyue/Daily-Question/issues/406)
++ 题目: [【Q399】实现一个 once 函数，记忆返回结果只执行一次](https://q.shanyue.tech/fe/code/406)
 
 ``` js
 const f = x => x
@@ -385,7 +385,7 @@ onceF(4)
 
 ### template ⭐⭐⭐⭐️️️️️
 
-+ 题目: [【Q660】实现一个 render/template 函数，可以用以渲染模板](https://github.com/shfshanyue/Daily-Question/issues/678)
++ 题目: [【Q660】实现一个 render/template 函数，可以用以渲染模板](https://q.shanyue.tech/fe/code/678)
 + 代码: [【Q660】实现一个 render/template 函数，可以用以渲染模板](https://codepen.io/shanyue/pen/yLboJQE?editors=0012)
 
 难度稍微大一点的编程题目。
@@ -413,11 +413,11 @@ render(template, data);
 
 ### camelCase ⭐️⭐⭐⭐
 
-+ 题目: [驼峰命名](https://github.com/shfshanyue/Daily-Question/issues/703)
++ 题目: [驼峰命名](https://q.shanyue.tech/fe/code/703)
 
 ### difference ⭐️⭐️⭐️
 
-+ 题目: [【Q655】实现 intersection，取数组交集](https://github.com/shfshanyue/Daily-Question/issues/673)
++ 题目: [【Q655】实现 intersection，取数组交集](https://q.shanyue.tech/fe/code/673)
 
 ## 03 编程逻辑题
 
@@ -425,7 +425,7 @@ render(template, data);
 
 ### FizzBuzz，是否能被3或5整除  ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [FizzBuzz，是否能被3或5整除](https://github.com/shfshanyue/Daily-Question/issues/702)
++ 题目: [FizzBuzz，是否能被3或5整除](https://q.shanyue.tech/fe/code/702)
 
 输入一个整数，如果能够被3整除，则输出 Fizz
 
@@ -451,7 +451,7 @@ fizzbuzz(7)
 
 ### 实现 Promise.map 用以控制并发数 ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [Promise.map](https://github.com/shfshanyue/Daily-Question/issues/89)
++ 题目: [Promise.map](https://q.shanyue.tech/fe/code/89)
 + 代码: [Promise.map](https://codepen.io/shanyue/pen/zYwZXPN?editors=0012)
 
 用以 Promise 并发控制，面试中经常会有问到，在工作中也经常会有涉及。在上手这道问题之前，了解 [Promise.all]() 的实现将对实现并发控制有很多的帮助。
@@ -462,16 +462,16 @@ fizzbuzz(7)
 
 **编码题中的集大成者**，出自头条的面经，promise 串行，并行，二分，并发控制，层层递进。
 
-+ 题目: [【Q644】实现一个异步的 sum/add](https://github.com/shfshanyue/Daily-Question/issues/662)
++ 题目: [【Q644】实现一个异步的 sum/add](https://q.shanyue.tech/fe/code/662)
 
 ### 如何使用 JS 实现一个发布订阅模式 ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q613】如何使用 JS 实现一个发布订阅模式](https://github.com/shfshanyue/Daily-Question/issues/631)
++ 题目: [【Q613】如何使用 JS 实现一个发布订阅模式](https://q.shanyue.tech/fe/code/631)
 + 代码: [【Q613】如何使用 JS 实现一个发布订阅模式](https://codepen.io/shanyue/pen/WNjprpe?editors=0012)
 
 ### 如何实现无限累加的 sum 函数 ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q421】如何实现无限累加的一个函数](https://github.com/shfshanyue/Daily-Question/issues/428)
++ 题目: [【Q421】如何实现无限累加的一个函数](https://q.shanyue.tech/fe/code/428)
 + 代码: [【Q421】如何实现无限累加的一个函数](https://codepen.io/shanyue/pen/LYymamZ?editors=0012)
 
 实现一个 sum 函数如下所示：
@@ -505,7 +505,7 @@ function sum (...args) {
 
 ### 统计数组中最大的数/第二大的数 ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [统计数组中最大的数/第二大的数](https://github.com/shfshanyue/Daily-Question/issues/647)
++ 题目: [统计数组中最大的数/第二大的数](https://q.shanyue.tech/fe/code/647)
 + 代码: [统计数组中最大的数/第二大的数](https://codepen.io/shanyue/pen/vYmyYwQ)
 
 求最大的一个值：
@@ -540,7 +540,7 @@ function maxTwo (list) {
 
 ### 统计字符串中出现次数最多的字符 ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q644】统计字符串中出现次数最多的字符及次数](https://github.com/shfshanyue/Daily-Question/issues/652)
++ 题目: [【Q644】统计字符串中出现次数最多的字符及次数](https://q.shanyue.tech/fe/code/652)
 + 代码: [【Q644】统计字符串中出现次数最多的字符及次数](https://codepen.io/shanyue/pen/YzVGjrv?editors=0012)
 
 ``` js
@@ -572,7 +572,7 @@ function getFrequentChar2 (str) {
 
 ### 对以下数字进行编码压缩 ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q412】对以下字符串进行压缩编码](https://github.com/shfshanyue/Daily-Question/issues/419)
++ 题目: [【Q412】对以下字符串进行压缩编码](https://q.shanyue.tech/fe/code/419)
 + 代码: [【Q412】对以下字符串进行压缩编码](https://codepen.io/shanyue/pen/bGWrwWM?editors=0012)
 
 这是一道大厂常考的代码题
@@ -663,15 +663,15 @@ function encode (str) {
 
 ### LRU Cache ⭐️⭐️⭐️⭐️⭐️
 
-+ 代码: [【Q249】使用 js 实现一个 lru cache](https://github.com/shfshanyue/Daily-Question/issues/251)
++ 代码: [【Q249】使用 js 实现一个 lru cache](https://q.shanyue.tech/fe/code/251)
 
 ### 实现一个函数用来对 URL 的 querystring 进行编码与解码 ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q440】实现一个函数用来对 URL 的 querystring 进行编码](https://github.com/shfshanyue/Daily-Question/issues/448)
++ 题目: [【Q440】实现一个函数用来对 URL 的 querystring 进行编码](https://q.shanyue.tech/fe/code/448)
 
 ### JSONP 的原理是什么，如何实现 ⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q439】JSONP 的原理是什么，如何实现](https://github.com/shfshanyue/Daily-Question/issues/447)
++ 题目: [【Q439】JSONP 的原理是什么，如何实现](https://q.shanyue.tech/fe/code/447)
 
 `JSONP`，全称 `JSON with Padding`，为了解决跨域的问题而出现。虽然它只能处理 GET 跨域，虽然现在基本上都使用 CORS 跨域，但仍然要知道它，毕竟**面试会问**。
 
@@ -708,7 +708,7 @@ jsonp({
 
 ### 使用 JS 如何生成一个随机字符串 ⭐️⭐️⭐️⭐️⭐️
 
-+ 题目: [【Q619】使用 JS 如何生成一个随机字符串](https://github.com/shfshanyue/Daily-Question/issues/637)
++ 题目: [【Q619】使用 JS 如何生成一个随机字符串](https://q.shanyue.tech/fe/code/637)
 
 ``` js
 const random = (n) => Math.random().toString(36).slice(2, 2 + n)
@@ -716,7 +716,7 @@ const random = (n) => Math.random().toString(36).slice(2, 2 + n)
 
 ### 给数字添加千位符  ⭐️⭐️⭐️
 
-+ 代码: [如何给数组添加千位符](https://github.com/shfshanyue/Daily-Question/issues/610)
++ 代码: [如何给数组添加千位符](https://q.shanyue.tech/fe/code/610)
 
 千位符替换可由正则 /(\d)(?=(\d\d\d)+(?!\d))/ 进行匹配
 
@@ -738,11 +738,11 @@ function numberThousands (number, thousandsSeperator = ',') {
 
 ### 输出 100 以内的菲波那切数列
 
-+ 题目: [输出 100 以内的菲波那切数列](https://github.com/shfshanyue/Daily-Question/issues/653)
++ 题目: [输出 100 以内的菲波那切数列](https://q.shanyue.tech/fe/code/653)
 
 ### TopK 问题
 
-+ 题目: [【Q288】如何求数组中的 TOP k](https://github.com/shfshanyue/Daily-Question/issues/290)
++ 题目: [【Q288】如何求数组中的 TOP k](https://q.shanyue.tech/fe/code/290)
 
 典型的二叉堆问题
 
@@ -753,11 +753,11 @@ function numberThousands (number, thousandsSeperator = ',') {
 
 ### 求正序增长的正整数数组中，其和为 N 的两个数
 
-+ 题目: [【Q681】求正序增长的正整数数组中，其和为 N 的两个数](https://github.com/shfshanyue/Daily-Question/issues/700)
++ 题目: [【Q681】求正序增长的正整数数组中，其和为 N 的两个数](https://q.shanyue.tech/fe/code/700)
 
 ### 求给定数组中 N 个数相加之和为 sum 所有可能集合
 
-+ 题目: [【Q673】求给定数组中 N 个数相加之和为 sum 所有可能集合](https://github.com/shfshanyue/Daily-Question/issues/692)
++ 题目: [【Q673】求给定数组中 N 个数相加之和为 sum 所有可能集合](https://q.shanyue.tech/fe/code/692)
 
 求给定数组中 N 个数相加之和为 sum 所有可能集合，请补充以下代码
 
@@ -767,7 +767,7 @@ function fn(arr, n, sum) {}
 
 ### 如何判断两个链表是否相交
 
-+ 题目: [【Q061】如何判断两个链表是否相交](https://github.com/shfshanyue/Daily-Question/issues/62)
++ 题目: [【Q061】如何判断两个链表是否相交](https://q.shanyue.tech/fe/code/62)
 
 经典问题
 

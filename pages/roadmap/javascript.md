@@ -2,11 +2,13 @@
 sidebarDepth: 4
 ---
 
+# 面试大厂，这些 JavaScript 问题一定要掌握
+
 ## API
 
 ### JS 中基本数据类型有哪些
 
-+ 题目：[JS 中基础数据类型有哪些](https://q.shanyue.tech/fe/js/515.html)
++ 题目：[JS 中基础数据类型有哪些](https://q.shanyue.tech/fe/js/515)
 
 七种，文档见 [基本数据类型 - MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/Primitive)
 
@@ -20,13 +22,13 @@ sidebarDepth: 4
 
 ### Number、String、Array、Object、Promise API
 
-+ 题目：[列举 Number、String、Array、Object、Promise 有哪些 API](https://q.shanyue.tech/fe/js/636.html#array)
++ 题目：[列举 Number、String、Array、Object、Promise 有哪些 API](https://q.shanyue.tech/fe/js/636#array)
 
 开放性题目，掌握 JavaScript 中此类最常用的 API 对于面试以及工作都很重要。
 
 ### 类数组转化为数组
 
-+ 题目：[js 中如何把类数组转化为数组](https://q.shanyue.tech/fe/js/169.html)
++ 题目：[js 中如何把类数组转化为数组](https://q.shanyue.tech/fe/js/169)
 
 ``` js
 Array.from(arrayLike);
@@ -36,7 +38,7 @@ Array.prototype.concat.apply([], arrayLike);
 
 ### 可选链操作符，如何访问数组与函数
 
-+ 题目：[js 中什么是可选链操作符，如何访问数组](https://q.shanyue.tech/fe/js/202.html)
++ 题目：[js 中什么是可选链操作符，如何访问数组](https://q.shanyue.tech/fe/js/202)
 
 > 文档见 [可选链操作符 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Optional_chaining) 
 
@@ -55,23 +57,23 @@ o?.a?.b?.c?.d
 
 ### 前端中遇到过处理二进制的场景吗
 
-+ 题目：[前端中遇到过处理二进制的场景吗](https://q.shanyue.tech/fe/js/197.html)
++ 题目：[前端中遇到过处理二进制的场景吗](https://q.shanyue.tech/fe/js/197)
 
 ### TypedArray
 
-+ 题目：[什么是 TypedArray](https://q.shanyue.tech/fe/js/198.html)
++ 题目：[什么是 TypedArray](https://q.shanyue.tech/fe/js/198)
 
 见 MDN
 
 ### Promise.allSettled() 场景
 
-+ 题目：[有没有用过 Promise.allSettled() ，它是干什么的](https://q.shanyue.tech/fe/js/247.html)
++ 题目：[有没有用过 Promise.allSettled() ，它是干什么的](https://q.shanyue.tech/fe/js/247)
 
 见 MDN
 
 ### 什么是 Iterable 对象，与 Array 有什么区别
 
-+ 题目：[什么是 Iterable 对象，与 Array 有什么区别](https://q.shanyue.tech/fe/js/358.html)
++ 题目：[什么是 Iterable 对象，与 Array 有什么区别](https://q.shanyue.tech/fe/js/358)
 
 实现了 `[Symbol.iterator]` 属性的对象即是 `Iterable` 对象，然后可以使用操作符 `for...of` 进行迭代
 
@@ -92,7 +94,7 @@ const {a: aa, b } = {a: 3, b: 4}
 
 分别打印 `a`、`aa`、`b`，他们的值是多少
 
-+ 题目：[解构赋值对象，他们的值是多少](https://q.shanyue.tech/fe/js/541.html)
++ 题目：[解构赋值对象，他们的值是多少](https://q.shanyue.tech/fe/js/541)
 
 ``` js
 const { a: aa, b } = { a: 3, b: 4 };
@@ -102,7 +104,7 @@ const { a: aa, b } = { a: 3, b: 4 };
 
 ### Map 与 WeakMap 有何区别
 
-+ 题目：[Map 与 WeakMap 有何区别](https://q.shanyue.tech/fe/js/542.html)
++ 题目：[Map 与 WeakMap 有何区别](https://q.shanyue.tech/fe/js/542)
 
 答：
 
@@ -111,7 +113,7 @@ const { a: aa, b } = { a: 3, b: 4 };
 
 ### 如何判断某一个值是数组
 
-+ 题目：[如何判断某一个值是数组](https://q.shanyue.tech/fe/js/563.html)
++ 题目：[如何判断某一个值是数组](https://q.shanyue.tech/fe/js/563)
 
 ``` js
 const isArray = Array.isArray || list => ({}).toString.call(list) === '[object Array]'
@@ -119,7 +121,7 @@ const isArray = Array.isArray || list => ({}).toString.call(list) === '[object A
 
 ### 简述 Object.defineProperty
 
-+ 题目：[简述 Object.defineProperty](https://q.shanyue.tech/fe/js/564.html)
++ 题目：[简述 Object.defineProperty](https://q.shanyue.tech/fe/js/564)
 
 与直接为一个对象的属性赋值(o.a = 3)不同，`Object.defineProperty` 可更为精确，拥有更多选项地为对象属性赋值
 
@@ -127,7 +129,7 @@ const isArray = Array.isArray || list => ({}).toString.call(list) === '[object A
 
 ### Object.keys 与 Object.getOwnPropertyNames() 有何区别
 
-+ 题目：[Object.keys 与 Object.getOwnPropertyNames() 有何区别](https://q.shanyue.tech/fe/js/565.html)
++ 题目：[Object.keys 与 Object.getOwnPropertyNames() 有何区别](https://q.shanyue.tech/fe/js/565)
 
 答：
 
@@ -138,7 +140,7 @@ const isArray = Array.isArray || list => ({}).toString.call(list) === '[object A
 
 ### 如何创建一个数组大小为100，每个值都为0的数组
 
-+ 题目：[如何创建一个数组大小为100，每个值都为0的数组](https://q.shanyue.tech/fe/js/520.html)
++ 题目：[如何创建一个数组大小为100，每个值都为0的数组](https://q.shanyue.tech/fe/js/520)
 
 ``` js
 // 方法一:
@@ -167,7 +169,7 @@ Array.from({ length: 100 }, (x) => 0);
 
 ### 防抖和节流
 
-+ 题目：[什么是防抖和节流，他们的应用场景有哪些](https://q.shanyue.tech/fe/js/3.html)
++ 题目：[什么是防抖和节流，他们的应用场景有哪些](https://q.shanyue.tech/fe/js/3)
 
 答：
 
@@ -176,7 +178,7 @@ Array.from({ length: 100 }, (x) => 0);
 
 ### typeof 与 instanceof 的区别
 
-+ 题目：[typeof 与 instanceof 的区别](https://q.shanyue.tech/fe/js/461.html)
++ 题目：[typeof 与 instanceof 的区别](https://q.shanyue.tech/fe/js/461)
 
 如下：
 
@@ -185,7 +187,7 @@ Array.from({ length: 100 }, (x) => 0);
 
 ### bind 与 call/apply 的区别是什么
 
-+ 题目：[bind 与 call/apply 的区别是什么](https://q.shanyue.tech/fe/js/268.html)
++ 题目：[bind 与 call/apply 的区别是什么](https://q.shanyue.tech/fe/js/268)
 
 他们都是绑定 this 的，但是
 
@@ -194,7 +196,7 @@ Array.from({ length: 100 }, (x) => 0);
 
 ### 在 js 中如何实现继承
 
-+ 题目：[在 js 中如何实现继承](https://q.shanyue.tech/fe/js/382.html)
++ 题目：[在 js 中如何实现继承](https://q.shanyue.tech/fe/js/382)
 
 有两种方法：
 
@@ -203,7 +205,7 @@ Array.from({ length: 100 }, (x) => 0);
 
 ### js 中在 new 的时候发生了什么
 
-+ 题目：[js 中在 new 的时候发生了什么](https://q.shanyue.tech/fe/js/341.html)
++ 题目：[js 中在 new 的时候发生了什么](https://q.shanyue.tech/fe/js/341)
 
 如下：
 
@@ -230,19 +232,19 @@ new Promise((resolve) => {
   .then(() => console.log(6));
 ```
 
-+ 题目：[以下输出顺序多少 (setTimeout 与 promise 顺序)](https://q.shanyue.tech/fe/js/396.html)
++ 题目：[以下输出顺序多少 (setTimeout 与 promise 顺序)](https://q.shanyue.tech/fe/js/396)
 
 ### 请简述一下 event loop
 
-+ 题目：[请简述一下 event loop](https://q.shanyue.tech/fe/js/221.html)
++ 题目：[请简述一下 event loop](https://q.shanyue.tech/fe/js/221)
 
 ### 简述 node/v8 中的垃圾回收机制
 
-+ 题目：[简述 node/v8 中的垃圾回收机制](https://q.shanyue.tech/fe/js/293.html)
++ 题目：[简述 node/v8 中的垃圾回收机制](https://q.shanyue.tech/fe/js/293)
 
 ### v8 是如何执行一段 JS 代码的
 
-+ 题目：[v8 是如何执行一段 JS 代码的](https://q.shanyue.tech/fe/js/449.html)
++ 题目：[v8 是如何执行一段 JS 代码的](https://q.shanyue.tech/fe/js/449)
 
 参考几篇文章
 
@@ -258,11 +260,11 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-+ 题目：[关于块级作用域，以下代码输出多少，在何时间输出](https://q.shanyue.tech/fe/js/581.html)
++ 题目：[关于块级作用域，以下代码输出多少，在何时间输出](https://q.shanyue.tech/fe/js/581)
 
 ### 什么是闭包，闭包的应用有哪些地方
 
-+ 题目：[什么是闭包，闭包的应用有哪些地方](https://q.shanyue.tech/fe/js/527.html)
++ 题目：[什么是闭包，闭包的应用有哪些地方](https://q.shanyue.tech/fe/js/527)
 
 ### 关于简单的事件循环，判断以下代码输出
 
@@ -274,7 +276,7 @@ Promise.resolve().then(() => console.log("B"));
 console.log("C");
 ```
 
-+ 题目：[关于简单的事件循环，判断以下代码输出](https://q.shanyue.tech/fe/js/592.html)
++ 题目：[关于简单的事件循环，判断以下代码输出](https://q.shanyue.tech/fe/js/592)
 
 ### 关于事件循环，一道异步代码执行输出顺序问题
 
@@ -312,7 +314,7 @@ asyncSum(3, 4);
 console.log("H");
 ```
 
-+ 题目：[关于事件循环，一道异步代码执行输出顺序问题](https://q.shanyue.tech/fe/js/528.html)
++ 题目：[关于事件循环，一道异步代码执行输出顺序问题](https://q.shanyue.tech/fe/js/528)
 
 ### 关于 Promise，判断以下代码的输出
 
@@ -344,11 +346,11 @@ Promise.resolve()
   });
 ```
 
-+ 题目：[关于 Promise，判断以下代码的输出](https://q.shanyue.tech/fe/js/727.html)
++ 题目：[关于 Promise，判断以下代码的输出](https://q.shanyue.tech/fe/js/727)
 
 ### 为何 0.1+0.2 不等于 0.3，应如何做相等比较
 
-+ 题目：[为何 0.1+0.2 不等于 0.3，应如何做相等比较](https://q.shanyue.tech/fe/js/583.html)
++ 题目：[为何 0.1+0.2 不等于 0.3，应如何做相等比较](https://q.shanyue.tech/fe/js/583)
 
 0.1，0.2 表示为二进制会有精度的损失，比较时可引入一个很小的数值 `Number.EPSILON` 容忍误差，其值为 2^-52。
 
@@ -368,7 +370,7 @@ function foo() {
 foo.call(3);
 ```
 
-+ 题目：[关于 this 与包装对象，以下输出多少](https://q.shanyue.tech/fe/js/584.html)
++ 题目：[关于 this 与包装对象，以下输出多少](https://q.shanyue.tech/fe/js/584)
 
 ### 关于类型转化，判断以下代码输出
 
@@ -382,7 +384,7 @@ Boolean(document.all);
 42 == true;
 ```
 
-+ 题目：[关于类型转化，判断以下代码输出](https://q.shanyue.tech/fe/js/586.html)
++ 题目：[关于类型转化，判断以下代码输出](https://q.shanyue.tech/fe/js/586)
 
 ### 关于暂时性死域，判断以下代码输出
 
@@ -405,7 +407,7 @@ function foo (x=x) {
 foo()
 ```
 
-+ 题目：[关于暂时性死域，判断以下代码输出](https://q.shanyue.tech/fe/js/587.html)
++ 题目：[关于暂时性死域，判断以下代码输出](https://q.shanyue.tech/fe/js/587)
 
 ### 关于词法作用域，判断以下代码输出
 
@@ -422,7 +424,7 @@ function checkScope() {
 checkScope()();
 ```
 
-+ 题目：[关于词法作用域，判断以下代码输出](https://q.shanyue.tech/fe/js/588.html)
++ 题目：[关于词法作用域，判断以下代码输出](https://q.shanyue.tech/fe/js/588)
 
 ### 关于 new，判断以下代码输出
 
@@ -438,5 +440,5 @@ const f = new F();
 console.log(f.a);
 ```
 
-+ 题目：[关于 new，判断以下代码输出](https://q.shanyue.tech/fe/js/590.html)
++ 题目：[关于 new，判断以下代码输出](https://q.shanyue.tech/fe/js/590)
 
