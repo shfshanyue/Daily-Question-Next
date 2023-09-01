@@ -35,6 +35,7 @@ export default {
         <Card icon={<FaInfo />} children="" title="掘金返现平台" href="https://geek.shanyue.tech" />
         <Card icon={<FaInfo />} children="" title="开发者工具大全" href="https://devtool.tech" />
         <Card icon={<FaInfo />} children="" title="一纸简历" href="https://cv.devtool.tech" />
+        <Card icon={<FaInfo />} children="" title="码途编辑器" href="https://markdown.devtool.tech" />
       </Cards>
     </div>,
   },
