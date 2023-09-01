@@ -1,6 +1,9 @@
 import type { DocsThemeConfig} from 'nextra-theme-docs';
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
+import { Cards, Card } from 'nextra/components'
+import { FaInfo } from "react-icons/fa6";
+
 
 export default {
   project: {
@@ -24,9 +27,15 @@ export default {
     toggleButton: true
   },
   footer: {
-    text: <div>
+    text: <div className="w-full">
       <div className="text-xl">大厂面试每日一题</div>
-      <div className="mt-4">让你的工作更加简单，让你的沟通更加高效。</div>
+      <div className="mt-4">勤学如春起之苗，不见其增，日有所长。辍学如磨刀之石，不见其损，日有所亏。</div>
+      <div className="mt-4 text-xl">其它链接</div>
+      <Cards>
+        <Card icon={<FaInfo />} children="" title="掘金返现平台" href="https://geek.shanyue.tech" />
+        <Card icon={<FaInfo />} children="" title="开发者工具大全" href="https://devtool.tech" />
+        <Card icon={<FaInfo />} children="" title="一纸简历" href="https://cv.devtool.tech" />
+      </Cards>
     </div>,
   },
   feedback: {
