@@ -26,7 +26,7 @@ const ALL_LABELS = [
   'flutter',
   '3D',
   'three-js',
-  'webrtx',
+  'webrtc',
   '微信小程序',
   '单元测试',
   '自动化测试',
