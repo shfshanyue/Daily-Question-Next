@@ -27,16 +27,42 @@ export default {
     toggleButton: true
   },
   footer: {
-    text: <div className="w-full">
-      <div className="text-xl">大厂面试每日一题</div>
-      <div className="mt-4">勤学如春起之苗，不见其增，日有所长。辍学如磨刀之石，不见其损，日有所亏。</div>
-      <div className="mt-4 text-xl">其它链接</div>
-      <Cards>
-        <Card icon={<FaInfo />} children="" title="掘金返现平台" href="https://geek.shanyue.tech" />
-        <Card icon={<FaInfo />} children="" title="开发者工具大全" href="https://devtool.tech" />
-        <Card icon={<FaInfo />} children="" title="一纸简历" href="https://cv.devtool.tech" />
-        <Card icon={<FaInfo />} children="" title="码途编辑器" href="https://markdown.devtool.tech" />
-      </Cards>
+    text: <div className="grid w-full grid-cols-3">
+      <div>
+        <div className="text-xl">大厂面试每日一题</div>
+        <div className="mt-4">勤学如春起之苗，不见其增，日有所长。</div>
+        <div className="mt-4">辍学如磨刀之石，不见其损，日有所亏。</div>
+      </div>
+      <div>
+        <div className="text-xl">我的网站</div>
+        <ul className="flex flex-col gap-4 mt-4">
+          <li>
+            <a href="https://geek.shanyue.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">掘金返现平台</a>
+          </li>
+          <li>
+            <a href="https://devtool.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">开发者工具大全</a>
+          </li>
+          <li>
+            <a href="https://cv.devtool.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">一纸简历</a>
+          </li>
+          <li>
+            <a href="https://markdown.devtool.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">码途编辑器</a>
+          </li>
+        </ul>
+        {/* <Cards>
+          <Card icon={<FaInfo />} children="" title="掘金返现平台" href="https://geek.shanyue.tech" />
+          <Card icon={<FaInfo />} children="" title="开发者工具大全" href="https://devtool.tech" />
+          <Card icon={<FaInfo />} children="" title="一纸简历" href="https://cv.devtool.tech" />
+          <Card icon={<FaInfo />} children="" title="码途编辑器" href="https://markdown.devtool.tech" />
+        </Cards> */}
+      </div>
+      <div>
+        <div className="text-xl">二维码</div>
+        <div className="mt-4">
+          关注公众号《互联网大厂面试》，每日推送一篇大厂面试题！
+        </div>
+        <img className="mt-4 rounded w-[180px] shadow" src="https://static.shanyue.tech/images/23-09-07/qrcode_for_gh_5f162937a2ad_258.6cc370.webp" />
+      </div>
     </div>,
   },
   feedback: {
