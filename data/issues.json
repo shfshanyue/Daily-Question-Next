@@ -6055,8 +6055,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "bantangzm",
-            "url": "https://github.com/bantangzm"
+            "login": "Awalter0411",
+            "url": "https://github.com/Awalter0411"
           }
         }
       ]
@@ -6413,7 +6413,19 @@
     "title": "【Q158】数据库 postgres 与 mysql 相比有哪些优劣",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5lmNjP",
+          "body": "PostgreSQL 和 MySQL 都是优秀的数据库管理系统，它们都提供了高性能、稳定和安全的数据存储和处理功能。但是，它们之间也存在一些差异，以下是它们的优劣比较：\r\n\r\n**功能强大**\r\n\r\nPostgreSQL 支持更多的数据类型和操作符，包括全文搜索和数组操作符。它还支持更复杂的查询语句，如子查询、连接多个表、使用递归查询等。MySQL 在这方面也有一些限制，比如不支持全文搜索和数组操作符。\r\n\r\n**性能优化**\r\n\r\nPostgreSQL 的性能优化工具和度量信息更加丰富，包括支持在线备份、表空间、资源组、逻辑复制等特性。这些工具可以帮助数据库管理员更好地监控、管理和优化数据库性能。MySQL 也有一些性能优化工具，但相对于 PostgreSQL 来说略显简单。\r\n\r\n**数据完整性**\r\n\r\nPostgreSQL 支持更严格的数据完整性约束，如主键、唯一索引、外键等。它还支持更复杂的业务逻辑，如触发器、规则和函数等。MySQL 在这方面相对较弱，对于一些复杂的业务逻辑处理能力有限。\r\n\r\n**多表连接查询**\r\n\r\nPostgreSQL 支持所有主流的多表连接查询方式，包括 Nest loop、Hash JOIN、Sort Merge JOIN 等。MySQL 也支持这些连接查询方式，但在某些情况下可能表现不佳。\r\n\r\n**数据仓库**\r\n\r\nPostgreSQL 是非常适合做数据仓库的数据库之一，支持大量的分析函数和操作符，还支持全文搜索、空间索引等特性。MySQL 在这方面相对较弱，更适合于事务处理和轻量级应用。\r\n\r\n**移动互联网特性**\r\n\r\nPostgreSQL 支持一些移动互联网特性，如空间索引和时间序列数据存储。MySQL 也有一些支持移动互联网的特性，但相对较少。\r\n\r\n**在线操作功能**\r\n\r\nPostgreSQL 支持在线建索引和修改表结构的功能，可以在不锁定表的情况下进行操作。MySQL 在这方面相对较弱，需要锁定表或者使用一些特殊的工具来实现。\r\n\r\n总的来说，PostgreSQL 和 MySQL 都是优秀的数据库管理系统，选择哪种取决于具体的应用场景和需求。如果需要高性能、稳定和安全的数据存储和处理功能，同时需要更严格的数据完整性约束和更复杂的查询语句，那么 PostgreSQL 是更好的选择。如果需要轻量级、易于管理和维护的数据库系统，同时不需要太复杂的数据处理和业务逻辑，那么 MySQL 是更好的选择。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "zcrchong",
+            "url": "https://github.com/zcrchong"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -7411,6 +7423,28 @@
             "login": "zhengaimin",
             "url": "https://github.com/zhengaimin"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5lOunG",
+          "body": "document.getElementById(\"box\").style.setPropertyValue('--color', 'pink')\r\n// 读取变量\r\ndoucment.getElementById('box').style.getPropertyValue('--color').trim()    //pink\r\n\r\n\r\nset的时候不加Value get的时候加Value。。。。。(●'◡'●)\r\n\r\n正确写法：\r\ndocument.getElementById(\"box\").style.setProperty('--color', 'pink')\r\n// 读取变量\r\ndoucment.getElementById('box').style.getPropertyValue('--color').trim()    //pink\r\n// 删除变量\r\ndocument.getElementById('box').style.removeProperty('--color')",
+          "star": {
+            "totalCount": 1
+          },
+          "author": {
+            "login": "Jupiter-u",
+            "url": "https://github.com/Jupiter-u"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5lQQ-Z",
+          "body": "@Jupiter-u 确实如此，这种用法实在是太难记了。\r\n\r\n> 哦对，你的回答中的代码可以通过 ``` 包裹，可以使其语法高亮。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "shfshanyue",
+            "url": "https://github.com/shfshanyue"
+          }
         }
       ]
     },
@@ -7671,6 +7705,17 @@
           "author": {
             "login": "zjunbin1286",
             "url": "https://github.com/zjunbin1286"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5k6Bkp",
+          "body": "CSS实现三角形的核心，在于设置元素宽高为0，宽高由border撑起，设置其他三个border为透明\r\nhttps://stackblitz.com/edit/web-platform-nkudf7?file=index.html,styles.css",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Neisun",
+            "url": "https://github.com/Neisun"
           }
         }
       ]
@@ -8282,6 +8327,28 @@
           "body": "Array、Set、Map、Object中都可能出现循环引用。\r\n```javascript\r\nconst obj = {\r\n    re: /hello/,\r\n    f () {},\r\n    date: new Date(),\r\n    map: new Map(),\r\n    list: [1, 2, 3],\r\n    a: 3,\r\n    b: 4\r\n}\r\n\r\nconst obj2 = {loop2: obj, name: 'obj2'}\r\nobj.loop = obj2\r\n\r\n\r\nfunction deepClone(source, cache = new WeakMap()) {\r\n    //原始类型或函数直接返回\r\n    if (typeof source !== 'object') {\r\n        return source\r\n    }\r\n\r\n    //加入缓存解决循环引用\r\n    if (cache.has(source)) {\r\n        return cache.get(source)\r\n    }\r\n    let res = new source.constructor()\r\n    cache.set(source, res)\r\n    \r\n    //处理JS内置数据结构：Array、Map、Set、Object\r\n    if (source instanceof Array) {\r\n        source.forEach(v => {\r\n            res.push(deepClone(v, cache))\r\n        })\r\n    }\r\n    else if (source instanceof Map) {\r\n        for (const [k, v] of source) {\r\n            res.set(k, deepClone(v, cache))\r\n        }\r\n    }\r\n    else if (source instanceof Set) {\r\n        for (const v of source) {\r\n            res.add(deepClone(v, cache))\r\n        }\r\n    }\r\n    else if (Object.prototype.toString.call(source) == '[object Object]') {\r\n        for(const key in source){\r\n            res[key] = deepClone(source[key], cache)\r\n        }\r\n    }else {\r\n        //处理自定义对象（需遵循协议new constructors时为深拷贝）\r\n        res = new source.constructor(source)\r\n    }\r\n\r\n    return res\r\n}\r\n\r\nconst newObj = deepClone(obj)\r\nconsole.log(newObj)\r\n```",
           "star": {
             "totalCount": 1
+          },
+          "author": {
+            "login": "xicYue",
+            "url": "https://github.com/xicYue"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5lMBOa",
+          "body": "> Array、Set、Map、Object中都可能出现循环引用。\r\n> \r\n> ```js\r\n> const obj = {\r\n>     re: /hello/,\r\n>     f () {},\r\n>     date: new Date(),\r\n>     map: new Map(),\r\n>     list: [1, 2, 3],\r\n>     a: 3,\r\n>     b: 4\r\n> }\r\n> \r\n> const obj2 = {loop2: obj, name: 'obj2'}\r\n> obj.loop = obj2\r\n> \r\n> \r\n> function deepClone(source, cache = new WeakMap()) {\r\n>     //原始类型或函数直接返回\r\n>     if (typeof source !== 'object') {\r\n>         return source\r\n>     }\r\n> \r\n>     //加入缓存解决循环引用\r\n>     if (cache.has(source)) {\r\n>         return cache.get(source)\r\n>     }\r\n>     let res = new source.constructor()\r\n>     cache.set(source, res)\r\n>     \r\n>     //处理JS内置数据结构：Array、Map、Set、Object\r\n>     if (source instanceof Array) {\r\n>         source.forEach(v => {\r\n>             res.push(deepClone(v, cache))\r\n>         })\r\n>     }\r\n>     else if (source instanceof Map) {\r\n>         for (const [k, v] of source) {\r\n>             res.set(k, deepClone(v, cache))\r\n>         }\r\n>     }\r\n>     else if (source instanceof Set) {\r\n>         for (const v of source) {\r\n>             res.add(deepClone(v, cache))\r\n>         }\r\n>     }\r\n>     else if (Object.prototype.toString.call(source) == '[object Object]') {\r\n>         for(const key in source){\r\n>             res[key] = deepClone(source[key], cache)\r\n>         }\r\n>     }else {\r\n>         //处理自定义对象（需遵循协议new constructors时为深拷贝）\r\n>         res = new source.constructor(source)\r\n>     }\r\n> \r\n>     return res\r\n> }\r\n> \r\n> const newObj = deepClone(obj)\r\n> console.log(newObj)\r\n> ```\r\n\r\ntypeof null 也是返回 'object' 的，建议都用 Object.prototype.toString.call() 判断吧",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "redsanjin-1",
+            "url": "https://github.com/redsanjin-1"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5lMBaQ",
+          "body": "这是来自QQ邮箱的假期自动回复邮件。\r\n \r\n您好，我最近正在休假中，无法亲自回复您的邮件。我将在假期结束后，尽快给您回复。",
+          "star": {
+            "totalCount": 0
           },
           "author": {
             "login": "xicYue",
@@ -8978,6 +9045,17 @@
           "author": {
             "login": "Ghaining",
             "url": "https://github.com/Ghaining"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5l_e4X",
+          "body": "答案是不是错了啊   放在浏览器是2 3 1 现在这个网站放上去也是2 3 1\r\n<img width=\"1132\" alt=\"image\" src=\"https://github.com/shfshanyue/Daily-Question/assets/91886018/b60d2dd2-b8dc-4491-be37-475403a7ce4a\">\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "601odd",
+            "url": "https://github.com/601odd"
           }
         }
       ]
@@ -10959,8 +11037,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "bantangzm",
-            "url": "https://github.com/bantangzm"
+            "login": "Awalter0411",
+            "url": "https://github.com/Awalter0411"
           }
         }
       ]
@@ -12302,8 +12380,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "bantangzm",
-            "url": "https://github.com/bantangzm"
+            "login": "Awalter0411",
+            "url": "https://github.com/Awalter0411"
           }
         },
         {
@@ -12678,7 +12756,19 @@
     "title": "【Q331】当分页10000页时数据库查询 offset 过大如何解决性能问题",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5lmPC8",
+          "body": "当数据库查询的 offset 过大时，数据库需要扫描和跳过大量的数据记录，这会导致查询时间显著增加。以下是一些解决性能问题的建议：\r\n\r\n1. 优化查询语句：确保查询语句是有效的和优化的。避免使用复杂的查询语句，而是使用简单的查询语句来检索所需的数据。\r\n2. 使用索引：为经常用于查询的列创建索引。索引可以大大提高查询性能，特别是在处理大量数据时。\r\n3. 批量处理：如果可能，尝试批量处理数据，而不是一次处理大量数据。这可以通过分批处理查询或使用批量插入/更新操作来实现。\r\n4. 分页查询：如果必须使用分页查询，考虑使用基于游标的分页方式，而不是使用 offset 和 limit。游标可以更高效地跳转和管理分页数据。\r\n5. 分区表：如果表的数据量非常大，考虑使用分区表。将数据分成多个逻辑分区可以提高查询性能，因为查询只需要扫描相关的分区。\r\n6. 调整数据库配置：根据数据库的类型和配置，可以调整一些参数来优化性能。例如，可以增加缓冲区大小、调整内存分配等。\r\n7. 使用缓存：如果可能，将常用的数据存储在缓存中，以减少对数据库的查询次数。缓存可以显著提高查询性能，特别是在处理大量数据时。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "zcrchong",
+            "url": "https://github.com/zcrchong"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -15332,7 +15422,7 @@
       "nodes": [
         {
           "id": "MDEyOklzc3VlQ29tbWVudDY4MDQxNjkxNw==",
-          "body": "这是一道前端基础与编程功底具备的面试题：\r\n\r\n+ 如果你前端基础强会了解 `document.querySelector(*)` 能够列出页面内所有标签\r\n+ 如果你编程能力强能够用**递归**/**正则**快速实现同等的效果\r\n\r\n有三种 API 可以列出页面所有标签：\r\n\r\n1. `document.querySelector('*')`，标准规范实现\r\n1. `$$('*')`，devtools 实现\r\n1. `document.all`，非标准规范实现\r\n\r\n``` js\r\n> document.querySelectorAll('*')\r\n< NodeList(593) [html, head, meta, meta, meta, meta, meta, meta, meta, title, link#favicon, link, link#MainCss, link#mobile-style, link, link, link, script, script, script, script, script, script, script, link, script, link, link, script, input#_w_brink, body, a, div#home, div#header, div#blogTitle, a#lnkBlogLogo, img#blogLogo, h1, a#Header1_HeaderTitle.headermaintitle.HeaderMainTitle, h2, div#navigator, ul#navList, li, a#blog_nav_sitehome.menu, li, a#blog_nav_myhome.menu, li, a#blog_nav_newpost.menu, li, a#blog_nav_contact.menu, li, a#blog_nav_rss.menu, li, a#blog_nav_admin.menu, div.blogStats, span#stats_post_count, span#stats_article_count, span#stats-comment_count, div#main, div#mainContent, div.forFlow, div#post_detail, div#topics, div.post, h1.postTitle, a#cb_post_title_url.postTitle2.vertical-middle, span, div.clear, div.postBody, div#cnblogs_post_body.blogpost-body, p, p, strong, p, p, p, strong, div.cnblogs_code, pre, span, span, span, span, span, p, span, strong, pre, strong, span, strong, br, br, br, div.cnblogs_code, pre, span, span, p, p, …]\r\n[0 … 99]\r\n[100 … 199]\r\n[200 … 299]\r\n[300 … 399]\r\n[400 … 499]\r\n[500 … 592]\r\n__proto__: NodeList\r\n```\r\n\r\n使用 `document.querySelectorAll` 实现如下\r\n\r\n``` js\r\n// 实现一个 maxBy 方便找出出现次数最多的 HTML 标签\r\nconst maxBy = (list, keyBy) => list.reduce((x, y) => keyBy(x) > keyBy(y) ? x : y)\r\n\r\nfunction getFrequentTag () {\r\n  const tags = [...document.querySelectorAll('*')].map(x => x.tagName).reduce((o, tag) => { \r\n    o[tag] = o[tag] ? o[tag] + 1 : 1;\r\n    return o\r\n  }, {})\r\n  return maxBy(Object.entries(tags), tag => tag[1])\r\n}\r\n```\r\n\r\n使用 `element.children` 递归迭代如下 (最终结果多一个 document)\r\n\r\n``` js\r\nfunction getAllTags(el = document) {\r\n  const children = Array.from(el.children).reduce((x, y) => [...x, ...getAllTags(y)], [])\r\n  return children\r\n}\r\n\r\n// 或者通过 flatMap 实现\r\nfunction getAllTags(el = document) {\r\n  const children = Array.prototype.flatMap.call(el.children, x => getAllTags(x))\r\n  return [el, ...children]\r\n}\r\n```\r\n\r\n如果你已经快速答了上来，那么还有两道拓展的面试题在等着你\r\n\r\n1. 如何找到当前页面出现次数前三多的 HTML 标签\r\n2. 如过多个标签出现次数同样多，则取多个标签",
+          "body": "这是一道前端基础与编程功底具备的面试题：\r\n\r\n+ 如果你前端基础强会了解 `document.querySelectorAll(*)` 能够列出页面内所有标签\r\n+ 如果你编程能力强能够用**递归**/**正则**快速实现同等的效果\r\n\r\n有三种 API 可以列出页面所有标签：\r\n\r\n1. `document.querySelectorAll('*')`，标准规范实现\r\n1. `$$('*')`，devtools 实现\r\n1. `document.all`，非标准规范实现\r\n\r\n``` js\r\n> document.querySelectorAll('*')\r\n< NodeList(593) [html, head, meta, meta, meta, meta, meta, meta, meta, title, link#favicon, link, link#MainCss, link#mobile-style, link, link, link, script, script, script, script, script, script, script, link, script, link, link, script, input#_w_brink, body, a, div#home, div#header, div#blogTitle, a#lnkBlogLogo, img#blogLogo, h1, a#Header1_HeaderTitle.headermaintitle.HeaderMainTitle, h2, div#navigator, ul#navList, li, a#blog_nav_sitehome.menu, li, a#blog_nav_myhome.menu, li, a#blog_nav_newpost.menu, li, a#blog_nav_contact.menu, li, a#blog_nav_rss.menu, li, a#blog_nav_admin.menu, div.blogStats, span#stats_post_count, span#stats_article_count, span#stats-comment_count, div#main, div#mainContent, div.forFlow, div#post_detail, div#topics, div.post, h1.postTitle, a#cb_post_title_url.postTitle2.vertical-middle, span, div.clear, div.postBody, div#cnblogs_post_body.blogpost-body, p, p, strong, p, p, p, strong, div.cnblogs_code, pre, span, span, span, span, span, p, span, strong, pre, strong, span, strong, br, br, br, div.cnblogs_code, pre, span, span, p, p, …]\r\n[0 … 99]\r\n[100 … 199]\r\n[200 … 299]\r\n[300 … 399]\r\n[400 … 499]\r\n[500 … 592]\r\n__proto__: NodeList\r\n```\r\n\r\n使用 `document.querySelectorAll` 实现如下\r\n\r\n``` js\r\n// 实现一个 maxBy 方便找出出现次数最多的 HTML 标签\r\nconst maxBy = (list, keyBy) => list.reduce((x, y) => keyBy(x) > keyBy(y) ? x : y)\r\n\r\nfunction getFrequentTag () {\r\n  const tags = [...document.querySelectorAll('*')].map(x => x.tagName).reduce((o, tag) => { \r\n    o[tag] = o[tag] ? o[tag] + 1 : 1;\r\n    return o\r\n  }, {})\r\n  return maxBy(Object.entries(tags), tag => tag[1])\r\n}\r\n```\r\n\r\n使用 `element.children` 递归迭代如下 (最终结果多一个 document)\r\n\r\n``` js\r\nfunction getAllTags(el = document) {\r\n  const children = Array.from(el.children).reduce((x, y) => [...x, y.tagName, ...getAllTags(y)], [])\r\n  return children\r\n}\r\n\r\n// 或者通过 flatMap 实现\r\nfunction getAllTags(el = document) {\r\n  const children = Array.prototype.flatMap.call(el.children, x => getAllTags(x))\r\n  return [el, ...children]\r\n}\r\n```\r\n\r\n如果你已经快速答了上来，那么还有两道拓展的面试题在等着你\r\n\r\n1. 如何找到当前页面出现次数前三多的 HTML 标签\r\n2. 如过多个标签出现次数同样多，则取多个标签",
           "star": {
             "totalCount": 1
           },
@@ -15417,6 +15507,28 @@
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5l5yX8",
+          "body": "文中有个代码有错  `使用 element.children 递归迭代如下 (最终结果多一个 document)`\r\n修改如下：\r\n```js\r\nfunction getAllTags(el = document) {\r\n  const children = Array.from(el.children).reduce(\r\n    (x, y) => [...x, y.tagName, ...getAllTags(y)],\r\n    []\r\n  );\r\n  return children;\r\n}\r\n```\r\n\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "601odd",
+            "url": "https://github.com/601odd"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5l-fSQ",
+          "body": "@601odd 已修复",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "shfshanyue",
+            "url": "https://github.com/shfshanyue"
+          }
         }
       ]
     },
@@ -15444,7 +15556,7 @@
           "id": "MDEyOklzc3VlQ29tbWVudDY3OTYyNjgzMw==",
           "body": "编写函数 `encode` 实现该功能\r\n\r\n> 代码见 [【Q412】对以下字符进行压缩编码 - codepen](https://codepen.io/shanyue/pen/bGWrwWM?editors=0012)\r\n\r\n``` js\r\nfunction encode (str) {\r\n  const l = []\r\n  let i = 0\r\n  for (const s of str) {\r\n    const len = l.length\r\n    const lastChar = len > 0 ? l[len - 1][0] : undefined\r\n    if (lastChar === s) {\r\n      l[len - 1][1]++\r\n    } else {\r\n      l.push([s, 1])\r\n    }\r\n  }\r\n  return l.map(x => x.join('')).join('')\r\n}\r\n\r\n// 另外一种思路的解法\r\nfunction encode (str) {\r\n  const l = []\r\n  let i = -1;\r\n  let lastChar\r\n  for (const char of str) {\r\n    if (char !== lastChar) {\r\n      lastChar = char\r\n      i++\r\n      l[i] = [char, 1];\r\n    } else {\r\n      l[i][1]++\r\n    }\r\n  }\r\n  return l.flat().join('')\r\n}\r\n```\r\n\r\n测试通过\r\n\r\n``` js\r\n> encode('aaab')\r\n< \"a3b1\"\r\n```\r\n\r\n但是面试官往往会继续深入\r\n\r\n1. 如果只出现一次，不编码数字，如 `aaab -> a3b`\r\n1. 如果只出现两次，不进行编码，如 `aabbb -> aab3`\r\n1. 如果进行解码，碰到数字如何处理？\r\n\r\n以下是除数字外的进一步编码\r\n\r\n``` js\r\nfunction encode (str) {\r\n  const l = []\r\n  let i = -1;\r\n  let lastChar\r\n  for (const char of str) {\r\n    if (char !== lastChar) {\r\n      lastChar = char\r\n      i++\r\n      l[i] = [char, 1];\r\n    } else {\r\n      l[i][1]++\r\n    }\r\n  }\r\n  return l.map(([x, y]) => {\r\n    if (y === 1) {\r\n      return x\r\n    }\r\n    if (y === 2) {\r\n      return x + x\r\n    }\r\n    return x + y\r\n  }).join('')\r\n}\r\n```",
           "star": {
-            "totalCount": 1
+            "totalCount": 2
           },
           "author": {
             "login": "shfshanyue",
@@ -18232,6 +18344,17 @@
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5lQYqc",
+          "body": "书接山月上文，我们给出示例demo\r\n[自定义滚动条](https://stackblitz.com/edit/web-platform-dx7thc?file=index.html)",
+          "star": {
+            "totalCount": 1
+          },
+          "author": {
+            "login": "Neisun",
+            "url": "https://github.com/Neisun"
+          }
         }
       ]
     },
@@ -18460,6 +18583,17 @@
           "author": {
             "login": "Telanx",
             "url": "https://github.com/Telanx"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5lQdOx",
+          "body": "grid和flex都可以实现，下边给出实现demo\r\n[根据子元素个数动态多列](https://stackblitz.com/edit/web-platform-zgwv8y?file=index.html,styles.css)",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Neisun",
+            "url": "https://github.com/Neisun"
           }
         }
       ]
@@ -18923,6 +19057,17 @@
             "login": "mrrs878",
             "url": "https://github.com/mrrs878"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5lQ0se",
+          "body": "在不引入图片和额外的元素，可以使用背景图的方式实现\r\n[具体的实现demo](https://stackblitz.com/edit/web-platform-jqbh2z?file=styles.css)",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Neisun",
+            "url": "https://github.com/Neisun"
+          }
         }
       ]
     },
@@ -19240,7 +19385,7 @@
           "id": "IC_kwDODQzyOs5j8-Lv",
           "body": "在 React 中，当状态更新时出现卡顿，可能是由于以下原因导致的：\r\n\r\n1. 大量计算：当组件进行大量计算时，可能会导致状态更新时出现卡顿。这种情况下，可以考虑使用 `useMemo` 或 `useCallback` 来优化计算性能。\r\n\r\n2. 大量渲染：当组件进行大量渲染时，可能会导致状态更新时出现卡顿。这种情况下，可以考虑使用 `React.memo` 或 `shouldComponentUpdate` 来避免不必要的渲染。\r\n\r\n3. 大量数据：当组件需要处理大量数据时，可能会导致状态更新时出现卡顿。这种情况下，可以考虑使用分页或虚拟滚动等技术来优化性能。\r\n\r\n4. 异步更新：当组件进行异步更新时，可能会导致状态更新时出现卡顿。这种情况下，可以考虑使用 `React.lazy` 或 `Suspense` 来异步加载组件，从而避免卡顿。\r\n\r\n针对以上情况，可以采取以下优化措施：\r\n\r\n1. 使用性能分析工具：可以使用 Chrome 开发者工具中的 Performance 面板或 React DevTools 中的 Profiler 面板来分析组件的性能瓶颈，并找到需要优化的地方。\r\n\r\n2. 拆分组件：可以将组件拆分成更小的组件，从而减少组件的复杂度，提高性能。\r\n\r\n3. 使用异步更新：可以使用 `React.lazy` 或 `Suspense` 来异步加载组件，从而避免卡顿。\r\n\r\n4. 使用分页或虚拟滚动：可以使用分页或虚拟滚动等技术来优化处理大量数据时的性能。\r\n\r\n5. 使用 `useMemo` 或 `useCallback`：可以使用 `useMemo` 或 `useCallback` 来优化计算性能。\r\n\r\n6. 使用 `React.memo` 或 `shouldComponentUpdate`：可以使用 `React.memo` 或 `shouldComponentUpdate` 来避免不必要的渲染。\r\n\r\n总之，在 React 中，当状态更新时出现卡顿，可以使用性能分析工具来定位性能瓶颈，并采取相应的优化措施来提高性能。",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "yumo-mt",
@@ -20142,7 +20287,7 @@
       "nodes": [
         {
           "id": "MDEyOklzc3VlQ29tbWVudDg0ODM2NTYzNg==",
-          "body": "使用 npm script 生命周期中的 `npm prepare`，他将会在发包 (publish) 之前以及装包 (install) 之后自动执行。\r\n\r\n如果指向在装包之后自动执行，可使用 `npm postinstall`\r\n\r\n例如:\r\n\r\n[husky](https://github.com/typicode/husky)\r\n\r\n``` json\r\n{\r\n  \"prepare\": \"npm run build & node packages/husky/lib/bin.js install\" \r\n}\r\n```\r\n\r\n[vue-cli](https://github.com/vuejs/vue-cli/blob/dev/package.json) 一些著名的仓库会使用 [patch-package](https://github.com/ds300/patch-package) 自动修复 node_modules 中依赖的问题\r\n\r\n``` json\r\n{\r\n  \"postinstall\": \"patch-package\"\r\n}\r\n```\r\n",
+          "body": "使用 npm script 生命周期中的 `npm prepare`，他将会在发包 (publish) 之前以及装包 (install) 之后自动执行。\r\n\r\n如果只想在装包之后自动执行，可使用 `npm postinstall`\r\n\r\n例如:\r\n\r\n[husky](https://github.com/typicode/husky)\r\n\r\n``` json\r\n{\r\n  \"prepare\": \"npm run build & node packages/husky/lib/bin.js install\" \r\n}\r\n```\r\n\r\n[vue-cli](https://github.com/vuejs/vue-cli/blob/dev/package.json) 一些著名的仓库会使用 [patch-package](https://github.com/ds300/patch-package) 自动修复 node_modules 中依赖的问题\r\n\r\n``` json\r\n{\r\n  \"postinstall\": \"patch-package\"\r\n}\r\n```\r\n",
           "star": {
             "totalCount": 0
           },
@@ -25187,7 +25332,7 @@
           "id": "IC_kwDODQzyOs40hz5T",
           "body": "``` js\r\nfunction chunk (list, size) {\r\n  const l = []\r\n  for (let i = 0; i < list.length; i++ ) {\r\n    const index = Math.floor(i / size)\r\n    l[index] ??= [];\r\n    l[index].push(list[i])\r\n  }\r\n  return l\r\n}\r\n```\r\n\r\n或者直接构造出每一个 chunk\r\n\r\n``` js\r\nfunction chunk(list, size) {\r\n  const l = []\r\n\r\n  for (let i = 0; i < list.length; i += size) {\r\n    const chunk = list.slice(i, i + size)\r\n    l.push(chunk)\r\n  }\r\n\r\n  return l\r\n}\r\n```",
           "star": {
-            "totalCount": 3
+            "totalCount": 4
           },
           "author": {
             "login": "shfshanyue",
@@ -25198,7 +25343,7 @@
           "id": "IC_kwDODQzyOs400DIe",
           "body": "```js\r\nfunction chunk(array, limit) {\r\n  limit = array.length <= limit ? array.length : limit;\r\n  const result = [];\r\n  while(array.length) {\r\n    result.push(array.splice(0, limit));\r\n  }\r\n  return result;\r\n}\r\n```",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "haotie1990",
@@ -25364,6 +25509,17 @@
           "author": {
             "login": "shengrongchun",
             "url": "https://github.com/shengrongchun"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5l43Sm",
+          "body": "并发计算，最小时间\r\n\r\n```javascript\r\nfunction sum(arr: any[]) {\r\n  return new Promise((resolve, reject) => {\r\n    let rest = [...arr];\r\n    let addIngCount = 0;\r\n    function next() {\r\n      if (addIngCount === 0 && rest.length <= 1) {\r\n        resolve(rest[0] ?? 0);\r\n        return;\r\n      }\r\n      for (let i = 0; i < rest.length - 1; i = i + 2) {\r\n        addIngCount++;\r\n        add(rest[i], rest[i + 1]).then((result) => {\r\n          rest.push(result);\r\n          addIngCount--;\r\n          next();\r\n        });\r\n      }\r\n      rest = rest.length % 2 === 1 ? [rest[rest.length - 1]] : [];\r\n    }\r\n    next();\r\n  });\r\n}\r\n```",
+          "star": {
+            "totalCount": 1
+          },
+          "author": {
+            "login": "cloudGrin",
+            "url": "https://github.com/cloudGrin"
           }
         }
       ]
@@ -26012,6 +26168,17 @@
           "author": {
             "login": "Yeti-xxx",
             "url": "https://github.com/Yeti-xxx"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5ksv5Y",
+          "body": "如果contxt中原本就有同名的fn属性呢，调用完你这个call之后，原本的fn属性就消失了 @yxw007 ",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "AzuraXW",
+            "url": "https://github.com/AzuraXW"
           }
         }
       ]
@@ -27404,7 +27571,7 @@
           "id": "IC_kwDODQzyOs5BOSfU",
           "body": "```js\r\n//驼峰转短横线\r\nfunction toKebabCase(str) {\r\n    let res =  str.replace(/([A-Z])/g, (all, i) => {\r\n        return \"-\" + i.toLowerCase();\r\n    })\r\n    if (res.slice(0, 1) === '-') {\r\n        res = res.slice(1); //去除开头的-\r\n    }\r\n    return res;\r\n}\r\n//短横线转驼峰\r\nfunction toCamelCase(str) {\r\n    return str.replace(/-([a-zA-Z])/g, function(all, i){\r\n        return i.toUpperCase();\r\n    })\r\n}\r\n\r\nconsole.log(toCamelCase('get-element-by-id'));\r\nconsole.log(toKebabCase('GetElementById'));\r\n```",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "jyehn",
@@ -27761,8 +27928,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "bantangzm",
-            "url": "https://github.com/bantangzm"
+            "login": "Awalter0411",
+            "url": "https://github.com/Awalter0411"
           }
         }
       ]
@@ -28089,6 +28256,17 @@
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5lXgVr",
+          "body": "flex-basis用于在flex布局时候给定项目的一个初始值， 默认情况下是auto，也就是说根据容器宽度去自动计算，width是给定项目固定宽度。\r\n1. 当flex布局的主轴是水平方向即flex-direction: row;那么flex-basis设定的就是初始宽度，如果同时存在width，width会覆盖flex-basis属性\r\n2. 当flex布局的主轴是垂直方向即flex-direction: column;那么flex-basis设定的就是初始高度，如果同时存在height，width会覆盖flex-basis属性;\r\n[demo示例](https://stackblitz.com/edit/web-platform-rprew4?file=styles.css,index.html)",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Neisun",
+            "url": "https://github.com/Neisun"
+          }
         }
       ]
     },
@@ -28323,6 +28501,17 @@
           "author": {
             "login": "PstereoJW",
             "url": "https://github.com/PstereoJW"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5mQbnl",
+          "body": "上述例子为什么先调用p2 结果还是没有改变?\r\n``` \r\np2().then(o => console.log(o, 'p2'))\r\np3().then(o => console.log(o, 'p3'))\r\np1().then(o => console.log(o, 'p1'))\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "xylon001",
+            "url": "https://github.com/xylon001"
           }
         }
       ]
@@ -29284,8 +29473,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "wenreq",
-            "url": "https://github.com/wenreq"
+            "login": "WenReq",
+            "url": "https://github.com/WenReq"
           }
         },
         {
@@ -29415,8 +29604,8 @@
             "totalCount": 1
           },
           "author": {
-            "login": "wenreq",
-            "url": "https://github.com/wenreq"
+            "login": "WenReq",
+            "url": "https://github.com/WenReq"
           }
         },
         {
@@ -29455,8 +29644,8 @@
             "totalCount": 5
           },
           "author": {
-            "login": "wenreq",
-            "url": "https://github.com/wenreq"
+            "login": "WenReq",
+            "url": "https://github.com/WenReq"
           }
         }
       ]
