@@ -58,7 +58,7 @@
     "react-icons": "^4.11.0",
     "styled-jsx-plugin-postcss": "^4.0.1",
     "tailwindcss": "^3.3.3",
-    "tsx": "^3.12.9",
+    "tsx": "^3.12.10",
     "typechat": "^0.0.10",
     "typescript": "^5.2.2",
     "undici": "^5.24.0"
