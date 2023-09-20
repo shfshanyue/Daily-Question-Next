@@ -4671,7 +4671,7 @@
       "nodes": [
         {
           "id": "MDEyOklzc3VlQ29tbWVudDU2MzYzNzUzMA==",
-          "body": "以 `nc` 模拟 http 报文如下\r\n\r\n``` bash\r\n$ nc www.baidu.com 80\r\nGET / HTTP/1.1\r\nHost: www.baidu.com\r\n\r\nHTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nCache-Control: no-cache\r\nConnection: Keep-Alive\r\nContent-Length: 14615\r\nContent-Type: text/html\r\nDate: Tue, 10 Dec 2019 02:48:44 GMT\r\nP3p: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nP3p: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nPragma: no-cache\r\nServer: BWS/1.1\r\nSet-Cookie: BAIDUID=F0FC6B3A056DEA285F51A1F2F8A170BB:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com\r\nSet-Cookie: BIDUPSID=F0FC6B3A056DEA285F51A1F2F8A170BB; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com\r\nSet-Cookie: PSTM=1575946124; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com\r\nSet-Cookie: BAIDUID=F0FC6B3A056DEA287CB2B9422E09E30E:FG=1; max-age=31536000; expires=Wed, 09-Dec-20 02:48:44 GMT; domain=.baidu.com; path=/; version=1; comment=bd\r\nTraceid: 1575946124058431156210725656341129791126\r\nVary: Accept-Encoding\r\nX-Ua-Compatible: IE=Edge,chrome=1\r\n\r\n<!DOCTYPE html><!--STATUS OK-->\r\n........内容省略\r\n```",
+          "body": "以 `nc` 模拟 http 报文如下\r\n\r\n``` bash\r\n$ nc www.baidu.com 80\r\nGET / HTTP/1.1\r\nHost: www.baidu.com\r\n\r\nHTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nCache-Control: no-cache\r\nConnection: Keep-Alive\r\nContent-Length: 14615\r\nContent-Type: text/html\r\nDate: Tue, 10 Dec 2019 02:48:44 GMT\r\nP3p: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nP3p: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nPragma: no-cache\r\nServer: BWS/1.1\r\nSet-Cookie: BAIDUID=F0FC6B3A056DEA285F51A1F2F8A170BB:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com\r\nSet-Cookie: BIDUPSID=F0FC6B3A056DEA285F51A1F2F8A170BB; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com\r\nSet-Cookie: PSTM=1575946124; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com\r\nSet-Cookie: BAIDUID=F0FC6B3A056DEA287CB2B9422E09E30E:FG=1; max-age=31536000; expires=Wed, 09-Dec-20 02:48:44 GMT; domain=.baidu.com; path=/; version=1; comment=bd\r\nTraceid: 1575946124058431156210725656341129791126\r\nVary: Accept-Encoding\r\nX-Ua-Compatible: IE=Edge,chrome=1\r\n\r\n<!DOCTYPE html><!--STATUS OK-->\r\n........内容省略\r\n```\r\n\r\nGET 请求报文如下：\r\n\r\n![](https://static.shanyue.tech/images/23-09-15/clipboard-9447.78475f.webp)\r\n\r\nPOST 请求报文如下：\r\n\r\n![](https://static.shanyue.tech/images/23-09-15/clipboard-6319.cd1372.webp)",
           "star": {
             "totalCount": 0
           },
@@ -14635,7 +14635,7 @@
       "nodes": [
         {
           "id": "MDEyOklzc3VlQ29tbWVudDY3MjkxMTU1OQ==",
-          "body": "TLS 握手的详细过程可参考下图：\r\n\r\n![TLS handshake](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/images/hpbn_0402.png)\r\n\r\n> 以上图片来自 [high-performance-browser](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)\r\n\r\n从 `wireshark` 抓包，也可以看到握手的详细流程，建议抓包加强理解，以下是抓包 `https://q.shanyue.tech` 时的握手流程\r\n\r\n通过 `curl -vvv --head` 来查看握手信息:\r\n\r\n``` bash\r\n$ curl -vvv --head  https://q.shanyue.tech\r\n*   Trying 111.6.180.235...\r\n* TCP_NODELAY set\r\n* Connected to q.shanyue.tech (111.6.180.235) port 443 (#0)\r\n* ALPN, offering h2\r\n* ALPN, offering http/1.1\r\n* successfully set certificate verify locations:\r\n*   CAfile: /etc/ssl/cert.pem\r\n  CApath: none\r\n* TLSv1.2 (OUT), TLS handshake, Client hello (1):\r\n* TLSv1.2 (IN), TLS handshake, Server hello (2):\r\n* TLSv1.2 (IN), TLS handshake, Certificate (11):\r\n* TLSv1.2 (IN), TLS handshake, Server key exchange (12):\r\n* TLSv1.2 (IN), TLS handshake, Server finished (14):\r\n* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):\r\n* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):\r\n* TLSv1.2 (OUT), TLS handshake, Finished (20):\r\n* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):\r\n* TLSv1.2 (IN), TLS handshake, Finished (20):\r\n* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256\r\n* ALPN, server accepted to use h2\r\n* Server certificate:\r\n*  subject: CN=q.shanyue.tech\r\n*  start date: Dec  2 00:00:00 2019 GMT\r\n*  expire date: Dec  1 12:00:00 2020 GMT\r\n*  subjectAltName: host \"q.shanyue.tech\" matched cert's \"q.shanyue.tech\"\r\n*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=Encryption Everywhere DV TLS CA - G1\r\n*  SSL certificate verify ok.\r\n* Using HTTP2, server supports multi-use\r\n* Connection state changed (HTTP/2 confirmed)\r\n* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0\r\n* Using Stream ID: 1 (easy handle 0x7f95ba80dc00)\r\n\r\n``` \r\n\r\n## 握手过程\r\n\r\n在 TLS 1.2 中，握手协议过程需要耗费两个 RTT，过程如下\r\n\r\n1. [OUT] Client Hello，客户端选出自身支持的 TLS 版本号、`cipher suites`、一个随机数、SessionId 传送给服务器端 (有可能可服用 Session)\r\n1. [IN] Server Hello，服务器端选出双方都支持的 TLS 版本，`cipher suite` 、一个随机数、SeesionId 给客户端\r\n1. [IN] Certificate，服务器端给客户端发送证书，用以身份验证及提供公钥\r\n1. [IN] Server Key Exchange，服务器端给客户端发送秘钥交换算法的一些参数\r\n1. [IN] Server Finished\r\n1. [OUT] Client Key Exchange，客户端给服务器端发送秘钥交换算法的一些参数，计算出预备主密钥 (pre master key)，作为随机数传递给服务器端 (这个随机数是安全的)。双方根据三个随机数生成对称加密中的秘钥\r\n1. [OUT] Change Cipher Spec，告知对方以后的消息将要使用TLS记录层协议进行加密\r\n1. [OUT] Finished，发送第一条加密的消息并完整性验证\r\n1. [IN] Change Cipher Spec，告知以后的消息将要使用TLS记录层协议进行加密\r\n1. [IN] Finished，发送第一条加密的消息并完整性验证\r\n\r\n## 相关链接\r\n\r\n+ [https握手流程详解](https://juejin.im/post/6844904135230390279#heading-10)\r\n+ [Chapter 4. Transport Layer Security (TLS)](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)",
+          "body": "TLS 握手的详细过程可参考下图：\r\n\r\n![](https://static.shanyue.tech/images/23-09-20/clipboard-1116.0ea7d3.webp)\r\n\r\n> 以上图片来自 [high-performance-browser](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)\r\n\r\n从 `wireshark` 抓包，也可以看到握手的详细流程，建议抓包加强理解，以下是抓包 `https://q.shanyue.tech` 时的握手流程\r\n\r\n通过 `curl -vvv --head` 来查看握手信息:\r\n\r\n``` bash\r\n$ curl -vvv --head  https://q.shanyue.tech\r\n*   Trying 111.6.180.235...\r\n* TCP_NODELAY set\r\n* Connected to q.shanyue.tech (111.6.180.235) port 443 (#0)\r\n* ALPN, offering h2\r\n* ALPN, offering http/1.1\r\n* successfully set certificate verify locations:\r\n*   CAfile: /etc/ssl/cert.pem\r\n  CApath: none\r\n* TLSv1.2 (OUT), TLS handshake, Client hello (1):\r\n* TLSv1.2 (IN), TLS handshake, Server hello (2):\r\n* TLSv1.2 (IN), TLS handshake, Certificate (11):\r\n* TLSv1.2 (IN), TLS handshake, Server key exchange (12):\r\n* TLSv1.2 (IN), TLS handshake, Server finished (14):\r\n* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):\r\n* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):\r\n* TLSv1.2 (OUT), TLS handshake, Finished (20):\r\n* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):\r\n* TLSv1.2 (IN), TLS handshake, Finished (20):\r\n* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256\r\n* ALPN, server accepted to use h2\r\n* Server certificate:\r\n*  subject: CN=q.shanyue.tech\r\n*  start date: Dec  2 00:00:00 2019 GMT\r\n*  expire date: Dec  1 12:00:00 2020 GMT\r\n*  subjectAltName: host \"q.shanyue.tech\" matched cert's \"q.shanyue.tech\"\r\n*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=Encryption Everywhere DV TLS CA - G1\r\n*  SSL certificate verify ok.\r\n* Using HTTP2, server supports multi-use\r\n* Connection state changed (HTTP/2 confirmed)\r\n* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0\r\n* Using Stream ID: 1 (easy handle 0x7f95ba80dc00)\r\n\r\n``` \r\n\r\n## 握手过程\r\n\r\n在 TLS 1.2 中，握手协议过程需要耗费两个 RTT，过程如下\r\n\r\n1. [OUT] Client Hello，客户端选出自身支持的 TLS 版本号、`cipher suites`、一个随机数、SessionId 传送给服务器端 (有可能可服用 Session)\r\n1. [IN] Server Hello，服务器端选出双方都支持的 TLS 版本，`cipher suite` 、一个随机数、SeesionId 给客户端\r\n1. [IN] Certificate，服务器端给客户端发送证书，用以身份验证及提供公钥\r\n1. [IN] Server Key Exchange，服务器端给客户端发送秘钥交换算法的一些参数\r\n1. [IN] Server Finished\r\n1. [OUT] Client Key Exchange，客户端给服务器端发送秘钥交换算法的一些参数，计算出预备主密钥 (pre master key)，作为随机数传递给服务器端 (这个随机数是安全的)。双方根据三个随机数生成对称加密中的秘钥\r\n1. [OUT] Change Cipher Spec，告知对方以后的消息将要使用TLS记录层协议进行加密\r\n1. [OUT] Finished，发送第一条加密的消息并完整性验证\r\n1. [IN] Change Cipher Spec，告知以后的消息将要使用TLS记录层协议进行加密\r\n1. [IN] Finished，发送第一条加密的消息并完整性验证\r\n\r\n## 相关链接\r\n\r\n+ [https握手流程详解](https://juejin.im/post/6844904135230390279#heading-10)\r\n+ [Chapter 4. Transport Layer Security (TLS)](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)",
           "star": {
             "totalCount": 0
           },
@@ -14948,6 +14948,17 @@
           "author": {
             "login": "eva-asdf",
             "url": "https://github.com/eva-asdf"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5m2_hp",
+          "body": "```\r\nfunction once(func) {\r\n    let revoke = false\r\n    let ret = null\r\n    return (...args) => {\r\n        if (!revoke) {\r\n            ret = func(...args)\r\n            revoke = true\r\n        }\r\n        return ret\r\n    }\r\n}\r\n\r\n// 测试\r\nfunction test() {\r\n    console.log('test')\r\n    return 1\r\n}\r\n\r\nlet o = once(test)\r\n\r\nconsole.log(o()) // test 1\r\nconsole.log(o()) // 1\r\nconsole.log(o()) // 1\r\n```\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "plutda",
+            "url": "https://github.com/plutda"
           }
         }
       ]
@@ -15718,7 +15729,7 @@
           "id": "IC_kwDODQzyOs5FO3C-",
           "body": "const encode = (str) => str.replace(/([a-zA-Z])\\1+/g, (all, p1) => p1 + all.length)",
           "star": {
-            "totalCount": 2
+            "totalCount": 3
           },
           "author": {
             "login": "xyuh111",
@@ -15756,6 +15767,17 @@
           "author": {
             "login": "Ghaining",
             "url": "https://github.com/Ghaining"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5mW10k",
+          "body": "// todo 对以下数字进行编码压缩\r\n```js\r\nfunction encode(string, count = 0) {\r\n  const array = string.split(\"\");\r\n  let resultArray = [];\r\n  for (let index = 0; index < array.length; index++) {\r\n    let charCount = 1;\r\n    while (array[index] === array[index + 1]) {\r\n      index++;\r\n      charCount++;\r\n    }\r\n    resultArray.push([array[index], charCount]);\r\n  }\r\n\r\n  return resultArray.reduce((pre, [item, _count]) => {\r\n    if (count >= _count) {\r\n      pre += item.repeat(_count);\r\n    } else {\r\n      pre += `${item}${_count}`;\r\n    }\r\n    return pre;\r\n  }, \"\");\r\n}\r\n```\r\n// todo 如果进行解码，碰到数字如何处理？\r\n```js\r\nfunction decode(string) {\r\n  let res = \"\";\r\n  const array = string.split(\"\");\r\n  for (let index = 0; index < array.length; index++) {\r\n    const element = array[index];\r\n    const count = Number(element);\r\n    if (isNaN(count)) {\r\n      res += element;\r\n    } else {\r\n      //   将前一个字符重复count-1次\r\n      res += array[index - 1].repeat(count - 1);\r\n    }\r\n  }\r\n\r\n  return res;\r\n}\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "nqsjd178559344",
+            "url": "https://github.com/nqsjd178559344"
           }
         }
       ]
@@ -16488,6 +16510,17 @@
             "login": "Kiera569",
             "url": "https://github.com/Kiera569"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5me1Li",
+          "body": "## [401 Unauthorized](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/401)\r\n\r\n401，请求的资源没有权限，需要认证。一般代表没有携带 token，或者 token 失效，而造成对该资源没有权限。需重新认证，传递正确的 token。\r\n\r\n## [403 Forbidden](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/403) \r\n\r\n403，请求的资源禁止访问。一般代表用户所拥有的权限不满足该资源的权限。如学生去访问教师资源，学生 A 访问学生 B 的成绩单等数据资源。还有一种情况是爬虫爬取页面被监控到而返回 403。\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "shfshanyue",
+            "url": "https://github.com/shfshanyue"
+          }
         }
       ]
     },
@@ -16589,6 +16622,17 @@
           "author": {
             "login": "buzuosheng",
             "url": "https://github.com/buzuosheng"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5mjbvy",
+          "body": "再次请求时，需要向服务器校验新鲜度，如果资源是新鲜的，返回 304，从浏览器获取资源\r\n\r\n``` bash\r\n           client         server\r\nGET /a.js   ----------->\r\n                   <----------- 200 OK\r\nGET /a.js   ----------->\r\n                   <----------- 304 Not Modified\r\n```\r\n\r\n与之相关的 Request/Response Headers 有以下几个\r\n\r\n+ `Last-Modified`/`If-Modified-Since`\r\n+ `Etag`/`If-None-Match`",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "shfshanyue",
+            "url": "https://github.com/shfshanyue"
           }
         }
       ]
@@ -24726,7 +24770,7 @@
           "id": "MDEyOklzc3VlQ29tbWVudDg3Nzc1MTg2MQ==",
           "body": "见代码实现: [统计字符串中出现次数最多的字符及次数- codepen](https://codepen.io/shanyue/pen/YzVGjrv?editors=0012)\r\n\r\n``` js\r\nfunction getFrequentChar (str) {\r\n  const dict = {}\r\n  for (const char of str) {\r\n    dict[char] = (dict[char] || 0) + 1\r\n  }\r\n  const maxBy = (list, keyBy) => list.reduce((x, y) => keyBy(x) > keyBy(y) ? x : y)\r\n  return maxBy(Object.entries(dict), x => x[1])\r\n}\r\n```\r\n\r\n以下方案一边进行计数统计一遍进行大小比较，只需要 1 次 `O(n)` 的算法复杂度\r\n\r\n``` js\r\nfunction getFrequentChar2 (str) {\r\n  const dict = {}\r\n  let maxChar = ['', 0]\r\n  for (const char of str) {\r\n    dict[char] = (dict[char] || 0) + 1\r\n    if (dict[char] > maxChar[1]) {\r\n      maxChar = [char, dict[char]]\r\n    }\r\n  }\r\n  return maxChar\r\n}\r\n```",
           "star": {
-            "totalCount": 3
+            "totalCount": 4
           },
           "author": {
             "login": "shfshanyue",
@@ -27359,7 +27403,7 @@
           "id": "IC_kwDODQzyOs41EIG8",
           "body": "一，常规两数之和\r\n```js\r\nvar twoSum = function (nums, target) {\r\n    const hash = new Map();\r\n    for (let i = 0; i < nums.length; i++) {\r\n        if (hash.has(target - nums[i])) return [nums[i], nums[target - i]];\r\n        hash.set(nums[i], i);\r\n    }\r\n    return null;\r\n};\r\n```\r\n\r\n二，双指针\r\n利用题目的提示 “正序增长的正整数数组”\r\n而且例1的提示很明显了，左右两个指针\r\n当前和大于目标值，右指针左移\r\n当前和小于目标值，左指针右移\r\n左指针等于右指针，循环中断，返回null\r\n```js\r\nconst twoSum = (number, target) => {\r\n    let left = 0,\r\n        right = number.length - 1;\r\n    while (left < right) {\r\n        const sum = number[left] + number[right];\r\n        if (sum === target) return [number[left], number[right]]; // 等于目标值，返回对应值\r\n        else if (sum < target) left++; // 小于目标值，左指针向右移动\r\n        else right--; // 大于目标值，右指针向左移动\r\n    }\r\n    return null;\r\n};\r\n```",
           "star": {
-            "totalCount": 1
+            "totalCount": 2
           },
           "author": {
             "login": "AaronKwong929",
