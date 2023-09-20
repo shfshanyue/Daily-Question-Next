@@ -15,6 +15,7 @@
     "start": "next start",
     "postbuild": "next-sitemap",
     "issues": "tsx scripts/issue.ts",
+    "issues:build": "tsx scripts/build.ts",
     "codegen": "graphql-codegen --config github/codegen.ts"
   },
   "dependencies": {
