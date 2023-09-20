@@ -155,7 +155,7 @@ async function generateMd () {
   for (const [filePath, markdown] of files) {
     // 138 先不用做格式化
     console.log(`Generate ${filePath}`)
-    fs.writeFileSync(filePath, filePath.includes('138') ? markdown : format(markdown))
+    fs.writeFileSync(filePath, filePath.includes('138') ? markdown : await format(markdown))
   }
 }
 
