@@ -8,11 +8,11 @@
   },
   "deploy": {
     "type": "page",
-    "title": "前端部署十五篇"
+    "title": "前端部署"
   },
   "engineering": {
     "type": "page",
-    "title": "前端工程化"
+    "title": "工程化"
   },
   "interview": {
     "type": "page",
@@ -30,7 +30,7 @@
   },
   "roadmap": {
     "type": "page",
-    "title": "面试路线图🆕"
+    "title": "面试路线图🔥"
   },
   "base": {
     "type": "page",
@@ -51,6 +51,12 @@
   "train": {
     "type": "page",
     "title": "训练营🔥"
+  },
+  "resume": {
+    "type": "page",
+    "href": "https://cv.devtool.tech",
+    "title": "一纸简历🔥",
+    "newWindow": true
   },
   "mock": {
     "type": "page",

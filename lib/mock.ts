@@ -6,7 +6,7 @@ import {
 } from "typechat";
 import { MockInterview } from "./mock.schema"
 
-const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-turbo-16k', 'https://openai.devdoc.tech/v1/chat/completions')
+const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-trubo-16k', 'https://openai.devdoc.tech/v1/chat/completions')
 
 // const interviewTagsSchema = fs.readFileSync(
 //   path.join(__dirname, "mock.schema.ts"),
@@ -53,9 +53,10 @@ export async function mock({
 1. 第一段，生成前端基础题目，根据候选人的${n}年前端编程经验，生成十道左右的前端基础题目，包含 CSS/JavaScript/DOM/HTTP 等
 2. 第二段，生成前端进阶题目，根据候选人的技术栈 ${labels} 以及${n}年前端编程经验，要求如下
 ${
-  labels?.split(',')?.map((label, i) => `  2.${i + 1} 对 ${ label }技术栈生成六道中等难度的面试题`).join('\n')
+  labels?.split(',')?.map((label, i) => `    2.${i + 1} 对 ${ label }技术栈生成六道中等难度的面试题`).join('\n')
 }
-3. 第三段，生成适合前端的代码面试题，四道左右`
+3. 第三段，生成适合前端的代码面试题，四道左右
+4. 以中文回答`
 
   const text = createPrompt({ category, labels, n })
   const article = await interviewTagsTranslator.translate(text)
