@@ -7,7 +7,7 @@ import {
 } from "typechat";
 import { InterviewArticle } from "./tag.schema"
 
-const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-turbo', 'https://openai.devdoc.tech/v1/chat/completions')
+const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-turbo', `https://${process.env.OPENAI_API_BASEURL}/v1/chat/completions`)
 
 const interviewTagsSchema = fs.readFileSync(
   path.join(__dirname, "tag.schema.ts"),
@@ -19,7 +19,7 @@ const interviewTagsTranslator = createJsonTranslator<InterviewArticle>(model, in
 function createOpenAI() {
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
-    baseURL: 'https://openai.devdoc.tech/v1'
+    baseURL: `https://${process.env.OPENAI_API_BASEURL}/v1`
   })
   return openai
 }

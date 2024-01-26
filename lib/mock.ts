@@ -1,12 +1,12 @@
-import fs from "fs";
-import path from "path";
 import {
   createJsonTranslator,
   createOpenAILanguageModel,
 } from "typechat";
 import { MockInterview } from "./mock.schema"
 
-const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-trubo-16k', 'https://openai.devdoc.tech/v1/chat/completions')
+console.log(process.env.OPENAI_API_KEY, process.env.OPENAI_API_BASEURL)
+
+const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-turbo-16k', `https://${process.env.OPENAI_API_BASEURL}/v1/chat/completions`)
 
 // const interviewTagsSchema = fs.readFileSync(
 //   path.join(__dirname, "mock.schema.ts"),
@@ -62,5 +62,7 @@ ${
   const article = await interviewTagsTranslator.translate(text)
   if (article.success) {
     return article.data
+  } else {
+    console.log(article.message)
   }
 }

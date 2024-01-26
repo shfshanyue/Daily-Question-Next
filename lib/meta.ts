@@ -8,7 +8,7 @@ import {
 import { retry } from 'midash'
 import { Meta } from "./meta.schema";
 
-const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-turbo', 'https://openai.devdoc.tech/v1/chat/completions')
+const model = createOpenAILanguageModel(process.env.OPENAI_API_KEY!, 'gpt-3.5-turbo', `https://${process.env.OPENAI_API_BASEURL}/v1/chat/completions`)
 
 // const metaSchema = `
 // type Meta = {

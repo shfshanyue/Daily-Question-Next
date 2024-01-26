@@ -12,6 +12,7 @@ const config = {
   swcMinify: true,
   env: {
     gaId: 'UA-',
+    OPENAI_API_BASEURL: 'api.nextapi.fun'
   },
   webpack(config) {
     return config
