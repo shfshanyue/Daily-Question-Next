@@ -10,6 +10,7 @@ import nextra from 'nextra'
 
 const config = {
   swcMinify: true,
+  output: 'standalone',
   env: {
     gaId: 'UA-',
     OPENAI_API_BASEURL: 'api.nextapi.fun'
