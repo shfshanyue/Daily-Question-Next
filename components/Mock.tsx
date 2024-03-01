@@ -104,7 +104,7 @@ export default function Mock() {
   const [currentYear, setCurrentYear] = useState(0)
   const [labels, setLabels] = useState<string[]>([])
   const [data, setData] = useState<MockInterview>(INIT_DATA)
-  const { isLoading, error, data: fetchData, mutate } = useMutation<MockInterview, unknown, {
+  const { isPending, error, data: fetchData, mutate } = useMutation<MockInterview, unknown, {
     currentYear: number;
     labels: string[];
   }, unknown>({
@@ -160,16 +160,16 @@ export default function Mock() {
       <div className="mb-4">
         <button
           onClick={() => {
-            if (!isLoading) {
+            if (!isPending) {
               mutate({
                 currentYear,
                 labels
               })
             }
           }}
-          className={clsx("rounded-md app-button", { 'bg-gray-200': isLoading })}>
+          className={clsx("rounded-md app-button", { 'bg-gray-200': isPending })}>
           {
-            isLoading ? '生成中...' : '生成'
+            isPending ? '生成中...' : '生成'
           }
         </button>
       </div>
