@@ -14,39 +14,76 @@
     "type": "page",
     "title": "工程化"
   },
-  "interview": {
-    "type": "page",
-    "title": "面经大全🔥",
-    "theme": {
-      "layout": "raw"
-    }
-  },
-  "ai": {
-    "type": "page",
-    "title": "智能面试",
-    "theme": {
-      "layout": "raw"
-    }
-  },
   "roadmap": {
     "type": "page",
     "title": "面试路线图🔥"
   },
   "base": {
     "type": "page",
-    "title": "计算机基础"
+    "title": "计算机基础",
+    "display": "hidden"
   },
   "fe": {
     "type": "page",
     "title": "高级前端"
   },
+  "ai": {
+    "href": "/ai",
+    "title": "智能面试",
+    "theme": {
+      "layout": "raw"
+    },
+    "display": "hidden"
+  },
+  "interview": {
+    "href": "/interview",
+    "title": "面经大全🔥",
+    "theme": {
+      "layout": "raw"
+    },
+    "display": "hidden"
+  },
+  "tools": {
+    "title": "面经与智能面试",
+    "type": "menu",
+    "items": {
+      "interview": {
+        "href": "/interview",
+        "title": "面经大全🔥"
+      },
+      "ai": {
+        "href": "/ai",
+        "title": "智能面试"
+      }
+    }
+  },
+  "other": {
+    "title": "其它面试题",
+    "type": "menu",
+    "items": {
+      "base": {
+        "href": "/base",
+        "title": "计算机基础"
+      },
+      "server": {
+        "href": "/server",
+        "title": "全栈开发"
+      },
+      "open": {
+        "title": "开放式问题",
+        "href": "/open"
+      }
+    }
+  },
   "server": {
     "type": "page",
-    "title": "全栈开发"
+    "title": "全栈开发",
+    "display": "hidden"
   },
   "open": {
     "type": "page",
-    "title": "开放式问题"
+    "title": "开放式问题",
+    "display": "hidden"
   },
   "train": {
     "type": "page",

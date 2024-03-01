@@ -654,8 +654,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "hackftz",
-            "url": "https://github.com/hackftz"
+            "login": "geekftz",
+            "url": "https://github.com/geekftz"
           }
         },
         {
@@ -2276,7 +2276,30 @@
     "title": "【Q045】如何把一个 CIDR 地址转化为IP地址范围段",
     "body": "如 `172.16.0.0/27` 的IP范围是多少",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5vqPSD",
+          "body": "172.16.0.0/27中的“27”表示网络前缀的位数为27，ipv4总地址位数为32，所以用于子网的位数为32 - 27 = 5。\r\n\r\n5位二进制数的大小范围是0～31，故ip地址范围段是172.16.0.0 ～ 172.16.0.31。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "enmida",
+            "url": "https://github.com/enmida"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5vqPUq",
+          "body": "这是来自QQ邮箱的假期自动回复邮件。你好，我最近正在休假中，无法亲自回复你的邮件。我将在假期结束后，尽快给你回复。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "loveminxo",
+            "url": "https://github.com/loveminxo"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -2322,7 +2345,19 @@
     "title": "【Q047】如何设计一个高并发系统",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5sdENM",
+          "body": "设计高并发系统主要围绕以下三个方面：\r\n1. 分布式架构\r\n    由于采用分布式架构，所以相比于单体应用就要围绕分布式架构做一系列的调整，所以在数据一致性上必须引用分布式锁来防止资源竞争，所以就需要用到Redis或者zookeeper这种保证原子性的软件，这里通常会采用Redis，因为Redis同时会作为缓存使用，同时由于一个服务对应有多个机器，所以我们就需要有服务治理的软件，如etcd, eureka, zookeeper等作为服务注册发现，那服务与服务之间内部的调用一般采用远程调用协议，常用的是gRPC，因为它支持服务发现机制，非常适合分布式架构。由于分布式架构，服务与服务之间如果靠同步请求将会造成请求极度缓慢，所以就必须采用消息队列来实现异步请求，那就需要用到Kafka, Pulsar和RabbitMQ这些消息队列服务；\r\n\r\n2. 负载均衡\r\n    我们采用分布式架构进行平行扩展，减轻单个机器承载的并发量，那并发量具体怎么分配就会涉及到负载均衡，常用的如nginx的负债均衡，云平台的网关或者第三方网关等；\r\n\r\n3. 数据库优化\r\n    数据库常常是高并发下最大的瓶颈，首先最常用的是采用Redis来缓存从而减少直接对数据库的请求，另外就是根据业务性质选择合适的数据库，如对于大量历史数据的存储可以采用NoSQL的数据库，如MongoDB等，而对于事务性数据才存储在关系型数据库如MySQL，如果使用的MySQL还可以针对MySQL进行读写分离，分库分表，优化连接数，优化索引等优化措施；\r\n\r\n而除了以上三个方面，还需要在日志记录，链路追踪，服务监控，容错等等方面考虑更细节的问题。\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -2477,7 +2512,19 @@
     "title": "【Q052】graphql 的引进有什么风险，以及性能问题",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5sfyLS",
+          "body": "引入 GraphQL 带来了很多优势，但同时也可能面临一些挑战和风险。以下是一些可能的风险和性能问题：\r\n\r\n风险：\r\n复杂性： GraphQL 查询可以非常灵活，但也可能变得复杂，特别是当查询涉及到嵌套关系和多个数据源时。管理复杂的查询可能需要更多的时间和资源。\r\n过度获取： 如果前端开发者不小心，他们可能请求过多的数据，导致过度获取。这可能会对性能产生负面影响，因为服务器可能需要检索并传输更多的数据。\r\n安全性： 不正确的查询可能导致安全漏洞，例如查询敏感数据或通过查询暴露敏感信息。正确配置和验证 GraphQL 查询是确保安全性的关键。\r\n维护成本： GraphQL 的引入可能需要更多的培训和学习成本。团队需要了解 GraphQL 查询语言以及如何有效地设计和管理 GraphQL Schema。\r\n\r\n性能问题：\r\nN+1 查询问题： 在关联数据的情况下，可能出现 N+1 查询问题，即对于每个主记录，需要额外发出 N 个附加查询。这可能导致数据库负担增加，性能下降。\r\n深度嵌套查询： 如果允许无限深度的嵌套查询，可能会导致性能问题，因为每个嵌套层级都需要额外的数据库查询。\r\n缓存难题： 由于 GraphQL 查询可以是动态的，可能更难有效地使用缓存。缓存的粒度和有效性需要更仔细地考虑。\r\n网络开销： 一次大型查询可能会导致大量的数据传输，增加网络开销。这对于移动设备和慢速网络连接可能是一个问题。\r\n\r\n为了解决这些问题，团队可以采取以下措施：\r\n查询优化： 确保查询是有效的，不会导致过度获取或 N+1 查询问题。可以使用 DataLoader 等工具来优化数据库查询。\r\n缓存策略： 有效地使用缓存，考虑缓存的粒度和过期策略。\r\n安全性措施： 实施合适的权限和验证措施，确保只有授权用户能够访问和修改特定的数据。\r\n性能监控： 使用性能监控工具来跟踪查询的性能，并及时发现和解决性能问题。\r\n\r\n总体而言，GraphQL 引入了灵活性和易用性，但在使用时需要仔细考虑和解决潜在的风险和性能问题。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -2642,6 +2689,17 @@
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5sf3QR",
+          "body": "熔断机制是分布式架构中用来防止服务雪崩的策略，因为服务之间可能存在依赖，假如某个服务存在高延迟造成大量请求拥挤，将会导致后续的服务无法进行，熔断机制这时会在请求进来的时候根据设定的策略判断该服务是否有异常，当存在异常时，熔断器会直接返回预设的响应，这样不会阻塞整个请求。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
         }
       ]
     },
@@ -2660,7 +2718,19 @@
     "title": "【Q058】什么是负载均衡",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5sf5rT",
+          "body": "负载均衡是分布式架构里针对流量进行均衡的机制，当多个请求过来时，根据服务器性能，业务实际情况对请求分配给业务相同的机器，负载均衡常用的算法有轮询，基于权重的轮训，随机，和IP Hash，比如一个IP请求某个接口可能会产生token或者其他缓存，如果这些token和缓存没有做远端持久化只是存在内存当中，那负载均衡就需要采用IP Hash来保证这个IP在每次请求的时候都是分配到同一台机器，这样它才能够使用到缓存。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -2687,6 +2757,17 @@
           "author": {
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5sf8Vs",
+          "body": "四层负载均衡和七层负载均衡指的是负载均衡是工作在OSI的第几层，即四层负载均衡是传输层负载均衡，它是根据传输层的信息，主要是IP和端口来进行分发，而七层负载均衡是应用层负载均衡，它是根据应用层的信息，主要是URL，cookie，报文头等来进行分发，像nginx是支持两种负载均衡模式的，而CDN则是基于七层负载均衡的。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
           }
         }
       ]
@@ -2808,6 +2889,17 @@
           "author": {
             "login": "grace-shi",
             "url": "https://github.com/grace-shi"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5sf_9z",
+          "body": "REST：\r\n优势：编写简单，易于外部调用，浏览器支持，基于文本的响应可读性强，灵活性强\r\n劣势：文本传输性能较差，不像RPC那样在使用上有严格的标准，所以不同人使用上差异化比较大\r\n\r\nRPC：\r\n优势：基于二进制协议的传输，性能比REST好，使用上有严格的标准以及强类型限制使可靠性增强，请求和响应必需借用相关的RPC库，这一特性天然适用于内部服务的的请求，安全性较强\r\n劣势：使用上比REST复杂，需提前定义好请求和响应的结构，传输的数据由于是二进制必须进行序列化才可阅读\r\n\r\n总体来说外部请求采用REST更为简单和兼容性强，内部请求采用RPC性能更强，可靠性高，更安全。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
           }
         }
       ]
@@ -3449,6 +3541,17 @@
             "login": "Harry3014",
             "url": "https://github.com/Harry3014"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs51O24L",
+          "body": "补充一张图和一个链接，\r\n![162db635ed5f6d26~tplv-t2oaga2asx-jj-mark_3024_0_0_0_q75](https://github.com/shfshanyue/Daily-Question/assets/53259809/18f43f9c-e85a-44ae-bf38-5382c66bbdf8)\r\n\r\nhttps://juejin.cn/post/6844903593275817998",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "hututuQWQ",
+            "url": "https://github.com/hututuQWQ"
+          }
         }
       ]
     },
@@ -3602,7 +3705,7 @@
           "id": "IC_kwDODQzyOs43Hs2z",
           "body": "https://developers.google.com/web/fundamentals/performance/get-started\r\n\r\n根据谷歌Web开发者网站总结的性能优化点:\r\n- 资源加载优化\r\n  - 衡量性能指标\r\n    - Lab Data, 在规范的特定条件下，对Web应用的各项指标进行评估，典型工具如谷歌的 lighthouse\r\n    - RUM，基于真实用户的性能指标监控，包括FCP，FID，CLS等，参考 https://web.dev/user-centric-performance-metrics/\r\n    - 瀑布图，借助 performance API 记录整个站点和各个资源的加载时长\r\n  - 优化资源大小(字节数)\r\n    - 评估各资源的用途并评估是否可以直接移除\r\n    - 通过压缩技术(minimize和compress)减少文本类资源(CSS,JavaScript,HTML)大小\r\n    - 选择合适的图片格式、裁剪图片、懒加载图片等，通过picture标签响应式地返回图片，参考 https://www.jianshu.com/p/607567e488fc\r\n    - 预加载和长期缓存字体，参考 https://web.dev/optimize-webfont-loading/\r\n  - 减少HTTP请求次数\r\n    - 合并文本资源，比如使用webpack这样的bundle技术\r\n    - 合并图片资源，比如雪碧图\r\n    - 内联内容较小的资源到html中，比如data url\r\n  - 善用HTTP缓存\r\n    - 本地缓存命中顺序，内存缓存 => Service Worker 缓存 => HTTP缓存(磁盘缓存) => HTTP/2 Push缓存，参考 https://calendar.perfplanet.com/2016/a-tale-of-four-caches/\r\n    - https://web.dev/http-cache/\r\n  - 优化JavaScript\r\n    - JavaScript的处理过程：下载(fetch) => 解压 => 解析(代码转换为AST) => 编译(AST转换为字节码) => 执行\r\n    - 死代码消除(Tree Shaking)，减小总体传输文件大小\r\n    - Code Spliting + 基于路由的按需加载，减小首次渲染的传输文件大小\r\n  - 优化首次渲染路径\r\n    - 渲染路径: DOM树构建 => CSSOM树构建 => Render Tree构建 => 样式计算 => 布局 => 绘制位图 => 合成图层\r\n    - 通过媒体查询避免首次渲染时加载不必要的CSS文件\r\n    - 将对页面结构无影响的JS文件标记为 async 和 defer，避免阻塞html解析\r\n- 渲染优化\r\n  - 使用 requestAnimationFrame 代替 setTimeout 和 setInterval 来更新视图，减少卡顿\r\n  - 将计算密集型的JavaScript代码移动到 Web Worker 中执行，避免占用主线程\r\n  - 使用复杂度更低、class风格的CSS选择器；减少频繁变动的CSS样式的影响元素个数\r\n  - 使用性能更高的 flex 布局代替 float 布局\r\n  - 避免对 offsetHeight 等dom属性的频繁访问，导致重绘和重排操作队列的频繁同步执行\r\n  - 在 performance profiling 之后，将频繁变动的动画部分所属的dom元素标记为 will-change，独立构成一个图层",
           "star": {
-            "totalCount": 1
+            "totalCount": 2
           },
           "author": {
             "login": "hwb2017",
@@ -3817,7 +3920,7 @@
           "id": "IC_kwDODQzyOs40hU2T",
           "body": "以下代码见 [如何实现 promise.map - codepen](https://codepen.io/shanyue/pen/zYwZXPN?editors=0012)\r\n\r\n``` js\r\nfunction pMap(list, mapper, concurrency = Infinity) {\r\n  // list 为 Iterator，先转化为 Array\r\n  list = Array.from(list)\r\n  return new Promise((resolve, reject) => {\r\n    let currentIndex = 0\r\n    let result = []\r\n    let resolveCount = 0\r\n    let len = list.length\r\n    function next() {\r\n      const index = currentIndex\r\n      currentIndex++\r\n      Promise.resolve(list[index]).then(o => mapper(o, index)).then(o => {\r\n        result[index] = o\r\n        resolveCount++\r\n        if (resolveCount === len) { resolve(result) }\r\n        if (currentIndex < len) { next() }\r\n      })\r\n    }\r\n    for (let i = 0; i < concurrency && i < len; i ++) {\r\n      next()\r\n    }\r\n  })\r\n}\r\n```",
           "star": {
-            "totalCount": 6
+            "totalCount": 7
           },
           "author": {
             "login": "shfshanyue",
@@ -4349,8 +4452,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "guanwanxiao",
-            "url": "https://github.com/guanwanxiao"
+            "login": "HuiFeiYa",
+            "url": "https://github.com/HuiFeiYa"
           }
         },
         {
@@ -4633,7 +4736,19 @@
     "title": "【Q107】什么是 Basic Auth 和 Digest Auth",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5sgFn5",
+          "body": "Basic Auth：使用Base64编码的用户名和密码，将其放置在HTTP请求头中进行身份验证；\r\nDigest Auth：使用摘要（Digest）算法，将密码使用算法加密后放在HTTP请求头中进行身份验证；\r\n这两种身份验证在实际应用中比较少，比较流行的还是Token-based Auth。\r\nToken-based Auth：使用令牌（Token），客户端在登录成功后获取令牌，之后的请求中将令牌包含在请求头中进行身份验证。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -5277,6 +5392,17 @@
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5sgHsW",
+          "body": "内网服务由于只允许局域网访问，所以首先我们要先进行严格的端口限制，确保其服务绑定的端口不允许外部请求，不绑定外网IP防止外部攻击，其次内部服务的请求采用RPC方式可减少被外部直接调用的风险，这些是隔绝外部访问的措施，接下来则要防止因为漏洞或木马而产生的从内部发出的攻击，首先要检查内网服务的代码，看是否存在可能远程触发，注入等漏洞，再者对内部的调用都要鉴权并且监控敏感操作及时报警，最后就是运维层面对服务器的监控，对于可疑流量波动和请求及时发现报警。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
         }
       ]
     },
@@ -5295,7 +5421,19 @@
     "title": "【Q125】docker 中如何为每个容器的 cpu/memory 设限，原理是什么",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5sgJbp",
+          "body": "在运行容器时，可以使用--cpus参数来设置CPU的限制，以及使用-m或--memory参数来设置内存的限制，docker是通过Linux内核的cgroups来实现对cpu和内存等资源等分配的",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -5512,7 +5650,19 @@
     "title": "【Q131】在 docker 的容器中，如何访问宿主机的 localhost",
     "body": "如在宿主机有一个 `mysql` 数据库，在容器中，如何连接数据库",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stTwi",
+          "body": "由于容器和宿主的网络是隔离的，所以直接访问宿主的localhost是不可行的，主要有三种实现方式：\r\n1.使用宿主机的IP地址代替localhost，这种方式比较通用；\r\n2.使用主机名 host.docker.internal（仅限 Windows、macOS、Docker Desktop）；\r\n3.使用网络模式 host共享宿主机的网络命名空间，这样就可以直接使用localhost访问（仅限 Linux）；",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -5529,7 +5679,19 @@
     "title": "【Q132】如何在 docker 中运行 docker",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stVTZ",
+          "body": "要在docker中在运行docker（DinD）需要将宿主的docker守护进程套接字挂载到容器，同时在容器内安装docker客户端，这样容器内便可以共享使用宿主的docker引擎，但是这种方式存在安全风险，通常不建议这样编排。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -5636,6 +5798,17 @@
           "author": {
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5stWT6",
+          "body": "1.轮询：根据请求顺序依次分发到不同的机器；\r\n2.最小连接数：将请求分发到连接数最少的机器；\r\n3.IP哈希：对客户端的IP进行哈希计算，根据哈希值分配机器这样可保证相同IP永远分配到同一台机器；\r\n4.加权轮询和加权最小连接数：对服务器进行额外的权重配置，权重越大分配到的概率越大；\r\n5.随机：随机进行分发；\r\n6.内容感知路由：根据请求内容的URL，HTTP头等信息判断分发到哪台机器；",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
           }
         }
       ]
@@ -5913,7 +6086,19 @@
     "title": "【Q143】docker-compose 部署 docker 时，如何把宿主机的环境变量注入到容器中",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stW1d",
+          "body": "通过在docker-compose.yaml的容器配置上加environment配置项，便可以将宿主的环境变量注入到容器",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -6368,7 +6553,19 @@
     "title": "【Q155】当服务升级或者回退时，如何保证流量平滑切换",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stYXf",
+          "body": "升级或者回退时先在预发布环境进行测试，确保测试无误后采用灰度发布的方式，先发布更新到负载较小的机器进行生产测试，一起正常再逐步更新所有机器",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -6440,7 +6637,19 @@
     "title": "【Q157】如何管理生产环境多个数据库的配置，如何快速连接",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stZ37",
+          "body": "可以通过本地配置文件，环境变量，远程配置服务etcd, zookeeper等，密钥存储服务或docker编排文件里配置多个数据库等配置信息，当需要连接不同数据库的时候只需要更换配置信息即可",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -7179,7 +7388,19 @@
     "title": "【Q180】当执行 SQL 语句 select * from user where id = 1 时发什么了什么",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stbGB",
+          "body": "当执行SQL语句时，一般数据库引擎会先解析SQL语句，然后根据字段索引对操作进行优化，选择最优的路径（例如当你设了索引，当数据量比较小的时候数据库会使用全表扫描而非索引），然后执行查询，收集结果并返回。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -7256,7 +7477,7 @@
           "id": "MDEyOklzc3VlQ29tbWVudDc1MTU1NzIzMg==",
           "body": "> @nieyao params 应该置后，测试示例时没有通过\r\n\r\n确实，忘了compose是从右往左执行的，那加个reverse 好了。\r\nconst compose = (...fns) => (...params) => fns.reverse().reduce((prev, current) => current(prev), ...params)\r\n或者用reduceRight\r\nconst compose = (...fns) => (...params) => fns.reduceRight((prev, current) => current(prev), ...params)\r\n",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "nieyao",
@@ -8398,6 +8619,28 @@
             "login": "xicYue",
             "url": "https://github.com/xicYue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs50bxIq",
+          "body": "```javascript\r\nconst object = {\r\n  arr: [\r\n    {\r\n      b: {\r\n        c: 3\r\n      }\r\n    },\r\n    {\r\n      b: {\r\n        c: 4\r\n      },\r\n      d: 5,\r\n      e: [\r\n        {\r\n          f: 6\r\n        },\r\n        {\r\n          g: 7,\r\n          h: {\r\n            i: 8,\r\n            j: [\r\n              {\r\n                k: 9\r\n              },\r\n              {\r\n                l: 10,\r\n                m: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, \"10\"]\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  func() {\r\n\r\n  },\r\n  date: new Date(),\r\n  map: new Map(),\r\n  set: new Set(),\r\n  weakMap: new WeakMap(),\r\n  weakSet: new WeakSet(),\r\n  booleanT: true,\r\n  booleanF: false,\r\n  funcGet: (x) => {\r\n    console.log(x)\r\n    return x + 1\r\n  },\r\n  symbol: Symbol(\"x\"),\r\n  nul: null,\r\n  undefin: undefined,\r\n  nan: NaN,\r\n  integrity: Infinity,\r\n  number: 42,\r\n  regexp: /hello/,\r\n  bigint: BigInt(\"987654321\"),\r\n  str: \"str\",\r\n  promise: new Promise((resolve, reject) => {\r\n    resolve(\"promise 1\")\r\n  }),\r\n  div: document.createElement('div',{\r\n    id:'div',\r\n    class:'div'\r\n  }),\r\n  generator: function* generatorFunc() {\r\n    yield \"yield 1\"\r\n  },\r\n  err: new Error(\"error\"),\r\n}\r\n\r\nfunction deepClone(origin, hashMap = new WeakMap()) {\r\n  if (origin == undefined || typeof origin !== 'object'){\r\n    return origin\r\n  }\r\n\r\n  if (origin instanceof Date){\r\n    return new Date(origin.getTime())\r\n  }\r\n\r\n  if (origin instanceof RegExp){\r\n    return new RegExp(origin)\r\n  }\r\n\r\n  if(origin instanceof HTMLElement){\r\n    return origin.cloneNode(true)\r\n  }\r\n\r\n  if(origin instanceof Promise){\r\n    return origin\r\n  }\r\n\r\n  if (hashMap.has(origin)){\r\n    return hashMap.get(origin)\r\n  }\r\n\r\n  let targetClone = new origin.constructor()\r\n  hashMap.set(origin, targetClone)\r\n  Reflect.ownKeys(origin).forEach((key) => {\r\n    targetClone[key] = deepClone(origin[key], hashMap)\r\n  })\r\n\r\n  return targetClone\r\n}\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "hviwen",
+            "url": "https://github.com/hviwen"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs50bxOC",
+          "body": "这是来自QQ邮箱的假期自动回复邮件。你好，我最近正在休假中，无法亲自回复你的邮件。我将在假期结束后，尽快给你回复。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "loveminxo",
+            "url": "https://github.com/loveminxo"
+          }
         }
       ]
     },
@@ -8580,7 +8823,19 @@
     "title": "【Q207】什么是隔离级",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stbhr",
+          "body": "隔离级别（Isolation Level）是数据库管理系统（DBMS）中用于控制并发事务访问共享数据的一个概念。隔离级别规定了一个事务对数据库中数据的读取和写入在何种程度上与其他事务隔离，以防止并发事务引起的一系列问题，如脏读、不可重复读和幻读。\r\n\r\n常见的隔离级别有以下四种：\r\n读未提交（Read Uncommitted）： 允许一个事务读取另一个事务尚未提交的数据。这是最低的隔离级别，也是最灵活的，但会导致脏读、不可重复读和幻读的问题。\r\n读提交（Read Committed）： 允许一个事务读取另一个事务已经提交的数据。在这个级别下，脏读的问题得到解决，但仍可能发生不可重复读和幻读。\r\n可重复读（Repeatable Read）： 保证在同一个事务中多次读取相同的数据时，得到的结果是一致的。可重复读级别通过锁定读取的数据行，防止其他事务修改这些行，解决了不可重复读的问题。\r\n串行化（Serializable）： 提供最高的隔离级别，确保一个事务的执行过程中不会受到其他事务的干扰。它通过对数据进行加锁，防止其他事务读取或修改被锁定的数据，从而避免了脏读、不可重复读和幻读。\r\n\r\n一般我们常用Serializable级别。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -9177,7 +9432,19 @@
     "title": "【Q223】数据库查询如何更好地利用数据库缓存进行优化",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stek8",
+          "body": "MySQL5.7之后就已经不推荐使用数据库缓存，因为数据库缓存会给数据库造成性能问题，可以将缓存放到应用层做，使用Redis。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -9194,7 +9461,19 @@
     "title": "【Q224】误操作了一个 delete from 语句，如何恢复数据",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stgVK",
+          "body": "1.如果数据库有备份，则从数据库的备份中恢复；\r\n2.数据库如果有开启binlog日志，可以通过日志找到该记录的操作语句进行恢复；\r\n3.借助一些第三方工具恢复；\r\n通常如果没有备份，或者没有开启日志，一旦误删除要恢复数据都是非常麻烦和困难的，所以数据库一定要做好备份以及权限控制。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -9325,8 +9604,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "guanwanxiao",
-            "url": "https://github.com/guanwanxiao"
+            "login": "HuiFeiYa",
+            "url": "https://github.com/HuiFeiYa"
           }
         },
         {
@@ -9431,8 +9710,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "guanwanxiao",
-            "url": "https://github.com/guanwanxiao"
+            "login": "HuiFeiYa",
+            "url": "https://github.com/HuiFeiYa"
           }
         },
         {
@@ -9793,6 +10072,17 @@
             "login": "iceycc",
             "url": "https://github.com/iceycc"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs50lQJj",
+          "body": "```javascript\r\nfunction _awaiter(fn) {\r\n  let resolveFn = (value) => value\r\n  let rejectFn = (reason) => reason\r\n\r\n  let generator = fn\r\n\r\n  let promise = new Promise((resolve, reject) => {\r\n    resolveFn = resolve\r\n    rejectFn = reject\r\n  })\r\n\r\n  const adopt = (value) => {\r\n    return value instanceof Promise ? value : Promise.resolve(value)\r\n  }\r\n\r\n  const step = (preValue) => {\r\n    try {\r\n      const { value, done } = generator.next(preValue)\r\n      adopt(value).then(\r\n        (nextValue) => {\r\n          if (done) {\r\n            resolveFn(nextValue)\r\n          } else {\r\n            step()\r\n          }\r\n        },\r\n        (reason) => {\r\n          if (done) {\r\n            rejectFn(reason)\r\n          } else {\r\n            step()\r\n          }\r\n        }\r\n      )\r\n    } catch (err) {\r\n      rejectFn(err)\r\n    }\r\n  }\r\n\r\n  step()\r\n  return promise\r\n}\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "hviwen",
+            "url": "https://github.com/hviwen"
+          }
         }
       ]
     },
@@ -9820,7 +10110,7 @@
           "id": "MDEyOklzc3VlQ29tbWVudDU5OTA3OTQ4Mw==",
           "body": "使用 `async`/`await` 实现\r\n\r\n``` js\r\nconst user1 = getUser(1)\r\nconst user2 = getUser(2)\r\nconst user3 = getUser(3)\r\n\r\nconst u1 =  await user1\r\nconst u2 =  await user2\r\nconst u3 =  await user3\r\n```",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "shfshanyue",
@@ -10212,7 +10502,19 @@
     "title": "【Q252】https 中如何保证证书是可信任的",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5rnG7s",
+          "body": "数字签名\r\n\r\n数字签名的原理其实很简单，就是把公钥私钥的用法反过来，之前是公钥加密、私钥解密，现在是私钥加密、公钥解密。但又因为非对称加密效率太低，所以私钥只加密原文的摘要，这样运算量就小的多，而且得到的数字签名也很小，方便保管和传输。\r\n\r\n数字证书和CA\r\n\r\n因为公钥是任何人都可以发布的，所以我们需要引入第三方来保证公钥的可信度，这个“第三方”就是我们常说的 CA（Certificate Authority，证书认证机构），CA 对公钥的签名认证也是有格式的，要包含公钥的序列号、用途、颁发者、有效时间等等，把这些打成一个包再签名，完整地证明公钥关联的各种信息，形成“数字证书”（Certificate）。小一点的 CA 可以让大 CA 签名认证，但链条的最后，也就是 Root CA，就只能自己证明自己了，这个就叫“自签名证书”（Self-Signed Certificate）或者“根证书”（Root Certificate）。你必须相信，否则整个证书信任链就走不下去了。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "zxw94FE",
+            "url": "https://github.com/zxw94FE"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -10684,7 +10986,19 @@
     "title": "【Q270】一张员工表，一个字段代表它的上级，如何查询该员工的所有上级",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stkdZ",
+          "body": "表中添加上级关系字段，如[1][2][3]，存放员工的所有上级，最末尾的ID为最高领导，这样可以更方便的查询所有上级关系，不过增加了维护该字段的业务工作",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -10875,7 +11189,19 @@
     "title": "【Q275】解释下 OLTP 与 OLAP",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stk6e",
+          "body": "OLTP（Online Transaction Processing）和OLAP（Online Analytical Processing）是两种数据库处理方式，它们分别服务于不同的应用场景。\r\n\r\nOLTP（Online Transaction Processing）:\r\n用途： OLTP主要用于处理大量的短期事务（交易），例如数据库中的增、删、改、查等操作，通常涉及对实时数据的处理。\r\n特点： OLTP系统注重事务的快速处理和高并发性，支持对数据库进行频繁的读写操作。数据库的设计通常采用规范化的模型，以确保数据的一致性和完整性。\r\n示例： 银行交易系统、在线购物系统、航班订票系统等。\r\n\r\nOLAP（Online Analytical Processing）:\r\n用途： OLAP主要用于支持决策支持和分析，提供对大量历史数据的复杂查询和分析功能。它用于生成报表、统计分析、数据挖掘等。\r\n特点： OLAP系统注重对大规模数据的复杂查询和分析，通常包括聚合、切片、切块等操作，以便用户能够更好地理解数据的趋势和模式。\r\n示例： 数据仓库系统、商业智能系统、在线分析系统等。\r\n总体来说，OLTP关注事务处理，追求快速的读写操作，而OLAP关注数据分析，提供复杂的查询和报表功能。在实际应用中，有时会采用混合的架构，即OLAP和OLTP相结合，以满足不同层次的需求。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -12244,17 +12570,6 @@
     "comments": {
       "nodes": [
         {
-          "id": "MDEyOklzc3VlQ29tbWVudDc1Nzc3MDg3MQ==",
-          "body": "`Promise.race = function (promises) {\r\n   return new Promise((resolve, reject) => {\r\n     promises.forEach((p,index) => {\r\n         Promise.resolve(p).then(\r\n            value => {resolve(value)},\r\n            reason => {\r\n              reject(reason)\r\n            }\r\n         )\r\n     })\r\n  })\r\n}`",
-          "star": {
-            "totalCount": 0
-          },
-          "author": {
-            "login": "codelou",
-            "url": "https://github.com/codelou"
-          }
-        },
-        {
           "id": "IC_kwDODQzyOs438nD_",
           "body": "```javascript\r\nPromise.race = (promiseArray) => {\r\n  return new Promise((resolve, reject) => {\r\n    promiseArray.forEach((item) => {\r\n      Promise.resolve(item).then( val => { \r\n        resolve(val)\r\n      }, reason => {\r\n        reject(reason)\r\n      })\r\n    })\r\n  })\r\n}\r\n```",
           "star": {
@@ -12852,7 +13167,19 @@
     "title": "【Q332】当数据库进行版本升级时，如何进行数据迁移",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5stnQx",
+          "body": "数据库版本升级时的数据迁移通常需要考虑以下几个步骤：\r\n\r\n备份数据： 在进行任何数据库操作之前，首先要确保备份数据，以防意外情况发生。\r\n数据库 Schema 升级： 如果数据库升级涉及到表结构的变化，需要执行相应的 SQL 脚本或使用数据库迁移工具（如 Flyway、Liquibase 等）来更新数据库 schema。这可能包括添加、修改或删除表、列、索引等。\r\n数据迁移脚本： 如果升级需要迁移现有数据，可以编写数据迁移脚本来将旧数据转移到新的表结构中。这可能涉及到数据格式的调整、合并或拆分等。\r\n应用程序代码升级： 如果升级会影响到应用程序代码（例如 SQL 查询的变化），确保应用程序代码也进行相应的升级。这可能需要修改 ORM 映射、数据库访问层的代码等。\r\n测试： 在正式进行数据库版本升级之前，务必在开发或测试环境中进行全面的测试，确保新的数据库版本和数据迁移脚本没有引入问题。\r\n逐步升级： 如果可能，可以采用逐步升级的方式，先升级测试环境，然后观察应用程序的行为和性能。如果一切正常，再升级生产环境。\r\n监控和回滚计划： 在进行生产环境升级时，监控数据库性能、应用程序行为等，准备好可能的回滚计划，以便在出现问题时能够迅速回滚到之前的版本。\r\n通知团队： 在进行数据库版本升级之前，通知相关团队的成员，确保大家都了解升级的计划和可能的影响。\r\n执行升级： 在完成所有准备工作后，执行数据库版本升级。在升级期间，要谨慎处理数据库连接池、事务处理等问题，以确保平滑过渡。\r\n验证和优化： 完成升级后，验证应用程序的行为是否正常，性能是否符合预期。如果有必要，进行进一步的优化。\r\n文档更新： 更新相关文档，包括数据库 schema 文档、应用程序代码文档等，以反映新的数据库版本和数据结构。\r\n\r\n每个数据库系统和应用程序架构可能有特定的注意事项和最佳实践，因此在进行数据库版本升级时，务必根据具体情况采取适当的措施。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -13138,7 +13465,19 @@
     "title": "【Q440】试着讲述数据库的几个范式",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5svlKo",
+          "body": "数据库的范式是一种设计原则，用于组织关系型数据库中的数据，以减少冗余和提高数据的一致性。主要有以下几个范式：\r\n\r\n第一范式（1NF）： 表中的每个列都包含原子性的值，不可再分。每一列都应该具有原子性，不可再分解为更小的数据项。\r\n第二范式（2NF）： 在满足第一范式的基础上，非主键列完全依赖于主键，而不是依赖于主键的一部分。即，表中的每个非主键列都必须完全依赖于主键。\r\n第三范式（3NF）： 在满足第二范式的基础上，非主键列之间互相独立，不存在传递依赖。即，非主键列之间不能有传递依赖关系。\r\nBC范式（Boyce-Codd范式）： 在满足第三范式的基础上，如果主键只包含一个属性，那么该表就满足BC范式。BC范式是第三范式的一种强化，主要针对主键包含多个属性的情况。\r\n第四范式（4NF）： 在满足BC范式的基础上，如果存在多值依赖关系，那么需要进一步分解表。\r\n第五范式（5NF）： 在满足第四范式的基础上，如果存在联合依赖关系，那么需要进行进一步的分解。\r\n\r\n这些范式的层次递进，每一级范式的目标是消除数据中的某种特定类型的冗余。选择范式的级别通常取决于具体的业务需求和性能优化的考虑。在实际数据库设计中，通常会根据具体情况灵活应用这些范式。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -13155,7 +13494,19 @@
     "title": "【Q341】为什么在 mysql 不能够使用 = null",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5svjJI",
+          "body": "在 MySQL 中，使用 = 进行比较时，不能直接用于 NULL 值。这是因为 NULL 代表缺失或未知的值，而在关系型数据库中，NULL 的比较是不确定的。要检查列是否为 NULL，应该使用 IS NULL 或 IS NOT NULL，而不是直接使用 = 或 !=。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -13172,7 +13523,19 @@
     "title": "【Q342】`A, B` 复合索引时，`A=? and B=?` 与 `B=? and A=?` 效果是否一致",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5sv8aa",
+          "body": "MySQL 复合索引遵循最左前缀匹配原则，这意味着如果你在多列上创建了一个复合索引，那么查询中使用这个索引时，必须按照索引中列的顺序从左到右进行匹配，所以如果符合索引是（A，B），查询 A=? and B=? 会使用到索引，而B=? and A=?不会使用到索引，两者效果是不一致的。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -13423,7 +13786,19 @@
     "title": "【Q350】如何实现一个 timeout 的中间件",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5sv-1q",
+          "body": "在请求的方法加个定时器，当超过时长之后直接返回超时错误",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -13974,7 +14349,19 @@
     "title": "【Q366】如何保存数据库与缓存的双写一致性",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5swB9Q",
+          "body": "1.先写缓存，再异步写数据库，这种情形性能比较好，但是可能会存在写数据库失败导致的数据不一致问题，所以要在写数据库环节加上失败重试，以及重试失败后发送写库失败消息给消息队列以便再次异步写入；\r\n2.先写数据库，再写缓存，这个性能较差，因为缓存需要等待数据库写入成功才能更新；\r\n3.使用分布式事务来保证两阶段提交都能成功，一旦某个阶段失败则全部回滚；\r\n4.对于某些强一致性的数据做一个计划任务定时检查缓存与数据库的一致性，一旦不一致则更新缓存；",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -14274,7 +14661,30 @@
     "title": "【Q375】在 redux 中如何写一个记录状态变更的日志插件",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5u0Ud_",
+          "body": "参考面向切面变成的方法，在 dispatch 1个 action 之后，state真正改变的地方进行 log",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "water-in-stone",
+            "url": "https://github.com/water-in-stone"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5u0Ufz",
+          "body": "这是来自QQ邮箱的假期自动回复邮件。你好，我最近正在休假中，无法亲自回复你的邮件。我将在假期结束后，尽快给你回复。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "loveminxo",
+            "url": "https://github.com/loveminxo"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -14433,7 +14843,19 @@
     "title": "【Q379】你们的后端项目的数据库索引做了哪些优化",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5swEx0",
+          "body": "针对数据库索引优化主要是做以下工作：\r\n1.对于多条件查询语句，看是否可使用复合索引；\r\n2.开启慢查询日志，用Explain语句分析查询慢的语句索引是否有生效，进行优化；\r\n3.检查索引的字段是否遵循不为nil的原则；\r\n4.检查符合索引是否遵循最左原则；",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -15618,6 +16040,17 @@
             "login": "justorez",
             "url": "https://github.com/justorez"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5rKpTb",
+          "body": "`Object.entries($$('*').map(it => it.tagName.toLowerCase()).reduce((cntArr, tag) => { cntArr[tag] = cntArr[tag] ? cntArr[tag] + 1 : 1; return cntArr }, {})).reduce((x, y) => x[1] > y[1] ? x : y)`",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Si3ver",
+            "url": "https://github.com/Si3ver"
+          }
         }
       ]
     },
@@ -16504,6 +16937,17 @@
             "login": "Younglina",
             "url": "https://github.com/Younglina"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs503SgF",
+          "body": "```javascript\r\nfunction qsParse(url = '') {\r\n  const params = {};\r\n  if (url.includes('?')) {\r\n    let startIndex = url.indexOf('?');\r\n    if (startIndex !== -1) {\r\n      url = url.slice(startIndex + 1);\r\n    }\r\n  }\r\n\r\n  const pairs = url.split('&');\r\n  for (let pair of pairs) {\r\n    const [key, value] = pair.split('=');\r\n    const decodeKey = decodeURIComponent(key);\r\n    const decodeValue = decodeURIComponent(value);\r\n\r\n    if (params.hasOwnProperty(decodeKey)) {\r\n      if (Array.isArray(params[decodeKey])) {\r\n        params[decodeKey].push(decodeValue);\r\n      } else {\r\n        params[decodeKey] = [params[decodeKey], decodeValue];\r\n      }\r\n    } else {\r\n      params[decodeKey] = decodeValue;\r\n    }\r\n  }\r\n  return params;\r\n}\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "hviwen",
+            "url": "https://github.com/hviwen"
+          }
         }
       ]
     },
@@ -16983,7 +17427,19 @@
     "title": "【Q438】数据库设计时 char 与 varchar 有什么区别",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs5sxVrn",
+          "body": "char和varchar都可以用来储存字符串并且设置长度，但char的长度是固定的，当字符串不够长度的时候会填充空格，varchar的长度是变化的，会储存实际的长度不会填充空格，但是查询的性能char要好于varchar，所以在数据库设计的时候，如果字段长度是固定的就使用char，否则使用varchar。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "ansonlovecoding",
+            "url": "https://github.com/ansonlovecoding"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -17345,8 +17801,8 @@
             "totalCount": 1
           },
           "author": {
-            "login": "battlepea",
-            "url": "https://github.com/battlepea"
+            "login": "joyz0",
+            "url": "https://github.com/joyz0"
           }
         },
         {
@@ -17356,8 +17812,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "guanwanxiao",
-            "url": "https://github.com/guanwanxiao"
+            "login": "HuiFeiYa",
+            "url": "https://github.com/HuiFeiYa"
           }
         },
         {
@@ -21841,6 +22297,17 @@
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5q95Pz",
+          "body": "`new Set($$('*').map(it => it.tagName.toLowerCase()))`",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Si3ver",
+            "url": "https://github.com/Si3ver"
+          }
         }
       ]
     },
@@ -22424,6 +22891,28 @@
             "login": "wuzqZZZ",
             "url": "https://github.com/wuzqZZZ"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs5yrtUb",
+          "body": "当 Boolean() 作为构造函数调用时，将创建 [Boolean] 对象，它不是一个原始值。\r\n\r\n当 Boolean() 作为普通函数调用时（不使用 new），它将参数强制转换为布尔原始值。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "yaochiqkl",
+            "url": "https://github.com/yaochiqkl"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5yrtlI",
+          "body": "这是来自QQ邮箱的假期自动回复邮件。你好，我最近正在休假中，无法亲自回复你的邮件。我将在假期结束后，尽快给你回复。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "loveminxo",
+            "url": "https://github.com/loveminxo"
+          }
         }
       ]
     },
@@ -22691,6 +23180,17 @@
           "author": {
             "login": "leohxj",
             "url": "https://github.com/leohxj"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5rnOpg",
+          "body": "HTTP的服务端缓存主要由代理服务器来实现，代理服务器收到源服务器的响应之后将报文转发给客户端的同时也存入自己的cache里，下次再有相同的请求就可以直接发送304或者缓存数据，节省源服务器的成本。\r\n因为代理服务器既是服务端，又是客户端的特性，有一些特殊的cache-control属性：\r\n其中就有 private 跟 public\r\n\r\nprivate：只允许在客户端缓存，不允许在代理服务器上缓存\r\npublic：完全公开，客户端跟代理服务器都可以缓存\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "zxw94FE",
+            "url": "https://github.com/zxw94FE"
           }
         }
       ]
@@ -25109,7 +25609,7 @@
           "id": "IC_kwDODQzyOs400Dxw",
           "body": "```js\r\nfunction fibonacciDp(n) {\r\n  const f = [];\r\n  f[0] = 0;\r\n  f[1] = 1;\r\n  for(let i = 2; i < n; i++) {\r\n    f[i] = f[i - 1] + f[i - 2];\r\n  }\r\n  return f;\r\n}\r\n```",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "haotie1990",
@@ -25627,7 +26127,7 @@
           "id": "IC_kwDODQzyOs40hI3e",
           "body": "## 初级实现: 串行方式\r\n\r\n遇到这种题目，第一反应就是如同同步 sum 的实现一样，一个一个进行累加。\r\n\r\n以下是一个借助于 `Array.prototype.reduce` 实现的 Promise 版本。\r\n\r\n这里一个注意的点是：**不能将 0 作为累加器的初始值，因此 add 为异步的，不能保证 `add(x, 0) === x`**\r\n\r\n```js\r\nfunction sum(arr) {\r\n  if (arr.length === 1) return arr[0];\r\n  return arr.reduce((x, y) => Promise.resolve(x).then((x) => add(x, y)));\r\n}\r\n```\r\n\r\n借助于 `async/await` 的异步 sum 的实现，逻辑更为清楚，同样我们把初始值设置为数组中第一个数，而非 0。\r\n\r\n``` js\r\nasync function sum(arr) {\r\n  let s = arr[0]\r\n  for (let i = 1; i < arr.length; i++) {\r\n    s = await add(s, arr[i])\r\n  }\r\n  return s\r\n}\r\n```\r\n\r\n[代码片段](https://code.juejin.cn/pen/7091460261323735048)\r\n\r\n不管是基于 promise 还是 async 实现，这应该是大部分人的第一反应，然而还有很多同学，直接最简单的实现无法通过，很可能无法通过面试。\r\n\r\n但是它有一个问题，在异步sum函数中，**其中最为耗时的是 add()，因为他是一个异步 IO 操作，模拟的是服务器数据请求，假设 add 延时一秒，此时需要 N-1 秒，延时太长。**\r\n\r\n## 中级实现: 并行方式\r\n\r\n关于上边的同步实现，有可能就会筛了一部分同学。面试官到了这里，就会继续增加难度。\r\n\r\n接下来是并行的写法: **我们实现一个 `chunk` 函数，将数组两两分组，每两个计算一次，使用 chunk 二分，此时延时变为 logN 秒**\r\n\r\n关于 `chunk` 的 API 可以参考 [lodash.chunk](https://lodash.com/docs/4.17.15#concat): `_.concat(array, [values])`，在平常工作中也会用到。\r\n\r\n```js\r\nfunction chunk(list, size) {\r\n  const l = [];\r\n  for (let i = 0; i < list.length; i++) {\r\n    const index = Math.floor(i / size);\r\n    l[index] ??= [];\r\n    l[index].push(list[i]);\r\n  }\r\n  return l;\r\n}\r\n```\r\n\r\n**在通过 chunk 进行两两分组时，有可能最后一项为单数，此时直接返回数值即可，在最终得到结果后，迭代该函数继续二分，直到最后只有一个数值。**\r\n\r\n``` js\r\nasync function sum(arr) {\r\n  if (arr.length === 1) return arr[0];\r\n  const promises = chunk(arr, 2).map(([x, y]) =>\r\n    // 注意此时单数的情况\r\n    y === undefined ? x : add(x, y)\r\n  );\r\n  return Promise.all(promises).then((list) => sum(list));\r\n}\r\n```\r\n\r\n[代码片段](https://code.juejin.cn/pen/7091470717836853255)\r\n\r\n写到这里，感觉难度还不是很大，注意，此时使用的是 `Promise.all`，意味着不管 `Promise.all` 所接收的数组中有多少元素，将会同时进行处理。\r\n\r\n此时面试官会进行扩展: **比如有10000个数据，那第一次就会发送5000个请求，网络拥堵了，我想控制成只能同时发送10个请求怎么办？**\r\n\r\n## 更进一步: 控制并行数\r\n\r\n如果需要控制并行数，则可以先实现一个 `promise.map` 用以控制并发，这也是在面试中经常考察的一个点。使用 `promise.map` 来代替上一步的 `promise.all`。\r\n\r\n关于 `promise.map` 的 API 可以参考 `bluebird`: `new Promise(function(function resolve, function reject) resolver) -> Promise`。\r\n\r\n与上一步相同，使用 sum 迭代该函数继续二分，直到最后只有一个数值。\r\n\r\n```js\r\nfunction pMap(list, mapper, concurrency = Infinity) {\r\n  return new Promise((resolve, reject) => {\r\n    let currentIndex = 0;\r\n    let result = [];\r\n    let resolveCount = 0;\r\n    let len = list.length;\r\n    function next() {\r\n      const index = currentIndex++;\r\n      Promise.resolve(list[index])\r\n        .then((o) => mapper(o, index))\r\n        .then((o) => {\r\n          result[index] = o;\r\n          if (++resolveCount === len) {\r\n            resolve(result);\r\n          }\r\n          if (currentIndex < len) {\r\n            next();\r\n          }\r\n        });\r\n    }\r\n    for (let i = 0; i < concurrency && i < len; i++) {\r\n      next();\r\n    }\r\n  });\r\n}\r\n\r\nasync function sum(arr, concurrency) {\r\n  if (arr.length === 1) return arr[0];\r\n  return pMap(\r\n    chunk(arr, 2),\r\n    ([x, y]) => {\r\n      return y === undefined ? x : add(x, y);\r\n    },\r\n    concurrency\r\n  ).then((list) => sum(list, concurrency));\r\n}\r\n```\r\n\r\n关于 `promise.map` 还有一个更简单的实现，可参考 [async-pool](https://github.com/rxaviers/async-pool/blob/master/lib/es9.js)",
           "star": {
-            "totalCount": 3
+            "totalCount": 4
           },
           "author": {
             "login": "shfshanyue",
@@ -26308,7 +26808,7 @@
           "id": "IC_kwDODQzyOs41CCva",
           "body": "bind/softBind/apply/call 都是this显式绑定的方法\r\n\r\n- bind会返回一个硬绑定的新函数，新函数会使用指定的第一个thisCtx去调用原始函数，并将其它参数传给原始函数。 硬绑定会降低函数的灵活性，在绑定之后不能通过显式或硬绑定的方式改变this，只能通过new改变\r\n- softBind 会对指定的函数进行封装，首先检查调用时的 this，如果 this 绑定到全局对象或者 undefined，那就用指定的thisCtx 去调用函数，否则不会修改 this  \r\n- apply和call功能相同，都是以指定的thisCtx和参数去执行方法，并返回原方法的返回值，只是apply中参数以数组传递\r\n```javascript\r\nFunction.prototype.myBind = function (ctx = globalThis) {\r\n  const fn = this;\r\n  const args = Array.from(arguments).slice(1);\r\n  function bound() {\r\n    if (this instanceof bound) {\r\n      fn.apply(this, args);\r\n    } else {\r\n      fn.apply(ctx, args);\r\n    }\r\n  }\r\n  bound.prototype = fn.prototype;\r\n  return bound;\r\n};\r\n```\r\n\r\n```javascript\r\nFunction.prototype.mySoftBind = function (ctx = globalThis) {\r\n  const fn = this;\r\n  const args = Array.from(arguments).slice(1);\r\n  function bound() {\r\n    if (!this || this === globalThis) {\r\n      fn.apply(ctx, args);\r\n    } else {\r\n      fn.apply(this, args);\r\n    }\r\n  }\r\n  bound.prototype = fn.prototype;\r\n  return bound;\r\n};\r\n```\r\n\r\n```javascript\r\nFunction.prototype.myCall = function (ctx = globalThis) {\r\n  const args = Array.from(arguments).slice(1);\r\n  const key = Symbol(\"key\");\r\n  ctx[key] = this;\r\n  const res=ctx[key](...args);\r\n  delete ctx[key]\r\n  return res\r\n};\r\n```\r\n```javascript\r\nFunction.prototype.myApply = function (ctx = globalThis) {\r\n  const args = arguments[1];\r\n  const key = Symbol(\"key\");\r\n  ctx[key] = this;\r\n  const res=ctx[key](...args);\r\n  delete ctx[key]\r\n  return res\r\n};\r\n```",
           "star": {
-            "totalCount": 10
+            "totalCount": 11
           },
           "author": {
             "login": "wussss",
@@ -26399,8 +26899,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "AzuraXW",
-            "url": "https://github.com/AzuraXW"
+            "login": "algok-876",
+            "url": "https://github.com/algok-876"
           }
         }
       ]
@@ -26853,6 +27353,28 @@
           "author": {
             "login": "Hishengs",
             "url": "https://github.com/Hishengs"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5reubB",
+          "body": "上面没有一个答案是对的啊，试试这个对象返回的都是true\r\n\r\n`const c = {};\r\nconst d = {\r\n    e:c,\r\n    f:c\r\n}`\r\n\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "cloudGrin",
+            "url": "https://github.com/cloudGrin"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5reunx",
+          "body": "```javascript\r\nfunction hasCircularReference(obj, seenObjects = new Set()) {\r\n  if (typeof obj !== 'object' || obj === null) {\r\n    return false;\r\n  }\r\n\r\n  if (seenObjects.has(obj)) {\r\n    return true;\r\n  }\r\n\r\n  seenObjects.add(obj);\r\n\r\n  for (let key in obj) {\r\n    if (hasCircularReference(obj[key], new Set([...seenObjects]))) {\r\n      return true;\r\n    }\r\n  }\r\n\r\n  return false;\r\n}\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "cloudGrin",
+            "url": "https://github.com/cloudGrin"
           }
         }
       ]
@@ -27490,7 +28012,7 @@
           "id": "IC_kwDODQzyOs41XB-O",
           "body": "```javascript\r\n\r\nfunction groupBy (data, filter) {\r\n    const map = {}\r\n    data.forEach(curr => {\r\n        const key = filter(curr)\r\n        if (!map[key]) map[key] = []\r\n        map[key].push(curr)\r\n    })\r\n    return map\r\n}\r\n```",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "heretic-G",
@@ -27820,6 +28342,17 @@
           "author": {
             "login": "Hazel-Lin",
             "url": "https://github.com/Hazel-Lin"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5rM_Q9",
+          "body": "```js\r\nfunction camelCase(str) {\r\n    return str.split(/[\\-_\\s]+/)\r\n        .filter(w => w !== '')\r\n        .reduce((prev, cur, index) => {\r\n            if (index === 1) prev = prev.toLowerCase()\r\n            cur = cur.charAt(0).toUpperCase() + cur.slice(1).toLowerCase()\r\n            return prev + cur\r\n        })\r\n}\r\n\r\ncamelCase('fooBar');\r\n// => 'fooBar'\r\n\r\ncamelCase('Foo Bar');\r\n// => 'fooBar'\r\n \r\ncamelCase('--foo-bar--');\r\n// => 'fooBar'\r\n \r\ncamelCase('__FOO_BAR__');\r\n// => 'fooBar'\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "justorez",
+            "url": "https://github.com/justorez"
           }
         }
       ]
@@ -30345,7 +30878,19 @@
     "title": "【Q745】webpack 的打包流程是什么样的",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs51b8rS",
+          "body": "Webpack 的打包流程大致可以归纳为以下几个步骤：\r\n初始化: 启动构建，读取与合并配置参数，加载 Plugin，实例化 Compiler。\r\n编译: 从 Entry 出发，针对每个 Module 串行调用对应的 Loader 去翻译文件的内容，再找出该 Module 依赖的 Module，递归地进行编译处理。\r\n确定 Chunk: 每个 Module 都编译完成后，根据 Module 之间的依赖关系，生成代码块(Chunk)。\r\n生成 Bundle: 每个 Chunk 都转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会。\r\n输出完成: 确定好输出内容后，根据配置确定的路径与文件名，把文件写入到文件系统。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "Apr2026",
+            "url": "https://github.com/Apr2026"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -30360,6 +30905,23 @@
     "id": "I_kwDODQzyOs51hvYX",
     "number": 804,
     "title": "【Q744】数据库中更新一条记录时，如何自动更新其 updated_at 字段",
+    "body": "",
+    "comments": {
+      "nodes": []
+    },
+    "labels": {
+      "nodes": [
+        {
+          "id": "MDU6TGFiZWwxNjUxNDAyMzEz",
+          "name": "db"
+        }
+      ]
+    }
+  },
+  {
+    "id": "I_kwDODQzyOs6AzjEP",
+    "number": 805,
+    "title": "【Q746】如何避免 SQL 攻击",
     "body": "",
     "comments": {
       "nodes": []
