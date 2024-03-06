@@ -16,6 +16,14 @@ export default {
       </span>
     </>
   ),
+  banner: {
+    key: 'comate',
+    text: (
+      <a href="https://comate.baidu.com/?inviteCode=hw7jki0p" target="_blank">
+        Baidu Comate，百度自研集成在 VSCode 中使用的编码辅助工具，目前可免费试用，点击查看 →
+      </a>
+    )
+  },
   sidebar: {
     titleComponent({ title, type }) {
       if (type === 'separator') {
