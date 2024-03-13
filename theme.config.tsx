@@ -1,9 +1,6 @@
 import type { DocsThemeConfig} from 'nextra-theme-docs';
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
-import { Cards, Card } from 'nextra/components'
-import { FaInfo } from "react-icons/fa6";
-
 
 export default {
   project: {
@@ -17,12 +14,18 @@ export default {
     </>
   ),
   banner: {
-    key: 'comate',
+    // key: 'comate',
+    // text: (
+    //   <a href="https://comate.baidu.com/?inviteCode=hw7jki0p" target="_blank">
+    //     Baidu Comate，百度自研集成在 VSCode 中使用的编码辅助工具，目前可免费试用，点击查看 →
+    //   </a>
+    // ),
+    key: 'tongyi',
     text: (
-      <a href="https://comate.baidu.com/?inviteCode=hw7jki0p" target="_blank">
-        Baidu Comate，百度自研集成在 VSCode 中使用的编码辅助工具，目前可免费试用，点击查看 →
+      <a href="https://developer.aliyun.com/topic/lingma/activities/202403?taskCode=14508&recordId=7a6665535809acb96955e0ddd5179112#/?utm_content=m_fission_1" target="_blank">
+        通义灵码，阿里开发的 Code Copilot，现在注册可免费领取 AI 盲盒，如iPhone15、机械键盘、双肩包等。点击查看 →
       </a>
-    )
+    ),
   },
   sidebar: {
     titleComponent({ title, type }) {
