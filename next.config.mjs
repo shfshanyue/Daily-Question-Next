@@ -23,18 +23,23 @@ const config = {
       {
         source: '/engineering/:number.html',
         destination: '/engineering/e:number', // Matched parameters can be used in the destination
-        permanent: false
+        permanent: true
       },
       {
         source: '/fe/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/:slug*',
         destination: '/fe/engineering/:slug*', // Matched parameters can be used in the destination
-        permanent: false
+        permanent: true
       },
       {
         source: '/:slug*.html',
         destination: '/:slug*', // Matched parameters can be used in the destination
         permanent: true
       },
+      {
+        source: '/base/http/:slug',
+        destination: '/fe/http/:slug', // Matched parameters can be used in the destination
+        permanent: true
+      }
     ]
   },
 }
