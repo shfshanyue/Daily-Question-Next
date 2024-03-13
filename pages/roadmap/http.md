@@ -1,6 +1,6 @@
 # 面试大厂，这些 HTTP 面试题要掌握
 
-## http 常见的状态码有哪些
+## http 状态码
 
 + 题目：[http 常见的状态码有哪些](https://q.shanyue.tech/fe/http/36)
 + 题目：[http 状态码 204 使用在什么场景](https://q.shanyue.tech/fe/http/599)
@@ -80,7 +80,7 @@ GET /a.js   ----------->
 + `Last-Modified`/`If-Modified-Since`
 + `Etag`/`If-None-Match`
 
-## HTTP 缓存策略
+### 缓存策略
 
 + 题目：[简述你们前端项目中资源的缓存配置策略](https://q.shanyue.tech/fe/http/193)
 + 题目：[现代前端应用应如何配置 HTTP 缓存机制](https://q.shanyue.tech/fe/http/600)
@@ -89,6 +89,8 @@ GET /a.js   ----------->
 
 1. 文件路径中带有 hash 值：一年的强缓存。因为该文件的内容发生变化时，会生成一个带有新的 hash 值的 URL。前端将会发起一个新的 URL 的请求。配置响应头 `Cache-Control: public,max-age=31536000,immutable`
 1. 文件路径中不带有 hash 值：协商缓存。大部分为 `public` 下文件。配置响应头 `Cache-Control: no-cache` 与 `etag/last-modified`
+
+## HTTP Header
 
 ## gzip 配置
 
@@ -126,7 +128,7 @@ GET /a.js   ----------->
 
 关于如何写一个 `cors` 的中间件可以参考 [koajs/cors](https://github.com/koajs/cors)
 
-## 安全
+## Cookie/SameSite
 
 + [SameSite Cookie 有哪些值，是如何预防 CSRF 攻击的](https://q.shanyue.tech/fe/http/569)
 【Q267】CSP 是干什么用的了
@@ -139,21 +141,6 @@ GET /a.js   ----------->
 + Strict: 任何情况下都不会向第三方网站请求发送Cookie
 
 目前，主流浏览器 Same-Site 的默认值为 `Lax`，而在以前是 `None`，将会预防大部分 CSRF 攻击，如果需要手动指定 `Same-Site` 为 `None`，需要指定 Cookie 属性 `Secure`，即在 https 下发送
-
-## http2
-
-+ 题目：[http2 与 http1.1 有什么改进](https://q.shanyue.tech/fe/http/86)
-+ 题目：[http2 中的首部压缩的实现原理是什么](https://q.shanyue.tech/fe/http/275)
-+ 题目：[http2 中 Stream 与 Frame 是什么关系](https://q.shanyue.tech/fe/http/670)
-
-关于 `http2` 可以阅读谷歌 `web.dev` 的文档 [Introduction to HTTP/2](https://web.dev/performance-http2/)
-
-关于 HTTP2 有以下改进
-
-1. 二进制分帧
-1. 请求多路复用 (Stream/Frame)
-1. 头部压缩: (HPack)
-1. 服务端推送: (Server Push)
 
 ## https
 
@@ -226,6 +213,21 @@ $ curl -vvv --head  https://q.shanyue.tech
 
 - [https 握手流程详解](https://juejin.im/post/6844904135230390279#heading-10)
 - [Chapter 4. Transport Layer Security (TLS)](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)
+
+## http2
+
++ 题目：[http2 与 http1.1 有什么改进](https://q.shanyue.tech/fe/http/86)
++ 题目：[http2 中的首部压缩的实现原理是什么](https://q.shanyue.tech/fe/http/275)
++ 题目：[http2 中 Stream 与 Frame 是什么关系](https://q.shanyue.tech/fe/http/670)
+
+关于 `http2` 可以阅读谷歌 `web.dev` 的文档 [Introduction to HTTP/2](https://web.dev/performance-http2/)
+
+关于 HTTP2 有以下改进
+
+1. 二进制分帧
+1. 请求多路复用 (Stream/Frame)
+1. 头部压缩: (HPack)
+1. 服务端推送: (Server Push)
 
 ## http3
 

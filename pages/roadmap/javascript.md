@@ -4,6 +4,14 @@ sidebarDepth: 4
 
 # 面试大厂，这些 JavaScript 问题一定要掌握
 
+在此之前，可以先过一遍 MDN，了解一些基础的 API，见 [JavaScript Reference](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference)
+
+特别是 Array、Object、Promise 的 API，在面试以及实际工作中，都很实用。
+
++ [Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
++ [Object](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object)
++ [Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
 ## API
 
 ### JS 中基本数据类型有哪些

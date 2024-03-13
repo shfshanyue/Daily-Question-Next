@@ -8,11 +8,27 @@
   },
   "deploy": {
     "type": "page",
-    "title": "前端部署"
+    "title": "前端部署",
+    "display": "hidden"
   },
   "engineering": {
     "type": "page",
-    "title": "工程化"
+    "title": "工程化",
+    "display": "hidden"
+  },
+  "books": {
+    "title": "我的小册",
+    "type": "menu",
+    "items": {
+      "interview": {
+        "href": "/engineering",
+        "title": "工程化"
+      },
+      "deploy": {
+        "href": "/deploy",
+        "title": "前端部署"
+      }
+    }
   },
   "roadmap": {
     "type": "page",
@@ -123,7 +139,7 @@
   },
   "mock": {
     "type": "page",
-    "display": "hidden"
+    "title": "模拟面试"
   },
   "contact": {
     "display": "hidden"

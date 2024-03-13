@@ -13,12 +13,13 @@ Web API 包括 Fetch API、Canvas API、Web Worker、WebRTC、WebGL 等，见 [M
 
 这是一道前端基础与编程功底具备的面试题：
 
-+ 如果你前端基础强会了解 `document.querySelector(*)` 能够列出页面内所有标签
++ 如果你前端基础强会了解 `document.querySelectorAll(*)` 能够列出页面内所有标签
 + 如果你编程能力强能够用**递归**/**正则**快速实现同等的效果
 
 有三种 API 可以列出页面所有标签：
 
-1. `document.querySelector('*')`，标准规范实现
+1. `document.querySelectorAll('*')`，标准规范实现
+1. `document.getElementsByTagName('*')`
 1. `$$('*')`，devtools 实现
 1. `document.all`，非标准规范实现
 
