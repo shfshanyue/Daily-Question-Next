@@ -22,6 +22,7 @@
 + [【Q447】如何实现一个数组洗牌函数 shuffle](code/455)
 + [【Q489】如何实现一个函数 lodash.merge](code/498)
 + [【Q491】如何实现一个 Promise.all](code/500)
++ [【Q505】JS 中基础数据类型有哪些](code/515)
 + [【Q561】实现一个 inherits 函数进行继承](code/576)
 + [【Q567】如何逆序一个字符串](code/582)
 + [【Q594】给数字添加千位符](code/610)
@@ -60,3 +61,4 @@
 + [【Q691】如何实现一个 ORM 类似的 find 链式调用](code/712)
 + [【Q701】实现函数 promisify，把回调函数改成 promise 形式](code/723)
 + [【Q747】如何实现一个 omit/omitBy 函数](code/793)
++ [【Q743】实现 batchFn 函数，可以批量执行函数](code/800)

@@ -59,5 +59,7 @@
   "677": "【Q659】在 React Hooks 中实现 usePreviouseValue 取上次渲染的值",
   "721": "【Q699】在虚拟 DOM 中进行 diff 算法时，介绍当根据 key 对数组进行重用时的算法",
   "802": "【Q474】在 react 中，以下父子组件的 useEffect/useLayoutEffect 顺序如何",
+  "806": "【Q749】React18 有哪些新特性",
+  "807": "【Q750】React19 有哪些新特性",
   "index": "汇总"
 }

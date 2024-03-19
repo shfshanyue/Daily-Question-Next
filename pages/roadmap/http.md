@@ -92,7 +92,7 @@ GET /a.js   ----------->
 
 ## HTTP Header
 
-## gzip 配置
+### gzip 配置
 
 + 题目：[gzip 的原理是什么，如何配置](https://q.shanyue.tech/fe/http/109)
 
@@ -100,10 +100,10 @@ GET /a.js   ----------->
 
 因此 `gzip` 用于 HTTP 文件传输中，比如 JS、CSS 等，**但一般不会压缩图片**。在 HTTP Response 报文中，用 `Content-Encoding` 指明使用 gzip 压缩，而以下响应头在大部分生产环境的响应报文中都可以看到！
 
-## 跨域
+### 跨域
 
-+ [什么情况下会发送 OPTIONS 请求](https://q.shanyue.tech/fe/http/363)
-【Q325】关于 cors 的响应头有哪些
++ 题目：[什么情况下会发送 OPTIONS 请求](https://q.shanyue.tech/fe/http/363)
++ 题目：[关于 cors 的响应头有哪些](https://q.shanyue.tech/fe/http/328)
 
 **当一个请求跨域且不是简单请求时就会发送 `OPTIONS` 请求**
 
@@ -128,7 +128,7 @@ GET /a.js   ----------->
 
 关于如何写一个 `cors` 的中间件可以参考 [koajs/cors](https://github.com/koajs/cors)
 
-## Cookie/SameSite
+### Cookie/SameSite
 
 + [SameSite Cookie 有哪些值，是如何预防 CSRF 攻击的](https://q.shanyue.tech/fe/http/569)
 【Q267】CSP 是干什么用的了
@@ -198,16 +198,18 @@ $ curl -vvv --head  https://q.shanyue.tech
 
 在 TLS 1.2 中，握手协议过程需要耗费两个 RTT，过程如下
 
-1. [OUT] Client Hello，客户端选出自身支持的 TLS 版本号、`cipher suites`、一个随机数、SessionId 传送给服务器端 (有可能可服用 Session)
-1. [IN] Server Hello，服务器端选出双方都支持的 TLS 版本，`cipher suite` 、一个随机数、SeesionId 给客户端
-1. [IN] Certificate，服务器端给客户端发送证书，用以身份验证及提供公钥
-1. [IN] Server Key Exchange，服务器端给客户端发送秘钥交换算法的一些参数
-1. [IN] Server Finished
-1. [OUT] Client Key Exchange，客户端给服务器端发送秘钥交换算法的一些参数，计算出预备主密钥 (pre master key)，作为随机数传递给服务器端 (这个随机数是安全的)。双方根据三个随机数生成对称加密中的秘钥
-1. [OUT] Change Cipher Spec，告知对方以后的消息将要使用 TLS 记录层协议进行加密
-1. [OUT] Finished，发送第一条加密的消息并完整性验证
-1. [IN] Change Cipher Spec，告知以后的消息将要使用 TLS 记录层协议进行加密
-1. [IN] Finished，发送第一条加密的消息并完整性验证
++ [OUT] Client Hello，客户端选出自身支持的 TLS 版本号、cipher suites、Client Random、SessionId 传送给服务器端 (有可能可复用 Session)
++ [IN] Server Hello，服务器端选出双方都支持的 TLS 版本，cipher suite 、Server Random、SeesionId 给客户端
++ [IN] Certificate，服务器端给客户端发送证书，用以身份验证及提供公钥
++ [IN] Server Key Exchange，服务器端给客户端发送密钥交换算法的一些参数
++ [IN] Server Finished
++ [OUT] Client Key Exchange，客户端给服务器端发送密钥交换算法的一些参数，计算出预主密钥 (`pre master secret`)，使用密钥交换算法（一般是 ECDHE）传递给服务器端。双方根据（Client Random、Server Random、Pre Master Secret）三个随机数生成对称加密中的密钥（`master secret`）。（再根据 `master secret` 生成 `Session Keys`，包括 `Client MAC Key`、`Client Write Key`、`Server MAC Key`、`Server Write Key`。用以以后对的通信加密。）
++ [OUT] Change Cipher Spec，告知以后的消息开始对称加密通信
++ [OUT] Finished，加密消息并完整性验证，标志着握手阶段成功并结束（对握手消息使用 `Client Write Key` 加解密，并使用 `Client MAC Key` 进行完整性校验）
++ [IN] Change Cipher Spec，告知以后的消息开始对称加密通信。此时服务器端通过密钥交换算法拿到 `pre master secret`，并根据三个随机数生成 `master secret`。
++ [IN] Finished，加密消息并完整性验证，标志着握手阶段成功并结束
+
+> 注，对于（）内容在面试中可以忽略不答
 
 ### 相关链接
 

@@ -230,7 +230,7 @@
     "id": "MDU6SXNzdWU1MTY4MTUzMjA=",
     "number": 3,
     "title": "【Q003】什么是防抖和节流，他们的应用场景有哪些",
-    "body": "",
+    "body": "追问：\r\n\r\n1. 如何要在时间刚开始就执行一次，应如何处理，如同 [lodash/debounce](https://lodash.com/docs/4.17.15#debounce) 的 `leading`\r\n2. 如何实现防抖函数的取消，如 lodash/debounce",
     "comments": {
       "nodes": [
         {
@@ -3313,7 +3313,7 @@
           "id": "MDEyOklzc3VlQ29tbWVudDU2OTM4MTUyOA==",
           "body": "我看过源码 没有写过",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "wang120140",
@@ -10485,7 +10485,19 @@
     "title": "【Q251】node --max-old-space-size=4096 是什么意思",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs52eP4X",
+          "body": "修改最大内存限制，防止内存溢出。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "myway42",
+            "url": "https://github.com/myway42"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -11290,6 +11302,17 @@
           "author": {
             "login": "Kffhi",
             "url": "https://github.com/Kffhi"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs53J5TY",
+          "body": "在 React 中，Hooks 是一种特殊的函数，用于在函数组件中添加状态、生命周期等特性。Hooks 可以在函数组件的顶层使用，但不能在条件语句、循环语句或嵌套函数中使用。这是因为 Hooks 的使用依赖于 React 的调用顺序和内部状态的管理机制。\r\n\r\n下面是为什么不能在表达式中定义 React Hooks 的原因：\r\n\r\n1. **Hooks 必须在函数组件的顶层使用**：\r\n   - React Hooks 必须在 React 函数组件的顶层使用，而不是在函数的内部或表达式中使用。这是因为 React 依赖于 Hooks 的调用顺序来确定组件的状态和效果的正确应用。\r\n   - 如果在表达式中定义 Hooks，React 将无法确定 Hooks 的调用顺序，可能会导致状态错误或效果不一致。\r\n\r\n2. **Hooks 需要在每次渲染时保持稳定**：\r\n   - React Hooks 需要在每次组件渲染时保持稳定，以便能够正确地管理组件的状态和效果。\r\n   - 如果在表达式中定义 Hooks，它们的调用可能会随着表达式的求值而发生变化，这将破坏 React 的调用顺序和状态管理机制。\r\n\r\n因此，为了确保 React 组件的正确运行和状态管理，Hooks 必须在函数组件的顶层使用，而不能在表达式中定义。如果需要根据条件动态使用 Hooks，可以考虑使用条件渲染或自定义钩子来管理。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "juvenile-spec",
+            "url": "https://github.com/juvenile-spec"
           }
         }
       ]
@@ -13678,7 +13701,7 @@
           "id": "MDEyOklzc3VlQ29tbWVudDY2MTA5NzQzMQ==",
           "body": "**一句话：`exports` 是 `module.exports` 的引用，如果 `exports` 没有重赋值，则二者没有任何区别**，原理就在于 CommonJS 的 `module_wrapper`，`compiledWrapper.call(thisValue, module.exports, require, module)`。\r\n\r\n类似如下所示\r\n\r\n``` js\r\nconst exports = module.exports\r\n```\r\n\r\n那以下代码结果会如何导出？\r\n\r\n``` js\r\nmodule.exports = 100\r\nexports = 3\r\n```\r\n\r\n很显然会导出 100，毕竟 `exports` 进行了重赋值。\r\n\r\n**那在 node 源码中如何实现的呢？** 从源码里可以看出 **exports** 的实质\r\n\r\n![module wrapper](https://shanyue.tech/assets/img/module-wrapper.70557e4e.png)\r\n\r\n详见源码: <https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js#L1252>，可以看出符合猜想\r\n\r\n众所周知，node 中所有的模块代码都被包裹在这个函数中\r\n\r\n``` js\r\nexports = module.exports\r\n(function(exports, require, module, __filename, __dirname) {\r\n  exports.a = 3\r\n});\r\n```\r\n\r\n而以下源码指出，`exports` 是如何得来\r\n\r\n``` js\r\nconst dirname = path.dirname(filename);\r\nconst require = makeRequireFunction(this, redirects);\r\nlet result;\r\n// 从这里可以看出来 exports 的实质\r\nconst exports = this.exports;\r\nconst thisValue = exports;\r\nconst module = this;\r\nif (requireDepth === 0) statCache = new Map();\r\nif (inspectorWrapper) {\r\n  result = inspectorWrapper(compiledWrapper, thisValue, exports,\r\n                            require, module, filename, dirname);\r\n} else {\r\n\r\n  // 这里是模块包装函数\r\n  result = compiledWrapper.call(thisValue, exports, require, module,\r\n                                filename, dirname);\r\n}\r\n```\r\n\r\n我们再对示例代码放在包裹函数中，最终导出结果如何一目了然\r\n\r\n``` js\r\nconst exports = module.exports\r\n(function(exports, require, module, __filename, __dirname) {\r\n  module.exports = 100\r\n  exports = 3\r\n});\r\n```\r\n\r\n",
           "star": {
-            "totalCount": 2
+            "totalCount": 3
           },
           "author": {
             "login": "shfshanyue",
@@ -14161,8 +14184,8 @@
             "totalCount": 2
           },
           "author": {
-            "login": "PixelMonkeyPro",
-            "url": "https://github.com/PixelMonkeyPro"
+            "login": "AureliusPatiens",
+            "url": "https://github.com/AureliusPatiens"
           }
         },
         {
@@ -14382,7 +14405,19 @@
     "title": "【Q367】redux 和 mobx 有什么不同",
     "body": "",
     "comments": {
-      "nodes": []
+      "nodes": [
+        {
+          "id": "IC_kwDODQzyOs53J4-Q",
+          "body": "Redux 和 MobX 都是 JavaScript 应用程序状态管理的库，它们有一些相似之处，但也有一些不同之处。以下是它们之间的主要区别：\r\n\r\n1. **响应性 vs. 不可变性**：\r\n   - Redux 鼓励使用不可变数据（Immutable Data）的概念来管理应用状态。Redux 的状态是通过纯函数（reducer）来处理的，这意味着状态的修改是不可变的，每次修改都会生成一个新的状态。\r\n   - MobX 则采用了响应式编程的思想，它可以自动跟踪状态的变化，并在状态发生变化时自动更新相关的组件。开发者可以直接修改状态，而不需要编写额外的代码来更新视图。\r\n\r\n2. **状态管理的复杂度**：\r\n   - Redux 是一个更加严格和规范的状态管理库，它提供了单一的状态树（Single State Tree）和明确的数据流程。虽然它的使用可能需要编写更多的代码，但也更加灵活和可控。\r\n   - MobX 相对来说更加灵活和简单，它不强制使用单一的状态树或特定的数据流程。开发者可以根据自己的喜好和需求来组织状态和数据流程。\r\n\r\n3. **性能和优化**：\r\n   - 由于 MobX 的响应式特性，它可以在状态发生变化时自动更新相关的组件，这样可以减少手动编写更新逻辑的工作。这使得 MobX 在某些情况下具有更好的性能和更少的重复代码。\r\n   - Redux 的不可变性和严格的数据流程可以帮助开发者更容易地进行状态管理和调试，但在某些情况下可能需要开发者手动进行性能优化。\r\n\r\n4. **社区和生态系统**：\r\n   - Redux 拥有庞大的社区和丰富的生态系统，有许多与之相关的中间件、工具和扩展。\r\n   - MobX 也有相当数量的用户和社区支持，但相对 Redux 而言规模较小，生态系统也相对较小。\r\n\r\n综上所述，Redux 更适合于需要严格数据流程和可预测性的大型应用程序，而 MobX 则更适合于快速开发和简化状态管理的小型到中型应用程序。选择哪一个取决于项目的需求、团队的偏好以及开发者对状态管理的理解和熟悉程度。",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "juvenile-spec",
+            "url": "https://github.com/juvenile-spec"
+          }
+        }
+      ]
     },
     "labels": {
       "nodes": [
@@ -15124,7 +15159,7 @@
       "nodes": [
         {
           "id": "MDEyOklzc3VlQ29tbWVudDY3MjkxMTU1OQ==",
-          "body": "TLS 握手的详细过程可参考下图：\r\n\r\n![](https://static.shanyue.tech/images/23-09-20/clipboard-1116.0ea7d3.webp)\r\n\r\n> 以上图片来自 [high-performance-browser](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)\r\n\r\n从 `wireshark` 抓包，也可以看到握手的详细流程，建议抓包加强理解，以下是抓包 `https://q.shanyue.tech` 时的握手流程\r\n\r\n通过 `curl -vvv --head` 来查看握手信息:\r\n\r\n``` bash\r\n$ curl -vvv --head  https://q.shanyue.tech\r\n*   Trying 111.6.180.235...\r\n* TCP_NODELAY set\r\n* Connected to q.shanyue.tech (111.6.180.235) port 443 (#0)\r\n* ALPN, offering h2\r\n* ALPN, offering http/1.1\r\n* successfully set certificate verify locations:\r\n*   CAfile: /etc/ssl/cert.pem\r\n  CApath: none\r\n* TLSv1.2 (OUT), TLS handshake, Client hello (1):\r\n* TLSv1.2 (IN), TLS handshake, Server hello (2):\r\n* TLSv1.2 (IN), TLS handshake, Certificate (11):\r\n* TLSv1.2 (IN), TLS handshake, Server key exchange (12):\r\n* TLSv1.2 (IN), TLS handshake, Server finished (14):\r\n* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):\r\n* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):\r\n* TLSv1.2 (OUT), TLS handshake, Finished (20):\r\n* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):\r\n* TLSv1.2 (IN), TLS handshake, Finished (20):\r\n* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256\r\n* ALPN, server accepted to use h2\r\n* Server certificate:\r\n*  subject: CN=q.shanyue.tech\r\n*  start date: Dec  2 00:00:00 2019 GMT\r\n*  expire date: Dec  1 12:00:00 2020 GMT\r\n*  subjectAltName: host \"q.shanyue.tech\" matched cert's \"q.shanyue.tech\"\r\n*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=Encryption Everywhere DV TLS CA - G1\r\n*  SSL certificate verify ok.\r\n* Using HTTP2, server supports multi-use\r\n* Connection state changed (HTTP/2 confirmed)\r\n* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0\r\n* Using Stream ID: 1 (easy handle 0x7f95ba80dc00)\r\n\r\n``` \r\n\r\n## 握手过程\r\n\r\n在 TLS 1.2 中，握手协议过程需要耗费两个 RTT，过程如下\r\n\r\n1. [OUT] Client Hello，客户端选出自身支持的 TLS 版本号、`cipher suites`、一个随机数、SessionId 传送给服务器端 (有可能可服用 Session)\r\n1. [IN] Server Hello，服务器端选出双方都支持的 TLS 版本，`cipher suite` 、一个随机数、SeesionId 给客户端\r\n1. [IN] Certificate，服务器端给客户端发送证书，用以身份验证及提供公钥\r\n1. [IN] Server Key Exchange，服务器端给客户端发送秘钥交换算法的一些参数\r\n1. [IN] Server Finished\r\n1. [OUT] Client Key Exchange，客户端给服务器端发送秘钥交换算法的一些参数，计算出预备主密钥 (pre master key)，作为随机数传递给服务器端 (这个随机数是安全的)。双方根据三个随机数生成对称加密中的秘钥\r\n1. [OUT] Change Cipher Spec，告知对方以后的消息将要使用TLS记录层协议进行加密\r\n1. [OUT] Finished，发送第一条加密的消息并完整性验证\r\n1. [IN] Change Cipher Spec，告知以后的消息将要使用TLS记录层协议进行加密\r\n1. [IN] Finished，发送第一条加密的消息并完整性验证\r\n\r\n## 相关链接\r\n\r\n+ [https握手流程详解](https://juejin.im/post/6844904135230390279#heading-10)\r\n+ [Chapter 4. Transport Layer Security (TLS)](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)",
+          "body": "TLS 握手的详细过程可参考下图：\r\n\r\n![](https://static.shanyue.tech/images/23-09-20/clipboard-1116.0ea7d3.webp)\r\n\r\n> 以上图片来自 [high-performance-browser](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)\r\n\r\n从 `wireshark` 抓包，也可以看到握手的详细流程，建议抓包加强理解，以下是抓包 `https://q.shanyue.tech` 时的握手流程\r\n\r\n通过 `curl -vvv --head` 来查看握手信息:\r\n\r\n``` bash\r\n$ curl -vvv --head  https://q.shanyue.tech\r\n*   Trying 111.6.180.235...\r\n* TCP_NODELAY set\r\n* Connected to q.shanyue.tech (111.6.180.235) port 443 (#0)\r\n* ALPN, offering h2\r\n* ALPN, offering http/1.1\r\n* successfully set certificate verify locations:\r\n*   CAfile: /etc/ssl/cert.pem\r\n  CApath: none\r\n* TLSv1.2 (OUT), TLS handshake, Client hello (1):\r\n* TLSv1.2 (IN), TLS handshake, Server hello (2):\r\n* TLSv1.2 (IN), TLS handshake, Certificate (11):\r\n* TLSv1.2 (IN), TLS handshake, Server key exchange (12):\r\n* TLSv1.2 (IN), TLS handshake, Server finished (14):\r\n* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):\r\n* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):\r\n* TLSv1.2 (OUT), TLS handshake, Finished (20):\r\n* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):\r\n* TLSv1.2 (IN), TLS handshake, Finished (20):\r\n* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256\r\n* ALPN, server accepted to use h2\r\n* Server certificate:\r\n*  subject: CN=q.shanyue.tech\r\n*  start date: Dec  2 00:00:00 2019 GMT\r\n*  expire date: Dec  1 12:00:00 2020 GMT\r\n*  subjectAltName: host \"q.shanyue.tech\" matched cert's \"q.shanyue.tech\"\r\n*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=Encryption Everywhere DV TLS CA - G1\r\n*  SSL certificate verify ok.\r\n* Using HTTP2, server supports multi-use\r\n* Connection state changed (HTTP/2 confirmed)\r\n* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0\r\n* Using Stream ID: 1 (easy handle 0x7f95ba80dc00)\r\n\r\n``` \r\n\r\n## 握手过程\r\n\r\n在 TLS 1.2 中，握手协议过程需要耗费两个 RTT，过程如下\r\n\r\n+ [OUT] Client Hello，客户端选出自身支持的 TLS 版本号、cipher suites、Client Random、SessionId 传送给服务器端 (有可能可复用 Session)\r\n+ [IN] Server Hello，服务器端选出双方都支持的 TLS 版本，cipher suite 、Server Random、SeesionId 给客户端\r\n+ [IN] Certificate，服务器端给客户端发送证书，用以身份验证及提供公钥\r\n+ [IN] Server Key Exchange，服务器端给客户端发送密钥交换算法的一些参数\r\n+ [IN] Server Finished\r\n+ [OUT] Client Key Exchange，客户端给服务器端发送密钥交换算法的一些参数，计算出预主密钥 (`pre master secret`)，使用密钥交换算法（一般是 ECDHE）传递给服务器端。双方根据（Client Random、Server Random、Pre Master Secret）三个随机数生成对称加密中的密钥（`master secret`）。（再根据 `master secret` 生成 `Session Keys`，包括 `Client MAC Key`、`Client Write Key`、`Server MAC Key`、`Server Write Key`。用以以后对的通信加密。）\r\n+ [OUT] Change Cipher Spec，告知以后的消息开始对称加密通信\r\n+ [OUT] Finished，加密消息并完整性验证，标志着握手阶段成功并结束（对握手消息使用 `Client Write Key` 加解密，并使用 `Client MAC Key` 进行完整性校验）\r\n+ [IN] Change Cipher Spec，告知以后的消息开始对称加密通信。此时服务器端通过密钥交换算法拿到 `pre master secret`，并根据三个随机数生成 `master secret`。\r\n+ [IN] Finished，加密消息并完整性验证，标志着握手阶段成功并结束\r\n\r\n> 注，对于（）内容在面试中可以忽略不答\r\n\r\n## 相关链接\r\n\r\n+ [https握手流程详解](https://juejin.im/post/6844904135230390279#heading-10)\r\n+ [Chapter 4. Transport Layer Security (TLS)](https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html)",
           "star": {
             "totalCount": 0
           },
@@ -15979,7 +16014,7 @@
           "id": "IC_kwDODQzyOs5aK0MD",
           "body": "```javascript\r\n// 利用hash\r\nconst map =new Map();\r\n[...document.querySelectorAll(\"*\")].forEach(item => {\r\n    const tagName = item.tagName.toLowerCase(); \r\n    map.set( tagName , map.has(tagName) ? map.get(tagName)+1 : 1);\r\n});\r\n```",
           "star": {
-            "totalCount": 1
+            "totalCount": 2
           },
           "author": {
             "login": "hatedMe",
@@ -16045,7 +16080,7 @@
           "id": "IC_kwDODQzyOs5rKpTb",
           "body": "`Object.entries($$('*').map(it => it.tagName.toLowerCase()).reduce((cntArr, tag) => { cntArr[tag] = cntArr[tag] ? cntArr[tag] + 1 : 1; return cntArr }, {})).reduce((x, y) => x[1] > y[1] ? x : y)`",
           "star": {
-            "totalCount": 0
+            "totalCount": 1
           },
           "author": {
             "login": "Si3ver",
@@ -20139,12 +20174,12 @@
     "id": "MDU6SXNzdWU4NzcxMzQ5MzI=",
     "number": 515,
     "title": "【Q505】JS 中基础数据类型有哪些",
-    "body": "",
+    "body": "追问：\r\n\r\n1. 如何判断某个值为基础数据类型，写一函数",
     "comments": {
       "nodes": [
         {
           "id": "MDEyOklzc3VlQ29tbWVudDg0ODM4MjI2OQ==",
-          "body": "七种，文档见 [基本数据类型 - MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/Primitive)\r\n\r\n+ number\r\n+ bigint: **这个常常会忽略，最新加入的**\r\n+ string\r\n+ undefined\r\n+ null\r\n+ symbol\r\n+ bool",
+          "body": "七种，文档见 [基本数据类型 - MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/Primitive)\r\n\r\n+ number\r\n+ bigint: **这个常常会忽略，最新加入的**\r\n+ string\r\n+ undefined\r\n+ null\r\n+ symbol\r\n+ bool\r\n\r\n关于如何判断基础数据类型，可以使用函数实现：\r\n\r\n``` js\r\nfunction isPrimitive(value) {\r\n  const type = typeof value;\r\n  return (\r\n    type === 'string'\r\n    || type === 'number'\r\n    || type === 'symbol'\r\n    || type === 'boolean'\r\n    || value == null\r\n  );\r\n}\r\n```\r\n\r\n或者使用排除法\r\n\r\n``` js\r\nfunction isPrimitive(value) {\r\n  return value == null || (typeof value !== 'function' && typeof value !== 'object');\r\n}\r\n```\r\n\r\n或者使用一点小技巧\r\n\r\n``` js\r\nfunction isPrimitive(value) {\r\n  return value !== Object(value)\r\n}\r\n```",
           "star": {
             "totalCount": 0
           },
@@ -20160,6 +20195,10 @@
         {
           "id": "MDU6TGFiZWwxNjUxNDAyMzE4",
           "name": "js"
+        },
+        {
+          "id": "MDU6TGFiZWwzMDU0MjAwNTE1",
+          "name": "code"
         }
       ]
     }
@@ -23371,8 +23410,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "enochzzz",
-            "url": "https://github.com/enochzzz"
+            "login": "yekezz",
+            "url": "https://github.com/yekezz"
           }
         }
       ]
@@ -25033,6 +25072,28 @@
           "author": {
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs53J8jK",
+          "body": "promise.all 或者 async await",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "juvenile-spec",
+            "url": "https://github.com/juvenile-spec"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs53J9MJ",
+          "body": "const fetchUser = (id) => {\r\n  return new Promise(resolve => {\r\n    setTimeout(() => {\r\n      console.log('Fetch: ', id)\r\n      resolve(id)\r\n    }, 5000)\r\n  })\r\n}\r\n\r\nconst cache = new Map(); // 使用 Map 替代对象\r\n\r\nconst cacheFetchUser = (id) => {\r\n  if (cache.has(id)) {\r\n    const { data, timestamp } = cache.get(id);\r\n    const currentTime = new Date().getTime();\r\n    const expirationTime = 60000; // 过期时间为 1 分钟\r\n    if (currentTime - timestamp < expirationTime) {\r\n      return Promise.resolve(data); // 返回缓存的数据\r\n    } else {\r\n      cache.delete(id); // 清除过期的缓存数据\r\n    }\r\n  }\r\n\r\n  const fetchData = fetchUser(id)\r\n    .then(data => {\r\n      cache.set(id, { data, timestamp: new Date().getTime() }); // 将数据存入缓存\r\n      return data;\r\n    });\r\n\r\n  cache.set(id, { data: fetchData, timestamp: new Date().getTime() }); // 将 Promise 存入缓存\r\n  return fetchData;\r\n}\r\n\r\n// 示例使用\r\ncacheFetchUser(3).then((id) => console.log(id));\r\ncacheFetchUser(3).then((id) => console.log(id));\r\ncacheFetchUser(3).then((id) => console.log(id));\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "juvenile-spec",
+            "url": "https://github.com/juvenile-spec"
           }
         }
       ]
@@ -30823,9 +30884,42 @@
       "nodes": [
         {
           "id": "IC_kwDODQzyOs5ch7Tl",
-          "body": "``` js\r\nconst batcher = (fn) => {\r\n  // todo batch logic\r\n  let options = []\r\n  let cache = undefined\r\n  return async (args) => {\r\n    options = [...options, ...args]\r\n    if (cache) {\r\n      return cache\r\n    }\r\n    const p = new Promise(async resolve => {\r\n      const result = await fn(options)\r\n      const map = result.reduce((acc, x, i) => {\r\n        const v = options[i]\r\n        acc[v] = x\r\n        return acc\r\n      }, {})\r\n      resolve(args.map(a => map[a]))\r\n    })\r\n    cache = p\r\n    return p\r\n  }\r\n}\r\n```",
+          "body": "在 [graphql/loader](https://github.com/graphql/dataloader/blob/main/src/index.js) 以及 [trpc](https://github.com/trpc/trpc/blob/next/packages/client/src/internals/dataLoader.ts#L41) 中均有关于 batch 的实现，意在提升性能，将多次 IO 合并为一次 IO\r\n\r\n其关键在于一次事件循环中的微任务队列存储所有的 batchKeys。\r\n\r\n[代码片段及执行结果见码上掘金](https://code.juejin.cn/pen/7342137519703588915)\r\n\r\n``` js\r\nconst batcher = (fn) => {\r\n  // todo batch logic\r\n  let allArgs = []\r\n  // 能够实现 batch 的关键所在\r\n  // 此处 fn(allArgs) 甚至可以实现为 fn([...new Set(allArgs)])，性能更好一些\r\n  const wait = Promise.resolve().then(() => fn(allArgs))\r\n\r\n  return async (args) => {\r\n    allArgs = [...allArgs, ...args]\r\n    const result = await wait\r\n\r\n    // allArgs 与 result 形成的一个 Map\r\n    // 借助于 lodash 可以更可读化地写成 Object.fromEntries(_.zip(allArgs, result))\r\n    const resultMap = result.reduce((acc, x, i) => {\r\n      const v = allArgs[i]\r\n      acc[v] = x\r\n      return acc\r\n    }, {})\r\n    return args.map(a => resultMap[a])\r\n  }\r\n}\r\n```",
           "star": {
-            "totalCount": 0
+            "totalCount": 2
+          },
+          "author": {
+            "login": "shfshanyue",
+            "url": "https://github.com/shfshanyue"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs51uC0n",
+          "body": "运行结果好像是输出 3 个 `[3, 5, 7]`，返回的 `promise` 中 `args` 应该都指向了第一次调用时传入的参数 ",
+          "star": {
+            "totalCount": 1
+          },
+          "author": {
+            "login": "MJWade96",
+            "url": "https://github.com/MJWade96"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs51uDS5",
+          "body": "网上看到了另一种解法：[SegmentFault](https://segmentfault.com/a/1190000039406198)",
+          "star": {
+            "totalCount": 1
+          },
+          "author": {
+            "login": "MJWade96",
+            "url": "https://github.com/MJWade96"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs51uu2b",
+          "body": "@MJWade96 已修复，并配上相应的注释、码上掘金的 Playground 以及相关源码参考。",
+          "star": {
+            "totalCount": 1
           },
           "author": {
             "login": "shfshanyue",
@@ -30839,6 +30933,10 @@
         {
           "id": "MDU6TGFiZWwxNjUxNDAyMzE4",
           "name": "js"
+        },
+        {
+          "id": "MDU6TGFiZWwzMDU0MjAwNTE1",
+          "name": "code"
         }
       ]
     }
@@ -30933,6 +31031,52 @@
           "name": "db"
         }
       ]
+    }
+  },
+  {
+    "id": "I_kwDODQzyOs6BOSt-",
+    "number": 806,
+    "title": "【Q749】React18 有哪些新特性",
+    "body": "",
+    "comments": {
+      "nodes": []
+    },
+    "labels": {
+      "nodes": [
+        {
+          "id": "MDU6TGFiZWwxNjU4MzQ3NDIy",
+          "name": "react"
+        }
+      ]
+    }
+  },
+  {
+    "id": "I_kwDODQzyOs6BOSy2",
+    "number": 807,
+    "title": "【Q750】React19 有哪些新特性",
+    "body": "",
+    "comments": {
+      "nodes": []
+    },
+    "labels": {
+      "nodes": [
+        {
+          "id": "MDU6TGFiZWwxNjU4MzQ3NDIy",
+          "name": "react"
+        }
+      ]
+    }
+  },
+  {
+    "id": "I_kwDODQzyOs6Ch12V",
+    "number": 808,
+    "title": "【Q752】实现 useDebouncedCallback",
+    "body": "类似 [useDebouncedCallback](https://github.com/xnimorz/use-debounce?tab=readme-ov-file#debounced-callbacks)\r\n\r\n示例如下\r\n\r\n``` js\r\n\r\nfunction Input() {\r\n  const [value, setValue] = useState('');\r\n\r\n  const handleChange = useDebouncedCallback(\r\n    (value) => {\r\n      setValue(value);\r\n    },\r\n    1000\r\n  );\r\n\r\n  return (\r\n    <div>\r\n      <input\r\n        onChange={(e) => handleChange(e.target.value)}\r\n      />\r\n      <p>{value}</p>\r\n    </div>\r\n  );\r\n}\r\n```",
+    "comments": {
+      "nodes": []
+    },
+    "labels": {
+      "nodes": []
     }
   }
 ]

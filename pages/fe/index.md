@@ -545,3 +545,5 @@
 + [【Q743】实现 batchFn 函数，可以批量执行函数](/fe/js/800)
 + [【Q474】在 react 中，以下父子组件的 useEffect/useLayoutEffect 顺序如何](/fe/react/802)
 + [【Q745】webpack 的打包流程是什么样的](/fe/webpack/803)
++ [【Q749】React18 有哪些新特性](/fe/react/806)
++ [【Q750】React19 有哪些新特性](/fe/react/807)
