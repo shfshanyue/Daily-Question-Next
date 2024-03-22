@@ -7,6 +7,10 @@ sidebarDepth: 4
 
 其中有一个高频问题是：我如何进行编程题目的练习？山月再次总结一份关于手写代码的练习路线。
 
+对于 LeetCode 题目，可以直接参考 [LeetCode 热题 100](https://leetcode.cn/studyplan/top-100-liked/)。
+
+对于其它手写代码，可以参考下图：
+
 ![前端手写代码](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f88684ccd899437f988661b41f9142f5~tplv-k3u1fbpfcp-watermark.image?)
 
 为了保证代码能够正常运行，调试和测试。
