@@ -35,7 +35,7 @@ async function main() {
   }, {
     concurrency: 30
   })
-  writeFileSync('./issuse-meta.json', JSON.stringify(items, null, 2))
+  writeFileSync('./issues-meta.json', JSON.stringify(items, null, 2))
 }
 
 main().then(o => console.log('OK')).catch(e => {

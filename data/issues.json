@@ -181,6 +181,17 @@
             "login": "zhengaimin",
             "url": "https://github.com/zhengaimin"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs54MW-A",
+          "body": "`getBoundingClientRect` with loading: https://codepen.io/justorez/pen/rNbmZwz\r\n```html\r\n<style>\r\n    body {\r\n        height: 100vh;\r\n    }\r\n    img {\r\n        display: block;\r\n        width: 600px;\r\n        margin-bottom: 10px;\r\n    }\r\n</style>\r\n<script type=\"module\">\r\n    import { throttle } from 'https://esm.sh/lodash-es'\r\n\r\n    const imgList = [\r\n        'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_1280.jpg',\r\n        'https://cdn.pixabay.com/photo/2018/03/06/22/57/portrait-3204843_960_720.jpg',\r\n        'https://cdn.pixabay.com/photo/2017/03/26/21/54/yoga-2176668_960_720.jpg',\r\n        'https://cdn.pixabay.com/photo/2017/08/07/16/39/girl-2605526_1280.jpg',\r\n        'https://cdn.pixabay.com/photo/2017/03/30/18/17/girl-2189247_960_720.jpg',\r\n        'https://cdn.pixabay.com/photo/2016/12/19/21/36/woman-1919143_960_720.jpg',\r\n        'https://cdn.pixabay.com/photo/2021/08/24/15/38/sand-6570980_960_720.jpg',\r\n        'https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_960_720.jpg',\r\n        'https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_960_720.jpg',\r\n        'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg'\r\n    ].map(url => {\r\n        const img = document.createElement('img')\r\n        img.src = 'https://www.icegif.com/wp-content/uploads/loading-icegif-1.gif'\r\n        img.dataset.src = url\r\n        document.body.append(img)\r\n        return img\r\n    })\r\n\r\n    const lazyLoad = throttle(() => {\r\n        for (const img of imgList) {\r\n            if (\r\n                img.getBoundingClientRect().top <\r\n                document.body.clientHeight\r\n            ) {\r\n                if (img.dataset.src) {\r\n                    img.src = img.dataset.src\r\n                }\r\n            }\r\n        }\r\n    }, 200)\r\n\r\n    setTimeout(lazyLoad, 1000) // 展示 loading 效果\r\n    document.addEventListener('scroll', lazyLoad)\r\n</script>\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "justorez",
+            "url": "https://github.com/justorez"
+          }
         }
       ]
     },
@@ -3313,7 +3324,7 @@
           "id": "MDEyOklzc3VlQ29tbWVudDU2OTM4MTUyOA==",
           "body": "我看过源码 没有写过",
           "star": {
-            "totalCount": 1
+            "totalCount": 2
           },
           "author": {
             "login": "wang120140",
@@ -8941,6 +8952,17 @@
           "author": {
             "login": "SageSanyue",
             "url": "https://github.com/SageSanyue"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs53vpYT",
+          "body": "> > @SageSanyue 直接用 `Array.prototype.some` 就简单多了\r\n> \r\n> 确实噢😯我完全没动我的zhu脑子:(\r\n> \r\n> ```\r\n> isPc() {\r\n>     var userAgentInfo = navigator.userAgent\r\n>     var Agents = new Array(\r\n>       'Android',\r\n>       'iPhone',\r\n>       'SymbianOS',\r\n>       'Windows Phone',\r\n>       'iPad',\r\n>       'iPod'\r\n>     )\r\n>     var flag = true\r\n>     flag = !Agents.some((ele) => {\r\n>         return userAgentInfo.indexOf(ele) > 0 \r\n>     })\r\n>     return flag\r\n>   }\r\n> ```\r\n\r\n是不是应该考虑 >= 0 或者 !==-1 会更好一点呢？",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "BonjourYY",
+            "url": "https://github.com/BonjourYY"
           }
         }
       ]
