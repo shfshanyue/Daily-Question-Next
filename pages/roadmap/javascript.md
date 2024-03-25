@@ -12,6 +12,8 @@ sidebarDepth: 4
 + [Object](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object)
 + [Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
+另外，对最新的 EcmaScript 特性，也需要了解一下，如 ES2021、ES2022、ES2023 等。
+
 ## API
 
 ### JS 中基本数据类型有哪些
