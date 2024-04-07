@@ -4945,7 +4945,7 @@
           "id": "MDEyOklzc3VlQ29tbWVudDcxNjI2NzE4MA==",
           "body": "> 比如 nginx 中的 etag 由 last_modified 与 content_length 组成，而 last_modified 又由 mtime 组成。\r\n> \r\n> 那Etag是怎么解决last_modified，当编辑文件却未更改文件时间的问题？\r\n\r\n1. 此时文件大小有可能发生更改，ETag 会改变\r\n1. 此时文件大小没有发生更改，ETag 不会改变。但这需要极其苛刻的条件：1s 内更改文件，并且保持文件大小不变。这种情况出现概率很低，因此忽略了",
           "star": {
-            "totalCount": 2
+            "totalCount": 1
           },
           "author": {
             "login": "shfshanyue",
@@ -10633,6 +10633,17 @@
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs54crb7",
+          "body": "这算是防君子不防小人么",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "HowGraceU",
+            "url": "https://github.com/HowGraceU"
+          }
         }
       ]
     },
@@ -16278,8 +16289,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "liting-yes",
-            "url": "https://github.com/liting-yes"
+            "login": "litingyes",
+            "url": "https://github.com/litingyes"
           }
         },
         {
@@ -20209,6 +20220,17 @@
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs55rOSq",
+          "body": "应该加上对bigint的判断吧\r\nfunction isPrimitive(value) {\r\n  const type = typeof value;\r\n  return (\r\n    type === 'string'\r\n    || type === 'number'\r\n    || type === 'symbol'\r\n    || type === 'boolean'\r\n    || type === 'bigint'\r\n    || value == null\r\n  );\r\n}",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "qwhatevera",
+            "url": "https://github.com/qwhatevera"
+          }
         }
       ]
     },
@@ -21829,6 +21851,17 @@
           "author": {
             "login": "shfshanyue",
             "url": "https://github.com/shfshanyue"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs5466z-",
+          "body": "\r\n\r\n\r\n\r\n\r\n\r\n\r\nexport default AnalysisList;\r\n浏览器中的 Cookie 包含以下字段：\r\n\r\n1、Name：Cookie 的名称。\r\n2、Value：Cookie 的值。\r\n3、Domain：Cookie 对应的域名。只有来自该域名的请求才会携带这个 Cookie。\r\n4、Path：Cookie 的路径。只有访问该路径的请求才会携带这个 Cookie。\r\n5、Expires/Max-Age：Cookie 的过期时间。如果设置了 Max-Age，Cookie 将在 Max-Age 秒后过期。如果设置了 Expires，Cookie 将在指定的日期/时间过期。\r\n6、Size：Cookie 的大小。\r\n7、HttpOnly：如果此字段被设置，那么通过 JavaScript 等客户端脚本将无法访问此 Cookie。这有助于防止跨站脚本攻击（XSS）。\r\n8、Secure：如果此字段被设置，那么这个 Cookie 只会被发送到 HTTPS 协议的服务器。\r\n9、SameSite：这个字段用于防止跨站请求伪造攻击（CSRF）。它有三个可能的值：Strict、Lax 和 None。如果设置为 Strict，Cookie 只会在同站请求中发送。如果设置为 Lax，Cookie 会在同站请求以及部分跨站请求中发送。如果设置为 None，Cookie 会在所有请求中发送。\r\n",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "xiaochena",
+            "url": "https://github.com/xiaochena"
           }
         }
       ]
@@ -24406,6 +24439,17 @@
             "login": "hwb2017",
             "url": "https://github.com/hwb2017"
           }
+        },
+        {
+          "id": "IC_kwDODQzyOs54qdBU",
+          "body": "```\r\nfunction replaceSubstring(str, start, end, replacement) {\r\n    const startstr = str.substring(0, start)\r\n    const endstr = str.substring(end+1)\r\n    return startstr + replacement + endstr\r\n}\r\n\r\nfunction countOfLetters(s) {\r\n    const flatObj = {}\r\n    function handle(slices) {\r\n        let left = 0;\r\n        let right = slices.length-1\r\n        let str = slices\r\n        while (left < right ) {\r\n            if (slices[left] === '(') {\r\n                while (left < right) {\r\n                    if (slices[right] === ')') {\r\n                        const res = handle(slices.slice(left+1, right))\r\n                        let num = Number(slices[right+1])\r\n                        if (!isNaN(num)) {\r\n                            str = replaceSubstring(slices, left, right+1, res.repeat(num))\r\n                        }\r\n                        return str\r\n                    } else {\r\n                        right--\r\n                    }\r\n                }\r\n            } else {\r\n                left++;\r\n            }\r\n        }\r\n\r\n        return str\r\n    }\r\n    const flated = handle(s)\r\n    for (let index=0; index<flated.length; index++) {\r\n        const char = flated[index]\r\n        const nextChar = flated[index+1]\r\n        if (char.match(/\\d/)) {\r\n            continue\r\n        }\r\n        console.log(char, nextChar)\r\n        if (!isNaN(Number(nextChar))) {\r\n            flatObj[char] = flatObj[char] ? flatObj[char] + Number(nextChar) : Number(nextChar)\r\n        } else {\r\n            flatObj[char] = flatObj[char] ? flatObj[char] + 1 : 1\r\n        }\r\n    }\r\n    return flatObj\r\n}\r\n\r\nconsole.log(countOfLetters(\"C4(A(A3B)2)2\")) // { A: 14, B: 4, C: 4 }\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "JamiLanister",
+            "url": "https://github.com/JamiLanister"
+          }
         }
       ]
     },
@@ -26396,8 +26440,8 @@
             "totalCount": 0
           },
           "author": {
-            "login": "okyokuto",
-            "url": "https://github.com/okyokuto"
+            "login": "1wkk",
+            "url": "https://github.com/1wkk"
           }
         },
         {
@@ -27845,6 +27889,17 @@
           "author": {
             "login": "shen076",
             "url": "https://github.com/shen076"
+          }
+        },
+        {
+          "id": "IC_kwDODQzyOs54t8Sp",
+          "body": "```\r\nfunction fun(arr, n, sum) {\r\n    let ans = []\r\n    let combination = []\r\n    function handle(start, array) {\r\n        ans.push([...array]);\r\n        for (let i=start; i<arr.length; i++) {\r\n            array.push(arr[i])\r\n            handle(i+1, array)\r\n            array.pop()\r\n        }\r\n    }\r\n    handle(0, [])\r\n\r\n    function add(list) {\r\n        return list.reduce((prev,cur) => prev+cur, 0)\r\n    }\r\n    for (let key of ans) {\r\n        if (key.length === n && add(key) === sum) {\r\n            combination.push([...key])\r\n        }\r\n    }\r\n    return combination\r\n}\r\n\r\n\r\n\r\n\r\nconsole.log(fun([2,3,6, -1,7,-2,9], 2, 5))\r\n```",
+          "star": {
+            "totalCount": 0
+          },
+          "author": {
+            "login": "JamiLanister",
+            "url": "https://github.com/JamiLanister"
           }
         }
       ]
@@ -31099,6 +31154,74 @@
     },
     "labels": {
       "nodes": []
+    }
+  },
+  {
+    "id": "I_kwDODQzyOs6EGCEB",
+    "number": 809,
+    "title": "【Q753】你是如何学习前端的",
+    "body": "",
+    "comments": {
+      "nodes": []
+    },
+    "labels": {
+      "nodes": [
+        {
+          "id": "MDU6TGFiZWwxNjUxNDAyMzEx",
+          "name": "open"
+        }
+      ]
+    }
+  },
+  {
+    "id": "I_kwDODQzyOs6Ek1jw",
+    "number": 810,
+    "title": "【Q754】实现 LazyMan",
+    "body": "``` js\r\nLazyMan('Hank')\r\n// 输出：\r\n// Hi!This is Hank!\r\n\r\n\r\nLazyMan('Hank').sleep(10).eat('dinner')\r\n// 输出：\r\n// Hi! This is Hank!\r\n// 等待10秒..\r\n// Wake up after 10\r\n// Eat dinner~\r\n\r\n\r\nLazyMan('Hank').eat('dinner').eat('supper')\r\n// 输出：\r\n// Hi This is Hank!\r\n// Eat dinner~\r\n// Eat supper~\r\n\r\n\r\nLazyMan('Hank').sleepFirst(5).eat('supper')\r\n// 输出：\r\n// 等待5秒..\r\n// Wake up after 5\r\n// Hi This is Hank!\r\n// Eat supper\r\n```",
+    "comments": {
+      "nodes": []
+    },
+    "labels": {
+      "nodes": [
+        {
+          "id": "MDU6TGFiZWwzMDU0MjAwNTE1",
+          "name": "code"
+        }
+      ]
+    }
+  },
+  {
+    "id": "I_kwDODQzyOs6E3DLt",
+    "number": 811,
+    "title": "【Q755】简述 WebWorker API",
+    "body": "1. 如何使用 worker\r\n2. worker 与主线程是如何通信的\r\n3. 在 worker 中进行的工作有哪些限制",
+    "comments": {
+      "nodes": []
+    },
+    "labels": {
+      "nodes": [
+        {
+          "id": "MDU6TGFiZWwxNzY5MDg5MzQ2",
+          "name": "dom"
+        }
+      ]
+    }
+  },
+  {
+    "id": "I_kwDODQzyOs6E3csL",
+    "number": 812,
+    "title": "【Q756】Promise.race 与 Promise.any",
+    "body": "简介二者区别，以及使用场景",
+    "comments": {
+      "nodes": []
+    },
+    "labels": {
+      "nodes": [
+        {
+          "id": "MDU6TGFiZWwxNjUxNDAyMzE4",
+          "name": "js"
+        }
+      ]
     }
   }
 ]
