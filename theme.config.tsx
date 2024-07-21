@@ -20,12 +20,18 @@ export default {
     //     Baidu Comate，百度自研集成在 VSCode 中使用的编码辅助工具，目前可免费试用，点击查看 →
     //   </a>
     // ),
-    key: 'tongyi',
+    // key: 'tongyi',
+    // text: (
+    //   <a href="https://developer.aliyun.com/topic/lingma/activities/202403?taskCode=14508&recordId=7a6665535809acb96955e0ddd5179112#/?utm_content=m_fission_1" target="_blank">
+    //     通义灵码，阿里开发的 Code Copilot，现在注册可免费领取 AI 盲盒，如iPhone15、机械键盘、双肩包等。点击查看 →
+    //   </a>
+    // ),
+    key: 'cv.devtool',
     text: (
-      <a href="https://developer.aliyun.com/topic/lingma/activities/202403?taskCode=14508&recordId=7a6665535809acb96955e0ddd5179112#/?utm_content=m_fission_1" target="_blank">
-        通义灵码，阿里开发的 Code Copilot，现在注册可免费领取 AI 盲盒，如iPhone15、机械键盘、双肩包等。点击查看 →
+      <a href="https://cv.devtool.tech" target="_blank">
+        一纸简历，通过 AI 更好地创建一份简历，点击查看 →
       </a>
-    ),
+    )
   },
   sidebar: {
     titleComponent({ title, type }) {
@@ -102,7 +108,7 @@ export default {
         <meta httpEquiv="Content-Language" content="en" />
         <meta
           name="description"
-          content="Make beautiful websites with Next.js & MDX."
+          content="大厂面试每日一题，每天五分钟，准备大厂中"
         />
         <meta
           name="og:title"
