@@ -26,10 +26,10 @@ export default {
     //     通义灵码，阿里开发的 Code Copilot，现在注册可免费领取 AI 盲盒，如iPhone15、机械键盘、双肩包等。点击查看 →
     //   </a>
     // ),
-    key: 'cv.devtool',
+    key: 'marscode',
     text: (
-      <a href="https://cv.devtool.tech" target="_blank">
-        一纸简历，通过 AI 更好地创建一份简历，点击查看 →
+      <a href="https://zjsms.com/iBnEyfxP/" target="_blank">
+        豆包 MarsCode，使用 AI 辅助面试与编程，提高学习与工作效率。
       </a>
     )
   },
