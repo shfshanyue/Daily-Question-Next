@@ -29,7 +29,7 @@ export default {
     key: 'marscode',
     text: (
       <a href="https://zjsms.com/iBnEyfxP/" target="_blank">
-        豆包 MarsCode，使用 AI 辅助面试与编程，提高学习与工作效率。
+        点击加入字节豆包 MarsCode 合伙人，免费领京东卡🎁，那万元现金💰，点击查看 → 
       </a>
     )
   },
