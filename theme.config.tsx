@@ -90,14 +90,6 @@ const config: DocsThemeConfig = {
   editLink: {
     component: null
   },
-  useNextSeoProps() {
-    const { asPath } = useRouter()
-    if (asPath !== '/') {
-      return {
-        titleTemplate: '%s – 大厂面试每日一题'
-      }
-    }
-  },
   head: function useHead() {
     const { title } = useConfig()
     const { route } = useRouter()

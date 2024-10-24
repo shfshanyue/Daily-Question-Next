@@ -31,6 +31,11 @@ const config = {
         permanent: true
       },
       {
+        source: '/server/%E7%88%AC%E8%99%AB/:slug*',
+        destination: '/server/crawler/:slug*', // Matched parameters can be used in the destination
+        permanent: true
+      },
+      {
         source: '/:slug*.html',
         destination: '/:slug*', // Matched parameters can be used in the destination
         permanent: true

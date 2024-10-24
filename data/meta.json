@@ -21,7 +21,7 @@
       "top n",
       "数据"
     ],
-    "description": "一个学校中的每个学生属于一个班级，如何获取每个班的前三名\n\n假设有学生表 student(id, score, class_id)，score 代表分数，class_id 代表班级，如何写出 SQL 取每个班级分数前三名\n\n通过一个自连接可以获取到"
+    "description": "一个学校中的每个学生属于一个班级，如何获取每个班的前三名    假设有学生表 student(id, score, class_id)，score 代表分数，class_id 代表班级，如何写出 SQL 取每个班级分数前三名    通过一个自连接可以获取到"
   },
   "10": {
     "number": 10,
@@ -326,7 +326,7 @@
       "域名",
       "IP"
     ],
-    "description": "什么是 CNAME 记录和 A 记录\n\nCNAME：域名  -> 域名\nA：域名 -> IP"
+    "description": "什么是 CNAME 记录和 A 记录    CNAME：域名  -> 域名  A：域名 -> IP"
   },
   "89": {
     "number": 89,
@@ -527,7 +527,7 @@
       "Load Balance",
       "多进程共享端口"
     ],
-    "description": "Node 中 cluster 的原理是什么。1. fork 子进程\n2. Load Balance\n3. 多进程共享端口。相关文章：Node 官方文档: cluster，深入浅出 node cluster，Node.js进阶：cluster模块深入剖析。"
+    "description": "Node 中 cluster 的原理是什么。1. fork 子进程  2. Load Balance  3. 多进程共享端口。相关文章：Node 官方文档: cluster，深入浅出 node cluster，Node.js进阶：cluster模块深入剖析。"
   },
   "143": {
     "number": 143,
@@ -575,7 +575,7 @@
       "localStorage",
       "浏览器环境"
     ],
-    "description": "如果使用 SSR，可以在 created/componentWillMount 中访问 localStorage 吗\n\n不可以，created/componentWillMount 时，还未挂载，代码仍然在服务器中执行，此时没有浏览器环境，因此此时访问 localStorage 将会报错"
+    "description": "如果使用 SSR，可以在 created/componentWillMount 中访问 localStorage 吗    不可以，created/componentWillMount 时，还未挂载，代码仍然在服务器中执行，此时没有浏览器环境，因此此时访问 localStorage 将会报错"
   },
   "149": {
     "number": 149,
@@ -635,7 +635,7 @@
       "测试用例数量",
       "维护"
     ],
-    "description": "如何进行代码质量检测\n\n圈复杂度(Cyclomatic complexity)描写了代码的复杂度，可以理解为覆盖代码所有场景所需要的最少测试用例数量。CC 越高，代码则越不好维护"
+    "description": "如何进行代码质量检测    圈复杂度(Cyclomatic complexity)描写了代码的复杂度，可以理解为覆盖代码所有场景所需要的最少测试用例数量。CC 越高，代码则越不好维护"
   },
   "161": {
     "number": 161,
@@ -731,7 +731,7 @@
       "灵活",
       "JS 控制"
     ],
-    "description": "有没有使用过 css variable，它解决了哪些问题\n\n可在运行时控制 CSS 逻辑，与 less/sass 相比，更加灵活，因为它很容易通过 JS 来控制。"
+    "description": "有没有使用过 css variable，它解决了哪些问题    可在运行时控制 CSS 逻辑，与 less/sass 相比，更加灵活，因为它很容易通过 JS 来控制。"
   },
   "186": {
     "number": 186,
@@ -742,7 +742,7 @@
       "流行",
       "方案"
     ],
-    "description": "谈谈你对 styled-component 的看法\n\n最为流行的 CSS-in-JS 方案"
+    "description": "谈谈你对 styled-component 的看法    最为流行的 CSS-in-JS 方案"
   },
   "187": {
     "number": 187,
@@ -798,7 +798,7 @@
       "undefined",
       "null"
     ],
-    "description": "`?.` 操作符，可以嵌套获取对象的属性值。通过获取对象属性获得的值可能是 undefined 或 null 时，可选链操作符提供了一种方法来简化被连接对象的值访问。"
+    "description": "?. 操作符，可以嵌套获取对象的属性值。通过获取对象属性获得的值可能是 undefined 或 null 时，可选链操作符提供了一种方法来简化被连接对象的值访问。"
   },
   "214": {
     "number": 214,
@@ -880,7 +880,7 @@
       "Promise",
       "subscription"
     ],
-    "description": "根据文档及 ts 的提示来看，useEffect 的回调参数返回的是一个清除副作用的 clean-up 函数。因此无法返回 Promise，更无法使用 async/await\n\n此时可以选择再包装一层 async 函数，置于 useEffect 的回调函数中，变相使用 async/await"
+    "description": "根据文档及 ts 的提示来看，useEffect 的回调参数返回的是一个清除副作用的 clean-up 函数。因此无法返回 Promise，更无法使用 async/await    此时可以选择再包装一层 async 函数，置于 useEffect 的回调函数中，变相使用 async/await"
   },
   "240": {
     "number": 240,
@@ -1031,7 +1031,7 @@
       "代表",
       "意思"
     ],
-    "description": "`X-Forwarded-For` 被反向代理器生成，如 nginx，traefik 等，一般用作标识客户端真实的 IP 地址，目前已成为事实上的标准。"
+    "description": "X-Forwarded-For 被反向代理器生成，如 nginx，traefik 等，一般用作标识客户端真实的 IP 地址，目前已成为事实上的标准。"
   },
   "289": {
     "number": 289,
@@ -1055,7 +1055,7 @@
       "小顶堆",
       "堆化"
     ],
-    "description": "如何求数组中的 TOP k\n求数组中的前 N 个最大的数\n\n1. 取数组中前 k 个数做小顶堆，堆化\n1. 数组中的其它数逐一与堆顶元素比较，若大于堆顶元素，则插入该数\n\n时间复杂度 O(nlg(k))"
+    "description": "如何求数组中的 TOP k  求数组中的前 N 个最大的数    1. 取数组中前 k 个数做小顶堆，堆化  1. 数组中的其它数逐一与堆顶元素比较，若大于堆顶元素，则插入该数    时间复杂度 O(nlg(k))"
   },
   "293": {
     "number": 293,
@@ -1174,7 +1174,7 @@
       "兄弟元素",
       "随后"
     ],
-    "description": "+ `+` 选择器匹配紧邻的兄弟元素\n+ `~` 选择器匹配随后的所有兄弟元素"
+    "description": "+ + 选择器匹配紧邻的兄弟元素  + ~ 选择器匹配随后的所有兄弟元素"
   },
   "337": {
     "number": 337,
@@ -1282,7 +1282,7 @@
       "区别",
       "迭代"
     ],
-    "description": "什么是 Iterable 对象，与 Array 有什么区别\n\n实现了 [Symbol.iterator] 属性的对象即是 Iterable 对象，然后可以使用操作符 for...of 进行迭代\n\n详细参考 <https://javascript.info/iterable>"
+    "description": "什么是 Iterable 对象，与 Array 有什么区别    实现了 [Symbol.iterator] 属性的对象即是 Iterable 对象，然后可以使用操作符 for...of 进行迭代    详细参考 <https://javascript.info/iterable>"
   },
   "361": {
     "number": 361,
@@ -1294,7 +1294,7 @@
       "全量替换",
       "特殊字符"
     ],
-    "description": "两种办法\n\n+ str.split('foo').join('bar')\n+ str.replaceAll('foo', 'bar')，在 ESNext 中，目前支持性不好"
+    "description": "两种办法    + str.split('foo').join('bar')  + str.replaceAll('foo', 'bar')，在 ESNext 中，目前支持性不好"
   },
   "366": {
     "number": 366,
@@ -1390,7 +1390,7 @@
       "RFC 8446",
       "ClientHello"
     ],
-    "description": "握手时间从以前的 2RTT 缩短到 1RTT，通过 Pre shared-key 减少了单独的 ServerKeyExchange 与 ClientKeyExchange 消耗的一个 RTT\n0-RTT Resumption"
+    "description": "握手时间从以前的 2RTT 缩短到 1RTT，通过 Pre shared-key 减少了单独的 ServerKeyExchange 与 ClientKeyExchange 消耗的一个 RTT  0-RTT Resumption"
   },
   "405": {
     "number": 405,
@@ -1694,7 +1694,7 @@
       "button",
       "checkbox"
     ],
-    "description": "HTML 中的 input 标签有哪些 type\n\nbutton\n没有默认行为的按钮，上面显示 value 属性的值，默认为空。\n\ncheckbox\n复选框，可设为选中或未选中。"
+    "description": "HTML 中的 input 标签有哪些 type    button  没有默认行为的按钮，上面显示 value 属性的值，默认为空。    checkbox  复选框，可设为选中或未选中。"
   },
   "479": {
     "number": 479,
@@ -1776,7 +1776,7 @@
       "renderToString",
       "hydrate"
     ],
-    "description": "什么是服务器渲染 (SSR)\n\n1. renderToString\n1. hydrate"
+    "description": "什么是服务器渲染 (SSR)    1. renderToString  1. hydrate"
   },
   "515": {
     "number": 515,
@@ -1833,7 +1833,7 @@
       "Generator",
       "自动执行器"
     ],
-    "description": "有没有使用过 async/await，他们的原理是什么\n\n原理: 一个 Generator 与一个自动执行器"
+    "description": "有没有使用过 async/await，他们的原理是什么    原理: 一个 Generator 与一个自动执行器"
   },
   "527": {
     "number": 527,
@@ -1948,7 +1948,7 @@
       "应用",
       "块级格式化上下文"
     ],
-    "description": "什么是 BFC\n它是如何生成的\n它有什么作用及应用\n块级格式化上下文，Block Formatting Context"
+    "description": "什么是 BFC  它是如何生成的  它有什么作用及应用  块级格式化上下文，Block Formatting Context"
   },
   "547": {
     "number": 547,
@@ -2091,7 +2091,7 @@
       "实现",
       "下载量"
     ],
-    "description": "如何判断某一个值是数组\n\n完美实现一个月下载量超过一个亿的包: isarray\n\njs\nconst isArray = Array.isArray || list => ({}).toString.call(list) === '[object Array]'"
+    "description": "如何判断某一个值是数组    完美实现一个月下载量超过一个亿的包: isarray    js  const isArray = Array.isArray || list => ({}).toString.call(list) === '[object Array]'"
   },
   "567": {
     "number": 567,
@@ -2172,7 +2172,7 @@
       "引用对象",
       "基础数据类型"
     ],
-    "description": "WeakMap 与垃圾回收有何关系\n\nWeakMap 与 Map 有亮点不同\n\n1. 键值只能为引用对象，无法使用基础数据类型\n2. 弱引用，无法枚举，因此无 .entries() 方法"
+    "description": "WeakMap 与垃圾回收有何关系    WeakMap 与 Map 有亮点不同    1. 键值只能为引用对象，无法使用基础数据类型  2. 弱引用，无法枚举，因此无 .entries() 方法"
   },
   "578": {
     "number": 578,
@@ -2251,7 +2251,7 @@
       "F",
       "a"
     ],
-    "description": "关于 new，判断以下代码输出\n\nfunction F () {\n  this.a = 3;\n  return {\n    a: 4;\n  }\n}\n\nconst f = new F();\nconsole.log(f.a);\n\n4"
+    "description": "关于 new，判断以下代码输出    function F () {    this.a = 3;    return {      a: 4;    }  }    const f = new F();  console.log(f.a);    4"
   },
   "592": {
     "number": 592,
@@ -2681,7 +2681,7 @@
       "Reflect.ownKeys",
       "Object.keys"
     ],
-    "description": "如何遍历一个对象\n\n1. Reflect.ownKeys({ a: 3, b: 4})\n2. Object.keys({ a: 3, b: 4 })"
+    "description": "如何遍历一个对象    1. Reflect.ownKeys({ a: 3, b: 4})  2. Object.keys({ a: 3, b: 4 })"
   },
   "705": {
     "number": 705,
@@ -2781,7 +2781,7 @@
       "库",
       "挖矿"
     ],
-    "description": "如何检测出你们安装的依赖是否安全\n\n如何确保所有 npm install 的依赖都是安全的？\n\n当有一个库偷偷在你的笔记本后台挖矿怎么办？\n\n比如，不久前一个周下载量超过八百万的库被侵入，它在你的笔记本运行时会偷偷挖矿。"
+    "description": "如何检测出你们安装的依赖是否安全    如何确保所有 npm install 的依赖都是安全的？    当有一个库偷偷在你的笔记本后台挖矿怎么办？    比如，不久前一个周下载量超过八百万的库被侵入，它在你的笔记本运行时会偷偷挖矿。"
   },
   "746": {
     "number": 746,
