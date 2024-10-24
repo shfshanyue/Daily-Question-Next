@@ -1,5 +1,6 @@
-FROM node:18-alpine AS base
-RUN npm i -g pnpm
+FROM node:20-alpine AS base
+# 启用 corepack
+RUN corepack enable
 
 # Install dependencies only when needed
 FROM base AS deps

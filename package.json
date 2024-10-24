@@ -9,6 +9,7 @@
     "type": "git",
     "url": "https://github.com/shfshanyue/next-app"
   },
+  "packageManager": "pnpm@9.12.2",
   "scripts": {
     "dev": "next",
     "build": "NODE_OPTIONS=--max-old-space-size=16384 next build",
@@ -66,6 +67,5 @@
   },
   "devDependencies": {
     "@types/prettier": "^2.7.3"
-  },
-  "packageManager": "pnpm@8.6.11"
+  }
 }
