@@ -5,7 +5,9 @@ import { useRouter } from 'next/router'
 const config: DocsThemeConfig = {
   project: {
   },
-  primaryHue: 25,
+  color: {
+    hue: 25
+  },
   logo: (
     <>
       <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
@@ -27,24 +29,24 @@ const config: DocsThemeConfig = {
     //   </a>
     // ),
     key: 'marscode',
-    text: (
+    content: (
       <a href="https://zjsms.com/iBnEyfxP/" target="_blank">
-        点击加入字节豆包 MarsCode 合伙人，免费领京东卡🎁，那万元现金💰，点击查看 → 
+        点击加入字节豆包 MarsCode 合伙人，免费领京东卡🎁，拿万元现金💰，点击查看 → 
       </a>
     )
   },
   sidebar: {
-    titleComponent({ title, type }) {
-      if (type === 'separator') {
-        return <span className="cursor-default">{title}</span>
-      }
-      return <>{title}</>
-    },
+    // titleComponent({ title, type }) {
+    //   if (type === 'separator') {
+    //     return <span className="cursor-default">{title}</span>
+    //   }
+    //   return <>{title}</>
+    // },
     defaultMenuCollapseLevel: 1,
     toggleButton: true
   },
   footer: {
-    text: <div className="grid w-full grid-cols-3">
+    content: <div className="grid w-full grid-cols-3">
       <div>
         <div className="text-xl">大厂面试每日一题</div>
         <div className="mt-4">勤学如春起之苗，不见其增，日有所长。</div>
@@ -86,7 +88,7 @@ const config: DocsThemeConfig = {
     content: null
   },
   editLink: {
-    text: null
+    component: null
   },
   useNextSeoProps() {
     const { asPath } = useRouter()
