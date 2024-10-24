@@ -1,5 +1,6 @@
-FROM node:20-alpine AS base
+FROM docker.m.daocloud.io/node:20-alpine
 # 启用 corepack
+ENV COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
 RUN corepack enable
 
 # Install dependencies only when needed
