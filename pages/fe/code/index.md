@@ -62,3 +62,4 @@
 + [【Q701】实现函数 promisify，把回调函数改成 promise 形式](code/723)
 + [【Q747】如何实现一个 omit/omitBy 函数](code/793)
 + [【Q743】实现 batchFn 函数，可以批量执行函数](code/800)
++ [【Q754】实现 LazyMan](code/810)

@@ -58,6 +58,7 @@
   },
   {
     "name": "爬虫",
+    "alias": "爬虫",
     "group": "server"
   },
   {

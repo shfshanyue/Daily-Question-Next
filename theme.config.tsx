@@ -2,7 +2,7 @@ import type { DocsThemeConfig} from 'nextra-theme-docs';
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
-export default {
+const config: DocsThemeConfig = {
   project: {
   },
   primaryHue: 25,
@@ -130,7 +130,6 @@ export default {
       </>
     )
   },
-  // search: {
-  //   component: false
-  // }
-} as DocsThemeConfig
+}
+
+export default config

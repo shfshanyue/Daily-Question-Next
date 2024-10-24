@@ -24,3 +24,4 @@
 + [【Q480】你最喜欢的三个 js 库是什么](/open/open/488)
 + [【Q618】列举 Number、String、Array、Object、Promise 有哪些 API](/open/open/636)
 + [【Q636】你们项目中使用了哪些依赖/第三方库](/open/open/654)
++ [【Q753】你是如何学习前端的](/open/open/809)

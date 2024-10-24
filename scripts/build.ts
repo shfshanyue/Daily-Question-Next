@@ -73,9 +73,17 @@ function generateCatagoryReadme (group: string, issues: Issue[]) {
   const labels = LABELS.filter(x => x.group === group)
   const meta = {
     index: '汇总',
-    ...Object.fromEntries(labels.map(label => [label.name === '前端工程化' ? 'engineering' : label.name, label.alias || label.name]))
+    ...Object.fromEntries(labels.map(label => [
+      label.name === '前端工程化' ? 'engineering' : 
+      label.name === '爬虫' ? 'crawler' : 
+      label.name, 
+      label.alias || label.name
+    ]))
   }
-  fs.writeFileSync(path.resolve('pages', group, '_meta.json'), JSON.stringify(meta, null, 2))
+
+  // Update this line to use _meta.ts instead of _meta.json
+  const metaContent = `export default ${JSON.stringify(meta, null, 2)}`
+  fs.writeFileSync(path.resolve('pages', group, '_meta.ts'), metaContent)
 }
 
 function generateLabelReademe (label: any, issues: Issue[]) {
@@ -83,7 +91,7 @@ function generateLabelReademe (label: any, issues: Issue[]) {
   const currentIssues = issues.filter(x => {
     return x.labels.nodes.some(l => label.name === l.name)
   })
-  const name = label.name === '前端工程化' ? 'engineering' : label.name
+  const name = label.name === '前端工程化' ? 'engineering' : label.name === '爬虫' ? 'crawler' : label.name
   const content = currentIssues.map(issue => {
     return `+ [${issue.title}](${name}/${issue.number})`
   }).join('\n')
@@ -95,7 +103,10 @@ function generateLabelReademe (label: any, issues: Issue[]) {
     index: '汇总',
     ...Object.fromEntries(currentIssues.map(issue => [issue.number, issue.title]))
   }
-  fs.writeFileSync(path.resolve('pages', label.group, name, '_meta.json'), JSON.stringify(meta, null, 2))
+  
+  // Update this line to use _meta.ts instead of _meta.json
+  const metaContent = `export default ${JSON.stringify(meta, null, 2)}`
+  fs.writeFileSync(path.resolve('pages', label.group, name, '_meta.ts'), metaContent)
 }
 
 function generateDir () {
@@ -111,7 +122,7 @@ function generateDir () {
   // 创建目录
   for (const label of LABELS) {
     // 示例：pages/fe/ts
-    const d = path.resolve(dir, 'pages', label.group, label.name === '前端工程化' ? 'engineering' : label.name)
+    const d = path.resolve(dir, 'pages', label.group, label.name === '前端工程化' ? 'engineering' : label.name === '爬虫' ? 'crawler' : label.name)
     if (!fs.existsSync(d)) {
       fs.mkdirSync(d, {
         recursive: true
@@ -141,7 +152,7 @@ async function generateMd () {
   for (const issue of issues) {
     const md = generateIssueMd(issue)
     for (const label of issue.labels.nodes) {
-      const name = label.name === '前端工程化' ? 'engineering' : label.name
+      const name = label.name === '前端工程化' ? 'engineering' : label.name === '爬虫' ? 'crawler' : label.name
       const group = labels[label.name].group
       files.push([path.resolve(dir, 'pages', group, name, `${issue.number}.md`), md])
     }
