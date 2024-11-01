@@ -1,3 +1,8 @@
+---
+title: 'HTTP 高频面试题整理 - 前端面试路线图'
+description: '系统整理前端面试常见的HTTP面试题，包括HTTP状态码、报文、缓存、跨域、HTTPS等核心知识点，助你轻松应对大厂技术面试中的HTTP相关问题'
+---
+
 # 面试大厂，这些 HTTP 面试题要掌握
 
 可根据 [HTTP 文档](https://developer.mozilla.org/zh-CN/docs/Web/HTTP) 进行学习。

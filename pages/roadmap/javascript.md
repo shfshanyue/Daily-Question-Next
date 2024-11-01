@@ -1,5 +1,7 @@
 ---
 sidebarDepth: 4
+title: 'JavaScript 高频面试题整理 - 前端面试路线图'
+description: '系统整理前端面试常见的JavaScript面试题，包括ES API、lodash API、编程逻辑题、算法与数据结构等核心知识点，助你轻松应对大厂技术面试中的JavaScript相关问题'
 ---
 
 # 面试大厂，这些 JavaScript 问题一定要掌握

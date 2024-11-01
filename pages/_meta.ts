@@ -112,37 +112,37 @@ export default {
     title: '一纸简历🔥',
     newWindow: true
   },
-  coze: {
-    title: 'AI Bot',
-    type: 'menu',
-    items: {
-      comate: {
-        href: 'https://comate.baidu.com/?inviteCode=hw7jki0p',
-        title: 'Baidu Comate',
-        newWindow: true
-      },
-      tongyi: {
-        href: 'https://developer.aliyun.com/topic/lingma/activities/202403?taskCode=14508&recordId=7a6665535809acb96955e0ddd5179112#/?utm_content=m_fission_1',
-        title: '通义灵码',
-        newWindow: true
-      },
-      coze: {
-        href: 'https://www.coze.cn/store/bot/7338902096575692815?bid=MDQEENnABjuSZsA3UimneFfVy2gEHsCt7MkXCLQVWm5HTOqB5K8qdIzn32UA8JX48eDgowQA&share=1&from=others',
-        title: '阿狸 P7 候选人（扣子）',
-        newWindow: true
-      },
-      doubao: {
-        href: 'https://www.doubao.com/share?botId=7338758967289724968',
-        title: '阿狸 P7 候选人（豆包）',
-        newWindow: true
-      },
-      cici: {
-        href: 'https://www.ciciai.com/share?botId=7339071191707320327',
-        title: '阿狸 P7 候选人（Cici）',
-        newWindow: true
-      }
-    }
-  },
+  // coze: {
+  //   title: 'AI Bot',
+  //   type: 'menu',
+  //   items: {
+  //     comate: {
+  //       href: 'https://comate.baidu.com/?inviteCode=hw7jki0p',
+  //       title: 'Baidu Comate',
+  //       newWindow: true
+  //     },
+  //     tongyi: {
+  //       href: 'https://developer.aliyun.com/topic/lingma/activities/202403?taskCode=14508&recordId=7a6665535809acb96955e0ddd5179112#/?utm_content=m_fission_1',
+  //       title: '通义灵码',
+  //       newWindow: true
+  //     },
+  //     coze: {
+  //       href: 'https://www.coze.cn/store/bot/7338902096575692815?bid=MDQEENnABjuSZsA3UimneFfVy2gEHsCt7MkXCLQVWm5HTOqB5K8qdIzn32UA8JX48eDgowQA&share=1&from=others',
+  //       title: '阿狸 P7 候选人（扣子）',
+  //       newWindow: true
+  //     },
+  //     doubao: {
+  //       href: 'https://www.doubao.com/share?botId=7338758967289724968',
+  //       title: '阿狸 P7 候选人（豆包）',
+  //       newWindow: true
+  //     },
+  //     cici: {
+  //       href: 'https://www.ciciai.com/share?botId=7339071191707320327',
+  //       title: '阿狸 P7 候选人（Cici）',
+  //       newWindow: true
+  //     }
+  //   }
+  // },
   mock: {
     type: 'page',
     title: '模拟面试'
