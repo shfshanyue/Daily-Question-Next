@@ -16,18 +16,6 @@ const config: DocsThemeConfig = {
     </>
   ),
   banner: {
-    // key: 'comate',
-    // text: (
-    //   <a href="https://comate.baidu.com/?inviteCode=hw7jki0p" target="_blank">
-    //     Baidu Comate，百度自研集成在 VSCode 中使用的编码辅助工具，目前可免费试用，点击查看 →
-    //   </a>
-    // ),
-    // key: 'tongyi',
-    // text: (
-    //   <a href="https://developer.aliyun.com/topic/lingma/activities/202403?taskCode=14508&recordId=7a6665535809acb96955e0ddd5179112#/?utm_content=m_fission_1" target="_blank">
-    //     通义灵码，阿里开发的 Code Copilot，现在注册可免费领取 AI 盲盒，如iPhone15、机械键盘、双肩包等。点击查看 →
-    //   </a>
-    // ),
     key: 'marscode',
     content: (
       <a href="https://zjsms.com/iBnEyfxP/" target="_blank">
@@ -36,12 +24,6 @@ const config: DocsThemeConfig = {
     )
   },
   sidebar: {
-    // titleComponent({ title, type }) {
-    //   if (type === 'separator') {
-    //     return <span className="cursor-default">{title}</span>
-    //   }
-    //   return <>{title}</>
-    // },
     defaultMenuCollapseLevel: 1,
     toggleButton: true
   },
@@ -54,7 +36,7 @@ const config: DocsThemeConfig = {
       </div>
       <div>
         <div className="text-xl">我的网站</div>
-        <ul className="flex flex-col gap-4 mt-4">
+        <ul className="flex flex-col gap-2 mt-4">
           <li>
             <a href="https://geek.shanyue.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">掘金返现平台</a>
           </li>
@@ -67,13 +49,15 @@ const config: DocsThemeConfig = {
           <li>
             <a href="https://markdown.devtool.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">码途编辑器</a>
           </li>
+          <li>
+            <a href="https://blog.shanyue.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">山月的新博客</a>
+          </li>
+          <li>
+            <a href="https://weekly.shanyue.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">
+              前端开发者周刊
+            </a>
+          </li>
         </ul>
-        {/* <Cards>
-          <Card icon={<FaInfo />} children="" title="掘金返现平台" href="https://geek.shanyue.tech" />
-          <Card icon={<FaInfo />} children="" title="开发者工具大全" href="https://devtool.tech" />
-          <Card icon={<FaInfo />} children="" title="一纸简历" href="https://cv.devtool.tech" />
-          <Card icon={<FaInfo />} children="" title="码途编辑器" href="https://markdown.devtool.tech" />
-        </Cards> */}
       </div>
       <div>
         <div className="text-xl">二维码</div>
@@ -91,36 +75,41 @@ const config: DocsThemeConfig = {
     component: null
   },
   head: function useHead() {
-    const { title } = useConfig()
+    const { title, frontMatter } = useConfig()
     const { route } = useRouter()
+    
+    const description = frontMatter.description || "大厂面试每日一题，每天五分钟，准备大厂中"
+    const baseUrl = 'https://q.shanyue.tech'
+    const canonicalUrl = `${baseUrl}${route}`
 
     return (
       <>
-        <meta name="msapplication-TileColor" content="#fff" />
-        <meta name="theme-color" content="#fff" />
+        <title>{title ? title + ' – 大厂面试每日一题' : '大厂面试每日一题'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="Content-Language" content="en" />
-        <meta
-          name="description"
-          content="大厂面试每日一题，每天五分钟，准备大厂中"
-        />
-        <meta
-          name="og:title"
-          content={title ? title + ' – 大厂面试每日一题' : '大厂面试每日一题'}
-        />
+        <meta httpEquiv="Content-Language" content="zh" />
+        <meta name="description" content={description} />
+        
+        {/* OpenGraph tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="大厂面试每日一题" />
+        <meta property="og:title" content={title ? title + ' – 大厂面试每日一题' : '大厂面试每日一题'} />
+        <meta property="og:description" content={description} />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title ? title + ' – 大厂面试每日一题' : '大厂面试每日一题'} />
+        <meta name="twitter:description" content={description} />
+        
         <meta name="apple-mobile-web-app-title" content="大厂面试每日一题" />
-        {/* <link
-          rel="icon"
-          href="/favicon-dark.svg"
-          type="image/svg+xml"
-          media="(prefers-color-scheme: dark)"
-        />
-        <link
-          rel="icon"
-          href="/favicon-dark.png"
-          type="image/png"
-          media="(prefers-color-scheme: dark)"
-        /> */}
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href={canonicalUrl} />
+        
+        {/* OpenGraph URL */}
+        <meta property="og:url" content={canonicalUrl} />
+        
+        {/* Twitter URL */}
+        <meta name="twitter:url" content={canonicalUrl} />
       </>
     )
   },
