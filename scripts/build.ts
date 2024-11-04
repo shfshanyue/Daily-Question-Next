@@ -64,7 +64,9 @@ function generateCatagoryReadme (group: string, issues: Issue[]) {
     return issue.labels.nodes.find(label => labelsByName[label.name].group === group)
   })
   const content = currentIssues.map(issue => {
-    return `+ [${issue.title}](/${group}/${issue.labels.nodes[0].name}/${issue.number})`
+    const labels = issue.labels.nodes
+    const label = labels.find(label => labelsByName[label.name].group === group) || labels[0]
+    return `+ [${issue.title}](/${group}/${label.name}/${issue.number})`
   }).join('\n')
     
   const md = title + content
