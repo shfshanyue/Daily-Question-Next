@@ -9,26 +9,10 @@ export default {
   deploy: {
     type: 'page',
     title: '前端部署',
-    display: 'hidden'
   },
   engineering: {
     type: 'page',
     title: '工程化',
-    display: 'hidden'
-  },
-  books: {
-    title: '我的小册',
-    type: 'menu',
-    items: {
-      interview: {
-        href: '/engineering',
-        title: '工程化'
-      },
-      deploy: {
-        href: '/deploy',
-        title: '前端部署'
-      }
-    }
   },
   roadmap: {
     type: 'page',
