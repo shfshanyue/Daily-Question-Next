@@ -18,11 +18,6 @@ export default {
     type: 'page',
     title: '面试路线图🔥'
   },
-  base: {
-    type: 'page',
-    title: '计算机基础',
-    display: 'hidden'
-  },
   fe: {
     type: 'page',
     title: '高级前端'
@@ -49,7 +44,7 @@ export default {
     items: {
       interview: {
         href: '/interview',
-        title: '面经大全🔥'
+        title: '面经大全🔥',
       },
       ai: {
         href: 'https://cv.devtool.tech/mock',
@@ -64,27 +59,26 @@ export default {
     items: {
       base: {
         href: '/base',
-        title: '计算机基础'
+        title: '计算机基础',
+        theme: {
+          sidebar: true
+        }
       },
       server: {
         href: '/server',
-        title: '全栈开发'
+        title: '全栈开发',
+        theme: {
+          sidebar: true
+        }
       },
       open: {
         title: '开放式问题',
-        href: '/open'
+        href: '/open',
+        theme: {
+          sidebar: true
+        }
       }
     }
-  },
-  server: {
-    type: 'page',
-    title: '全栈开发',
-    display: 'hidden'
-  },
-  open: {
-    type: 'page',
-    title: '开放式问题',
-    display: 'hidden'
   },
   train: {
     type: 'page',
