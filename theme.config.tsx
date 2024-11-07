@@ -38,24 +38,27 @@ const config: DocsThemeConfig = {
         <div className="text-xl">我的网站</div>
         <ul className="flex flex-col gap-2 mt-4">
           <li>
-            <a href="https://geek.shanyue.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">掘金返现平台</a>
+            <a href="https://cv.devtool.tech/docs/resume" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">简历编写指南</a>
           </li>
           <li>
-            <a href="https://devtool.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">开发者工具大全</a>
+            <a href="https://cv.devtool.tech" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">一纸简历</a>
           </li>
           <li>
-            <a href="https://cv.devtool.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">一纸简历</a>
+            <a href="https://devtool.tech" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">开发者工具大全</a>
           </li>
           <li>
-            <a href="https://markdown.devtool.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">码途编辑器</a>
+            <a href="https://markdown.devtool.tech" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">码途编辑器</a>
           </li>
           <li>
-            <a href="https://blog.shanyue.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">山月的新博客</a>
+            <a href="https://blog.shanyue.tech" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">山月的新博客</a>
           </li>
           <li>
-            <a href="https://weekly.shanyue.tech" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">
+            <a href="https://weekly.shanyue.tech" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">
               前端开发者周刊
             </a>
+          </li>
+          <li>
+            <a href="https://geek.shanyue.tech" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">掘金返现平台</a>
           </li>
         </ul>
       </div>
