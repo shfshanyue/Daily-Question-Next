@@ -41,6 +41,9 @@ const config: DocsThemeConfig = {
             <a href="https://cv.devtool.tech/docs/resume" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">简历编写指南</a>
           </li>
           <li>
+            <a href="https://cv.devtool.tech/templates" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">简历模板</a>
+          </li>
+          <li>
             <a href="https://cv.devtool.tech" target="_blank" className="inline-block border-b border-transparent text-primary dark:text-primary-dark hover:text-orange-500">一纸简历</a>
           </li>
           <li>
