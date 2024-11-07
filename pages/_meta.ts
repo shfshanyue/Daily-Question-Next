@@ -50,7 +50,12 @@ export default {
         href: 'https://cv.devtool.tech/mock',
         title: '智能面试',
         newWindow: true
-      }
+      },
+      resume: {
+        href: 'https://cv.devtool.tech',
+        title: '一纸简历🔥',
+        newWindow: true
+      },
     }
   },
   other: {
@@ -83,12 +88,6 @@ export default {
   train: {
     type: 'page',
     title: '训练营🔥'
-  },
-  resume: {
-    type: 'page',
-    href: 'https://cv.devtool.tech',
-    title: '一纸简历🔥',
-    newWindow: true
   },
   // coze: {
   //   title: 'AI Bot',

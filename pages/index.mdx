@@ -30,4 +30,30 @@ import Image from 'next/image'
       <img src="https://static.shanyue.tech/images/23-06-21/clipboard-2282.daa749.webp" className="rounded-3xl border border-gray-200" />
     </div>
   </div>
+
+  <div className="content-container py-10">
+    <h2 className="text-3xl font-bold text-gray-800 mb-8">常见问题</h2>
+    <div className="grid gap-6">
+      <div className="border rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-3">这个网站是做什么的？</h3>
+        <p className="text-gray-600">这是一个专注于前端的互联网大厂面试题的学习平台，帮助你系统性地准备技术面试。</p>
+      </div>
+
+      <div className="border rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-3">如何使用这个网站？</h3>
+        <p className="text-gray-600">
+          建议每天花5-10分钟时间学习一道题，持续积累。你可以按照我们提供的 <Link className="text-orange-500 hover:text-orange-600 hover:underline" href="/roadmap">面试路线图</Link> 进行系统学习。
+          系统学习之后可按照 <Link className="text-orange-500 hover:text-orange-600 hover:underline" href="/interview">面经大全</Link> 随机选择面经查缺补漏。
+        </p>
+      </div>
+
+      <div className="border rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-3">题目难度如何？</h3>
+        <p className="text-gray-600">
+          在 <Link className="text-orange-500 hover:text-orange-600 hover:underline" href="/roadmap">面试路线图</Link> 中，每道题偏向低中级，适合面试前突击。
+          而在 <Link className="text-orange-500 hover:text-orange-600 hover:underline" href="/fe">高级前端</Link> 中是一个总题库，每道题难度不一，适合长期积累。
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

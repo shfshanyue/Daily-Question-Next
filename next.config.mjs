@@ -9,7 +9,6 @@ import nextra from 'nextra'
 // })
 
 const config = {
-  swcMinify: true,
   output: 'standalone',
   env: {
     gaId: 'UA-',
