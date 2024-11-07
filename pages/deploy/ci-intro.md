@@ -1,4 +1,9 @@
-# CICD 简介并使用 Github Actions 自动部署单页应用 
+---
+title: 前端 CI/CD 入门：使用 GitHub Actions 实现自动化部署
+description: 本文介绍 CI/CD 的基础概念，详细讲解如何使用 GitHub Actions 实现前端项目的自动化部署。包括工作流配置、分支保护策略、自建 Runner 等实用技巧，帮助开发者快速掌握 CI/CD 部署流程。
+---
+
+# CICD 简介并使用 GitHub Actions 自动部署单页应用 
 
 在前边的篇章中，我们在服务器中搭建了 Traefik 网关，并使用 `docker-compose` 部署前端并发布成功。
 
@@ -36,37 +41,37 @@
 
 ![](https://static.shanyue.tech/images/22-07-05/clipboard-7635.303020.webp)
 
-> PS: 该图出自 [Gitlab CICD Workflow](https://docs.gitlab.com/ee/ci/introduction/index.html#basic-cicd-workflow)
+> PS: 该图出自 [GitLab CICD Workflow](https://docs.gitlab.com/ee/ci/introduction/index.html#basic-cicd-workflow)
 
 1. CI: 切出功能分支，进行新特性开发。此时为图中的 `Verify`、`Package` 阶段
 1. CD: 合并功能分支，进行自动化部署。此时为图中的 `Release` 阶段。
 
 ## CICD 工具与产品
 
-+ Gitlab CI
-+ Github Actions
++ GitLab CI
++ GitHub Actions
 + [Jenkins](https://www.jenkins.io/)
 
-国内公司一般以 `gitlab CI` 作为 CICD 工具，此时需要自建 `Gitlab Runner` 作为构建服务器。
+国内公司一般以 `gitlab CI` 作为 CICD 工具，此时需要自建 `GitLab Runner` 作为构建服务器。
 
 如果你们公司没有 CICD 基础设置，但是个人对 CICD 有极大兴趣，那么可以尝试 github 免费的 CICD 服务: [github actions](https://github.com/features/actions)。
 
-本篇文章以 Github Actions 为主进行介绍。
+本篇文章以 GitHub Actions 为主进行介绍。
 
 ## 基础概念与术语
 
 每一家 CICD 产品，都有各自的配置方式，但是总体上用法差不多。我们了解下 CICD 的基本术语
 
 + `Runner`: 用来执行 CI/CD 的构建服务器
-+ `workflow/pipeline`: CI/CD 的工作流。(在大部分 CI，如 Gitlab 中为 Pipeline，而 Github 中为 Workflow，但二者实际上还是略有不同)
++ `workflow/pipeline`: CI/CD 的工作流。(在大部分 CI，如 GitLab 中为 Pipeline，而 GitHub 中为 Workflow，但二者实际上还是略有不同)
 + `job`: 任务，比如构建，测试和部署。每个 `workflow`/`pipeline` 由多个 `job` 组成
 
-在本系列专栏中，以 Github Actions 为主，并配有全部关于 Github Actions 的配置代码，并可成功运行，配置目录见 [.github/workflows](https://github.com/shfshanyue/cra-deploy/tree/master/.github/workflows)。以 Gitlab CI 为辅，并配有部分配置代码。
+在本系列专栏中，以 GitHub Actions 为主，并配有全部关于 GitHub Actions 的配置代码，并可成功运行，配置目录见 [.github/workflows](https://github.com/shfshanyue/cra-deploy/tree/master/.github/workflows)。以 GitLab CI 为辅，并配有部分配置代码。
 
-以下是关于 Github Actions 与 Gitlab CI 的配置文档，在以后篇章中可自行查阅。
+以下是关于 GitHub Actions 与 GitLab CI 的配置文档，在以后篇章中可自行查阅。
 
-1. [Github Actions 配置](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions)
-2. [Gitlab CI 配置](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
+1. [GitHub Actions 配置](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions)
+2. [GitLab CI 配置](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
 
 ## 基本功能介绍
 
@@ -87,9 +92,9 @@
 on: push
 ```
 
-更多 Github Actions Event 可以参考官方文档 [Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#about-workflow-events)
+更多 GitHub Actions Event 可以参考官方文档 [Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#about-workflow-events)
 
-以下是 Github Actions 的一些时机的示例：
+以下是 GitHub Actions 的一些时机的示例：
 
 ``` yaml
 # 仅仅当 master 代码发生变更时，用以自动化部署
@@ -121,7 +126,7 @@ on:
     - cron:  '30 8 * * *'
 ```
 
-在 Gitlab CI 中通过 [rules](https://docs.gitlab.com/ee/ci/yaml/#rules) 进行配置，以下是 Gitlab CI 一些时机的示例：
+在 GitLab CI 中通过 [rules](https://docs.gitlab.com/ee/ci/yaml/#rules) 进行配置，以下是 GitLab CI 一些时机的示例：
 
 ``` yaml
 # 仅仅当 master 代码发生变更时，用以自动化部署
@@ -172,13 +177,13 @@ jobs:
 
 ![至少需要一位成员同意才能合并](https://static.shanyue.tech/images/22-07-05/clipboard-4703.b64821.webp)
 
-在 Gitlab 与 Github 中均可进行设置:
+在 GitLab 与 GitHub 中均可进行设置:
 
-+ [Github: Managing a branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule)
-+ [Gitlab: Merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-+ [Gitlab: Merge request approvals ALL TIERS](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
++ [GitHub: Managing a branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule)
++ [GitLab: Merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
++ [GitLab: Merge request approvals ALL TIERS](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
 
-如下示例，未通过 CI，不允许 Merge。可见示例 [PR #22](https://github.com/shfshanyue/cra-deploy/pull/22)。
+���下示例，未通过 CI，不允许 Merge。可见示例 [PR #22](https://github.com/shfshanyue/cra-deploy/pull/22)。
 
 ![](https://static.shanyue.tech/images/22-07-05/clipboard-2308.20bda7.webp)
 
@@ -192,7 +197,7 @@ jobs:
 $ docker-compose up --build
 ```
 
-以下是对于简单部署在个人服务器的一个 Github Actions 的案例，由于构建服务器无部署服务器管理集群应用的能力与权限 (kubernetes 拥有这种能力)。如果部署到服务器，只能简单粗暴地通过 ssh 进入服务器并拉取代码执行命令。
+以下是对于简单部署在个人服务器的一个 GitHub Actions 的案例，由于构建服务器无部署服务器管理集群应用的能力与权限 (kubernetes 拥有这种能力)。如果部署到服务器，只能简单粗暴地通过 ssh 进入服务器并拉取代码执行命令。
 
 ```yaml
 deploy:
@@ -214,9 +219,9 @@ deploy:
 
 ## 自建 Runner
 
-在本次实践中，将构建服务器与部署服务器置于一起，则可以解决这个问题。在 Github Actions，可以在自有服务器中自建 Runner，文档如下。
+在本次实践中，将构建服务器与部署服务器置于一起，则可以解决这个问题。在 GitHub Actions，可以在自有服务器中自建 Runner，文档如下。
 
-+ [Github Actions: Adding self hosted runners](https://docs.github.com/cn/actions/hosting-your-own-runners/adding-self-hosted-runners)
++ [GitHub Actions: Adding self hosted runners](https://docs.github.com/cn/actions/hosting-your-own-runners/adding-self-hosted-runners)
 
 此时部署仅仅需要一行 `docker-compose up`。
 
@@ -262,7 +267,7 @@ production:
 ## 作业
 
 + 初阶：请讲述几条主分支保护策略
-+ 中阶：自建 Github Actions Runner 并完成自动部署
++ 中阶：自建 GitHub Actions Runner 并完成自动部署
 + 面试：什么是 CICD
 
 ## 小结

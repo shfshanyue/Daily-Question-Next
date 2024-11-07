@@ -1,3 +1,8 @@
+---
+title: 基于 Nginx 部署前端应用：从 Node 到 Nginx 的最佳实践指南
+description: 本文详细介绍如何使用 Nginx 替代 Node.js 部署前端静态资源，包括镜像体积优化、Nginx 配置实践、Docker 环境搭建等内容。通过实例讲解如何使用 Docker 快速掌握 Nginx 部署技能。
+---
+
 # 基于 nginx 镜像构建容器
 
 正如上一篇章所言，对于仅仅提供静态资源服务的前端，实际上是不必将 nodejs 作为运行环境的。

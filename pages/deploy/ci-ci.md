@@ -1,3 +1,8 @@
+---
+title: 前端 CI 实践指南：使用 Github Actions 实现代码质量保障
+description: 本文详细介绍如何使用 Github Actions 搭建前端 CI 流程，包括代码风格检查、单元测试等质量保障措施。通过并行与串行任务的优化，以及与 Git Hooks 的对比，帮助团队建立完善的前端质量管控体系。
+---
+
 # CI 的实践与通过 CI 进行前端安全质量保障
 
 在上一篇章，我们了解到什么是 CICD。
@@ -57,7 +62,7 @@ on:
 
 但是 Lint 和 Test 都需要依赖安装 (Install)，在依赖安装结束后再执行，此时就是串行的。
 
-**而进行串行时，如果前一个任务失败，则下一个任务也无法继续。即如果测试无法通过，则无法进行 Preview，更无法上线。**
+**而进行串行时，如果前一个任务失败，则下一个任务也无法继续。即如果测试无法通过，则无法进行 Preview���更无法上线。**
 
 > PS: 此处可控制某些任务允许失败。如 Github Actions 中的 [jobs.<job_id>.continue-on-error](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idcontinue-on-error)
 

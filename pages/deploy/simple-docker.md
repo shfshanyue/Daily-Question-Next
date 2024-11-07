@@ -1,3 +1,8 @@
+---
+title: Docker 部署前端应用入门：从零开始的容器化实践指南
+description: 本文通过一个最简单的前端应用，详细讲解如何使用 Docker 和 Docker Compose 进行部署。包括 Dockerfile 编写、镜像构建、容器运行等基础知识，帮助前端开发者快速掌握 Docker 部署技能。
+---
+
 # 基于 docker/docker-compose 对极简项目的部署
 
 本篇文章介绍如何使用 Docker 将一个极简前端页面进行部署，而极简资源内容如下。也就是上篇文章的 **hello 版前端应用**。

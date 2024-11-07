@@ -1,3 +1,8 @@
+---
+title: 前端静态资源部署优化：OSS 按需上传与 Rclone 实践指南
+description: 本文介绍如何优化前端静态资源部署到对象存储的过程，通过 Rclone 实现按需上传、并发控制和缓存优化。解决了上传时间过长和资源冗余等问题，提升部署效率并降低云存储成本。
+---
+
 # oss 上传时间及空间优化
 
 ![](https://static.shanyue.tech/images/22-05-23/oss-optimize.79b9fc.webp)

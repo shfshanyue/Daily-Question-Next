@@ -1,3 +1,8 @@
+---
+title: CI/CD 环境变量最佳实践：Github Actions 与 Gitlab CI 环境配置指南
+description: 详细介绍 CI/CD 流程中环境变量的使用技巧，包括 Git 相关变量的获取、敏感信息的安全管理，以及在 Github Actions 和 Gitlab CI 中的具体配置方法。适用于前后端项目的环境变量管理实践。
+---
+
 # CI 中的环境变量
 
 在以前诸多章节中都会使用到环境变量。比如在 OSS 篇使用环境变量存储云服务的权限。在前端的异常监控服务中还会用到 Git 的 Commit/Tag 作为 Release 方便定位代码，其中 Commit/Tag 的名称即可从环境变量中获取。

@@ -1,3 +1,8 @@
+---
+title: 使用 CI Cache 加速前端构建部署：npm install 与 build 优化实践
+description: 本文介绍如何在 CI/CD 流程中利用缓存机制优化前端构建部署速度。通过缓存 node_modules 和构建产物，可显著减少 npm install 与 build 时间，提升部署效率。文章以 Github Actions 为例进行实践说明。
+---
+
 # 使用 CI Cache 加速 npm i/npm run build
 
 ![](https://static.shanyue.tech/images/22-07-09/clipboard-6058.4199b9.webp)

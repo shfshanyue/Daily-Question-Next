@@ -1,3 +1,8 @@
+---
+title: 前端多环境部署实践：基于 Docker 实现功能分支预览环境
+description: 本文详细介绍如何使用 Docker 和 CI/CD 为每个功能分支创建独立的预览环境。包括环境变量配置、自动化部署、域名管理，以及如何优雅地清理过期环境，助力团队提升开发测试效率。
+---
+
 # Preview and Environments
 
 关于 Preview，我在前几篇文章提到过几次，**即每一个功能分支都配有对应的测试环境**。
@@ -325,7 +330,7 @@ $ deploy shanyue-feature-A --host feature-A.dev.shanyue.tech
 
 随着 CICD 的发展、对快速迭代以及代码质量提出了更高的要求，基于分支的分支测试环境则成为了刚需。
 
-对于该环境的搭建，思路也很清晰
+对���该环境的搭建，思路也很清晰
 
 1. 借用现有的 CICD 服务，如 `github actions` 或者 `gitlab CI` 获取当前分支信息
 1. 借用 Docker 快速部署前端或者后端，根据分支信息启动不同的服务，根据 Docker 启动服务并配置标签
