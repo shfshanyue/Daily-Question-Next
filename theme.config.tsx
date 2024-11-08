@@ -18,8 +18,8 @@ const config: DocsThemeConfig = {
   banner: {
     key: 'marscode',
     content: (
-      <a href="https://zjsms.com/iBnEyfxP/" target="_blank">
-        点击加入字节豆包 MarsCode 合伙人，免费领京东卡🎁，拿万元现金💰，点击查看 → 
+      <a href="https://cv.devtool.tech/templates" target="_blank">
+        一纸简历更新更多的简历模板，如应届生模板与三年前端模板，点击查看 →
       </a>
     )
   },
