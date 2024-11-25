@@ -16,7 +16,7 @@ const config: DocsThemeConfig = {
     </>
   ),
   banner: {
-    key: 'marscode',
+    key: 'cvdevtool.templates',
     content: (
       <a href="https://cv.devtool.tech/templates" target="_blank">
         一纸简历更新更多的简历模板，如应届生模板与三年前端模板，点击查看 →
